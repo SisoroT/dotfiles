@@ -1,0 +1,1157 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'D
+	/home/sisoro/Documents
+	..
+1603080692
+'T
+	/home/sisoro/.local/share/Trash/files
+	..
+1603426582
+'c
+	/home/sisoro/.config
+	..
+1602811167
+'d
+	/home/sisoro/Downloads
+	..
+1602931629
+'h
+	/home/sisoro/
+	..
+1602708408
+'p
+	/home/sisoro/Pictures
+	..
+1602931610
+'t
+	/home/sisoro/.local/share/vifm/Trash
+	..
+1603426572
+'w
+	/home/sisoro/Pictures/Wallpapers
+	..
+1602931534
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/sisoro/.config/picom
+	picom.conf
+1
+d/home/sisoro/.config
+	picom
+18
+d/home/sisoro/.config/picom
+	picom.conf
+1
+d/home/sisoro/.config
+	aliasrc
+34
+d/home/sisoro
+	razer-dotfiles
+34
+d/home/sisoro/razer-dotfiles
+	vimrc
+5
+d/home/sisoro
+	razer-dotfiles
+34
+d/home/sisoro/razer-dotfiles
+	vim
+2
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim/.vim/plugged
+	ale
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles
+	vim
+2
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim/.vim/plugged
+	ale
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles
+	vim
+2
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim/.vim/plugged
+	ale
+1
+d/home/sisoro/razer-dotfiles/vim/.vim
+	plugged
+1
+d/home/sisoro/razer-dotfiles/vim
+	.vim
+1
+d/home/sisoro/razer-dotfiles
+	config
+1
+d/home/sisoro/razer-dotfiles/config
+	vifm
+5
+d/home/sisoro/razer-dotfiles
+	config
+1
+d/home/sisoro/razer-dotfiles/config
+	dunst
+1
+d/home/sisoro/razer-dotfiles/config/dunst
+	..
+0
+d/home/sisoro/razer-dotfiles/config
+	i3
+2
+d/home/sisoro/razer-dotfiles/config/i3
+	..
+0
+d/home/sisoro/razer-dotfiles/config
+	polybar
+3
+d/home/sisoro/razer-dotfiles/config/polybar
+	scripts
+1
+d/home/sisoro/razer-dotfiles/config
+	polybar
+3
+d/home/sisoro/razer-dotfiles
+	p10k.zsh
+3
+d/home/sisoro
+	Videos
+33
+d/home/sisoro/.config
+	picom
+18
+d/home/sisoro/.config/picom
+	picom.conf
+1
+d/home/sisoro/.config
+	vifm
+29
+d/home/sisoro/.config/vifm
+	colors
+1
+d/home/sisoro/.config
+	vifm
+29
+d/home/sisoro/.config/vifm
+	colors
+1
+d/home/sisoro/.config/vifm/colors
+	..
+0
+d/home/sisoro/.config/vifm
+	scripts
+2
+d/home/sisoro/.config/vifm/scripts
+	..
+0
+d/home/sisoro/.config/vifm
+	scripts
+2
+d/home/sisoro/.config/vifm/scripts
+	..
+0
+d/home/sisoro/.config/vifm
+	scripts
+2
+d/home/sisoro/.config/vifm/scripts
+	..
+0
+d/home/sisoro/.config/vifm
+	colors
+1
+d/home/sisoro/.config
+	vifm
+29
+d/home/sisoro/.config/vifm
+	scripts
+2
+d/home/sisoro/.config/vifm/scripts
+	..
+0
+d/home/sisoro/.config/vifm
+	colors
+1
+d/home/sisoro/.config/vifm/colors
+	..
+0
+d/home/sisoro/.config/vifm
+	..
+0
+d/home/sisoro/.config
+	picom
+27
+d/home/sisoro/.config/picom
+	picom.conf
+1
+d/home/sisoro/.config
+	user-dirs.locale
+42
+d/home/sisoro
+	.oh-my-zsh
+4
+d/home/sisoro/.oh-my-zsh
+	.github
+2
+d/home/sisoro/.oh-my-zsh/.github
+	..
+0
+d/home/sisoro/.oh-my-zsh
+	.git
+1
+d/home/sisoro/.oh-my-zsh/.git
+	hooks
+2
+d/home/sisoro/.oh-my-zsh/.git/hooks
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	branches
+1
+d/home/sisoro/.oh-my-zsh/.git/branches
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	hooks
+2
+d/home/sisoro/.oh-my-zsh/.git/hooks
+	applypatch-msg.sample
+1
+d/home/sisoro/.oh-my-zsh/.git
+	info
+3
+d/home/sisoro/.oh-my-zsh/.git/info
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	logs
+4
+d/home/sisoro/.oh-my-zsh/.git/logs
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	objects
+5
+d/home/sisoro/.oh-my-zsh/.git/objects
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	refs
+6
+d/home/sisoro/.oh-my-zsh/.git/refs
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	objects
+5
+d/home/sisoro/.oh-my-zsh/.git/objects
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	objects
+5
+d/home/sisoro/.oh-my-zsh/.git/objects
+	info
+1
+d/home/sisoro/.oh-my-zsh/.git/objects/info
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git/objects
+	pack
+2
+d/home/sisoro/.oh-my-zsh/.git/objects/pack
+	pack-5434cac2fb31acaee98a1aee6422af88c322d3cb.idx
+1
+d/home/sisoro/.oh-my-zsh/.git/objects
+	pack
+2
+d/home/sisoro/.oh-my-zsh/.git
+	logs
+4
+d/home/sisoro/.oh-my-zsh/.git/logs
+	refs
+1
+d/home/sisoro/.oh-my-zsh/.git/logs/refs
+	remotes
+2
+d/home/sisoro/.oh-my-zsh/.git/logs/refs/remotes
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git/logs/refs
+	heads
+1
+d/home/sisoro/.oh-my-zsh/.git/logs
+	..
+0
+d/home/sisoro/.oh-my-zsh/.git
+	ORIG_HEAD
+9
+d/home/sisoro/.oh-my-zsh
+	.git
+1
+d/home/sisoro/.oh-my-zsh/.git
+	ORIG_HEAD
+9
+d/home/sisoro/.oh-my-zsh
+	plugins
+7
+d/home/sisoro/.oh-my-zsh/plugins
+	zsh-autosuggestions
+38
+d/home/sisoro/.oh-my-zsh
+	plugins
+7
+d/home/sisoro/.oh-my-zsh/plugins
+	zsh-autosuggestions
+38
+d/home/sisoro/.oh-my-zsh
+	plugins
+7
+d
+
+# Right window history (oldest to newest):
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro
+	.nv
+10
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro
+	.vim
+18
+D/home/sisoro/.vim
+	plugged
+2
+D/home/sisoro/.vim/plugged
+	nerdtree
+2
+D/home/sisoro/.vim/plugged/nerdtree
+	syntax
+8
+D/home/sisoro/.vim/plugged/nerdtree/syntax
+	..
+0
+D/home/sisoro/.vim/plugged/nerdtree
+	plugin
+7
+D/home/sisoro/.vim/plugged/nerdtree/plugin
+	..
+0
+D/home/sisoro/.vim/plugged/nerdtree
+	nerdtree_plugin
+6
+D/home/sisoro/.vim/plugged/nerdtree/nerdtree_plugin
+	..
+0
+D/home/sisoro/.vim/plugged/nerdtree
+	lib
+5
+D/home/sisoro/.vim/plugged/nerdtree/lib
+	nerdtree
+1
+D/home/sisoro/.vim/plugged/nerdtree/lib/nerdtree
+	bookmark.vim
+1
+D/home/sisoro/.vim/plugged/nerdtree/lib
+	..
+0
+D/home/sisoro/.vim/plugged/nerdtree
+	nerdtree_plugin
+6
+D/home/sisoro/.vim/plugged/nerdtree/nerdtree_plugin
+	..
+0
+D/home/sisoro/.vim/plugged/nerdtree
+	nerdtree_plugin
+6
+D/home/sisoro/.vim/plugged
+	nerdtree
+4
+D/home/sisoro/.vim/plugged/nerdtree
+	nerdtree_plugin
+6
+D/home/sisoro/.vim/plugged
+	vim-prettier
+10
+D/home/sisoro/.vim/plugged/vim-prettier
+	tests
+10
+D/home/sisoro/.vim/plugged/vim-prettier/tests
+	__snapshots__
+1
+D/home/sisoro/.vim/plugged/vim-prettier/tests/__snapshots__
+	..
+0
+D/home/sisoro/.vim/plugged/vim-prettier/tests
+	__snapshots__
+1
+D/home/sisoro/.vim/plugged/vim-prettier
+	.git
+1
+D/home/sisoro/.vim/plugged/vim-prettier/.git
+	shallow
+12
+D/home/sisoro/.vim/plugged/vim-prettier
+	.git
+1
+D/home/sisoro/.vim/plugged
+	vim-prettier
+10
+D/home/sisoro/.vim/plugged/vim-prettier
+	media
+7
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro
+	Desktop
+2
+D/home/sisoro/Desktop
+	steam.desktop
+1
+D/home/sisoro
+	Documents
+3
+D/home/sisoro/Documents
+	..
+0
+D/home/sisoro
+	Documents
+3
+D/home/sisoro/Documents
+	Physics
+1
+D/home/sisoro/Pictures/Wallpapers
+	blue-city-bed.jpg
+5
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Downloads
+	RechatTool-1.5.5
+1
+D/home/sisoro
+	Documents
+3
+D/home/sisoro/Pictures
+	Wallpapers
+1
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro
+	Pictures
+6
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro
+	Downloads
+4
+D/home/sisoro/Pictures
+	Wallpapers
+2
+D/home/sisoro/Pictures/Wallpapers
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	Screenshots
+1
+D/home/sisoro/Pictures/Screenshots
+	..
+0
+D/home/sisoro/Pictures
+	..
+0
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures
+	..
+0
+D/home/sisoro/Documents
+	Physics
+1
+D/home/sisoro/Downloads
+	RechatTool-1.5.5
+1
+D/home/sisoro/Documents
+	Physics
+1
+D/home/sisoro
+	Applications
+1
+D/home/sisoro/Pictures
+	..
+0
+D/home/sisoro/Documents
+	..
+0
+D/home/sisoro
+	Documents
+3
+D/home/sisoro/Pictures
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:mkdir github
+:mkdir scripts
+:touch popup-calendar.sh
+:chmod 755 popup-calendar.sh
+:set columns
+:mkdir 755 scripts
+:touch uberzug-example.sh
+:chmod +755 ~/scripts/uberzug-example.sh
+:e vifmimg
+:e vifmrun
+:w test
+:test
+:split test
+:split
+:exit
+:mkdir ./dracula.vifm
+:mkdir ./
+:colorscheme distrotube
+:colorscheme Default
+:colorscheme dracula
+:cd
+:vifmimg
+: ./home/sisoro/.config/vifm/
+: ./home/sisoro/.config/vifm/scripts/vifmrun
+:chmod +x vifmrc
+:chmod +x ~/.config/vifm/vifmrc
+:trashes
+:trashes?
+:trashdir
+:Trash
+:lstrash
+:rename
+:mkdir .vimrc
+:vim .vimrc
+:.vimrc
+:vimrc
+:touch .vimrc
+:touch img
+:qw
+: ~/.config
+:e ~/.config
+:cd ~/.config
+:cd ~
+:wq
+:y 15,20
+:y 15:20
+:ei
+:noh
+:mkdir Physics
+:mkdir Lab 7
+:mkdir lab-6 lab-7 lab-8 lab-9 lab-10 lab-11 lab-12
+:mkdir Psych
+:mkdir 755 test
+:trash
+:sync
+:shell
+:cd /
+:mkdir Screenshots
+:touch rofi-calendar
+:marks
+:w
+:q
+
+# Search history (oldest to newest):
+/fonts
+/th
+/font
+/pic
+/con
+/ranger
+/xre
+/ico
+/down
+/python3
+/scripts
+/config-old
+/config
+/polybar
+/rofi
+/themes
+/icon
+/icons
+/dunst
+/python
+/site
+/ueber
+/alias
+/light
+/vifm
+/view
+/i3
+/vimrc
+/.local
+/steam
+/skins
+/blue
+/bluetoo
+/scrot
+/vim
+/picom
+/zsh
+
+# Prompt history (oldest to newest):
+pdotfiles
+prazer-dotfiles
+pconfig.rasi
+pvifmrun.sh
+pvifmimg.sh
+pvifmimg
+pvifmrun
+pvifmrc-old
+pdracula.vifm
+pvifmrc
+plaunch
+pconfig-dracula
+pconfig-d
+pconfig-old
+pconfig
+p000_config
+pbackground-tela-old
+pbackground-tela
+p.vimrc-old
+p.vimrc
+pBedCity.jpg
+pbed-city
+pCityRain.jpg
+pcity-rain
+pwindow-rain
+ptransparent umbrella.jpg
+ptransparent-umbrella
+psitting-down
+psilver-hair-sitting
+ptrain-station
+pwallpaperflare.com_wallpaper.jpg
+pgat
+psabre
+pwallpaperflare.com_wallpaper(1)
+ppatio-floor
+pchanging
+pkitchen-window
+pseppuku
+pgat-classroom
+psitting-by-the-sea
+pgat-grey
+pcat-girl
+pviolin-silver
+prui-bed
+pnezuko
+pnezuko-water
+prain-umbrella-bridge
+phate-minimal
+pbalcony-balloon
+pfishing
+pwallpaperflare.com_wallpaper(4).jpg
+pcity-high
+pwallpaperflare.com_wallpaper(5).jpg
+pcouch-stuffed-animals
+psword-forest
+phate-minmal2
+pnezuko-water.jpg
+prui-bed.jpg
+pDC RC Circuits.docx
+pRyan DC RC Circuits
+pRyan Taylor DC RC Circuits.docx
+pRyan Taylor DC RC data
+pblue-city-bed
+pScreenshots_000.png
+pTESTpicom.conf
+ppicom.conf
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/sisoro/.local/share/vifm/Trash/000_picom.conf
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/sisoro/.local/share/vifm/Trash/000_Reading Response 6.docx
+	/home/sisoro/Documents/Reading Response 6.docx
+t/home/sisoro/.local/share/vifm/Trash/000_.2.viminfo.tmp
+	/home/sisoro/.local/share/Trash/files/.2.viminfo.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.2.viminfz.tmp
+	/home/sisoro/.local/share/Trash/files/.2.viminfz.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfo
+	/home/sisoro/.local/share/Trash/files/.viminfo
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfo.tmp
+	/home/sisoro/.local/share/Trash/files/.viminfo.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfx.tmp
+	/home/sisoro/.local/share/Trash/files/.viminfx.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfy.tmp
+	/home/sisoro/.local/share/Trash/files/.viminfy.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfz.tmp
+	/home/sisoro/.local/share/Trash/files/.viminfz.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_174031-DOT_0.3.tar.gz
+	/home/sisoro/.local/share/Trash/files/174031-DOT_0.3.tar.gz
+t/home/sisoro/.local/share/vifm/Trash/000_INSTALL.md
+	/home/sisoro/.local/share/Trash/files/INSTALL.md
+t/home/sisoro/.local/share/vifm/Trash/000_LICENSE
+	/home/sisoro/.local/share/Trash/files/LICENSE
+t/home/sisoro/.local/share/vifm/Trash/000_MesloLGS NF Bold Italic.ttf
+	/home/sisoro/.local/share/Trash/files/MesloLGS NF Bold Italic.ttf
+t/home/sisoro/.local/share/vifm/Trash/000_MesloLGS NF Bold.ttf
+	/home/sisoro/.local/share/Trash/files/MesloLGS NF Bold.ttf
+t/home/sisoro/.local/share/vifm/Trash/000_MesloLGS NF Italic.ttf
+	/home/sisoro/.local/share/Trash/files/MesloLGS NF Italic.ttf
+t/home/sisoro/.local/share/vifm/Trash/000_MesloLGS NF Regular.ttf
+	/home/sisoro/.local/share/Trash/files/MesloLGS NF Regular.ttf
+t/home/sisoro/.local/share/vifm/Trash/000_README.md
+	/home/sisoro/.local/share/Trash/files/README.md
+t/home/sisoro/.local/share/vifm/Trash/000_Xresources
+	/home/sisoro/.local/share/Trash/files/Xresources
+t/home/sisoro/.local/share/vifm/Trash/000_config-old
+	/home/sisoro/.local/share/Trash/files/config-old
+t/home/sisoro/.local/share/vifm/Trash/000_fontawesome-free-5.10.2-desktop.zip
+	/home/sisoro/.local/share/Trash/files/fontawesome-free-5.10.2-desktop.zip
+t/home/sisoro/.local/share/vifm/Trash/000_launch-dracula.sh
+	/home/sisoro/.local/share/Trash/files/launch-dracula.sh
+t/home/sisoro/.local/share/vifm/Trash/000_lightdm-mini-greeter.conf
+	/home/sisoro/.local/share/Trash/files/lightdm-mini-greeter.conf
+t/home/sisoro/.local/share/vifm/Trash/000_screenshot.png
+	/home/sisoro/.local/share/Trash/files/screenshot.png
+t/home/sisoro/.local/share/vifm/Trash/000_polybar-9
+	/home/sisoro/.local/share/Trash/files/polybar-9
+t/home/sisoro/.local/share/vifm/Trash/000_.git
+	/home/sisoro/.local/share/Trash/files/.git
+t/home/sisoro/.local/share/vifm/Trash/000_.github
+	/home/sisoro/.local/share/Trash/files/.github
+t/home/sisoro/.local/share/vifm/Trash/000_git-clones
+	/home/sisoro/.local/share/Trash/files/git-clones
+t/home/sisoro/.local/share/vifm/Trash/000_config
+	/home/sisoro/.config/polybar/config
+t/home/sisoro/.local/share/vifm/Trash/001_.git
+	/home/sisoro/.vim/pack/themes/start/vim/.git
+t/home/sisoro/.local/share/vifm/Trash/001_.github
+	/home/sisoro/.vim/pack/themes/start/vim/.github
+t/home/sisoro/.local/share/vifm/Trash/000_after
+	/home/sisoro/.vim/pack/themes/start/vim/after
+t/home/sisoro/.local/share/vifm/Trash/000_autoload
+	/home/sisoro/.vim/pack/themes/start/vim/autoload
+t/home/sisoro/.local/share/vifm/Trash/000_colors
+	/home/sisoro/.vim/pack/themes/start/vim/colors
+t/home/sisoro/.local/share/vifm/Trash/000_doc
+	/home/sisoro/.vim/pack/themes/start/vim/doc
+t/home/sisoro/.local/share/vifm/Trash/000_.gitignore
+	/home/sisoro/.vim/pack/themes/start/vim/.gitignore
+t/home/sisoro/.local/share/vifm/Trash/000_INSTALL.md
+	/home/sisoro/.vim/pack/themes/start/vim/INSTALL.md
+t/home/sisoro/.local/share/vifm/Trash/000_LICENSE
+	/home/sisoro/.vim/pack/themes/start/vim/LICENSE
+t/home/sisoro/.local/share/vifm/Trash/000_README.md
+	/home/sisoro/.vim/pack/themes/start/vim/README.md
+t/home/sisoro/.local/share/vifm/Trash/000_screenshot.png
+	/home/sisoro/.vim/pack/themes/start/vim/screenshot.png
+t/home/sisoro/.local/share/vifm/Trash/000_dracula
+	/home/sisoro/.vim/plugged/dracula
+t/home/sisoro/.local/share/vifm/Trash/000_rofi
+	/home/sisoro/.config/rofi/rofi
+t/home/sisoro/.local/share/vifm/Trash/002_dracula
+	/home/sisoro/.vim/pack/themes/start/dracula
+t/home/sisoro/.local/share/vifm/Trash/000_pack
+	/home/sisoro/.vim/pack
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfz.tmp
+	/home/sisoro/.viminfz.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_.viminfo.tmp
+	/home/sisoro/.viminfo.tmp
+t/home/sisoro/.local/share/vifm/Trash/000_uberzug-example.sh
+	/home/sisoro/scripts/uberzug-example.sh
+t/home/sisoro/.local/share/vifm/Trash/000_755
+	/home/sisoro/755
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-14-051050_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-14-051050_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-14-035317_540x193_scrot.png
+	/home/sisoro/Pictures/2020-10-14-035317_540x193_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-13-172930_933x999_scrot.png
+	/home/sisoro/Pictures/2020-10-13-172930_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-13-172758_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-13-172758_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-13-172608_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-13-172608_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-12-063142_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-12-063142_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-11-220240_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-11-220240_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_sitting-rain-umbrella.jpg
+	/home/sisoro/Pictures/Wallpapers/sitting-rain-umbrella.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_anime-darling-in-the-franxx-shooting-star-zero-two-darling-in-the-franxx-wallpaper-thumb.jpg
+	/home/sisoro/Downloads/anime-darling-in-the-franxx-shooting-star-zero-two-darling-in-the-franxx-wallpaper-thumb.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_patio-floor.jpg
+	/home/sisoro/Pictures/Wallpapers/patio-floor.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_nord-vim
+	/home/sisoro/.vim/plugged/nord-vim
+t/home/sisoro/.local/share/vifm/Trash/000_node_modules
+	/home/sisoro/.vim/plugged/vim-prettier/node_modules
+t/home/sisoro/.local/share/vifm/Trash/000_7
+	/home/sisoro/Documents/Physics/7
+t/home/sisoro/.local/share/vifm/Trash/000_Lab
+	/home/sisoro/Documents/Physics/Lab
+t/home/sisoro/.local/share/vifm/Trash/001_755
+	/home/sisoro/Documents/Psych/755
+t/home/sisoro/.local/share/vifm/Trash/000_test
+	/home/sisoro/Documents/Psych/test
+t/home/sisoro/.local/share/vifm/Trash/000_749456522.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/749456522.json
+t/home/sisoro/.local/share/vifm/Trash/000_749456522.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/749456522.txt
+t/home/sisoro/.local/share/vifm/Trash/000_768903882.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/768903882.json
+t/home/sisoro/.local/share/vifm/Trash/000_768903882.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/768903882.txt
+t/home/sisoro/.local/share/vifm/Trash/000_756344003.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/756344003.json
+t/home/sisoro/.local/share/vifm/Trash/000_756344003.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/756344003.txt
+t/home/sisoro/.local/share/vifm/Trash/000_749908925.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/749908925.json
+t/home/sisoro/.local/share/vifm/Trash/000_749908925.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/749908925.txt
+t/home/sisoro/.local/share/vifm/Trash/000_732067934.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/732067934.json
+t/home/sisoro/.local/share/vifm/Trash/000_732067934.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/732067934.txt
+t/home/sisoro/.local/share/vifm/Trash/000_exam4-equations.jpg
+	/home/sisoro/Downloads/exam4-equations.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_~
+	/home/sisoro/.local/share/Trash/files/~
+t/home/sisoro/.local/share/vifm/Trash/000_grub2-themes-master
+	/home/sisoro/.local/share/Trash/files/grub2-themes-master
+t/home/sisoro/.local/share/vifm/Trash/000_grub2-themes-master.2
+	/home/sisoro/.local/share/Trash/files/grub2-themes-master.2
+t/home/sisoro/.local/share/vifm/Trash/000_Material-Black-Plum-3.36_1.8.9.zip
+	/home/sisoro/.local/share/Trash/files/Material-Black-Plum-3.36_1.8.9.zip
+t/home/sisoro/.local/share/vifm/Trash/000_dracula-grub2-master.zip
+	/home/sisoro/.local/share/Trash/files/dracula-grub2-master.zip
+t/home/sisoro/.local/share/vifm/Trash/000_grub2-themes-master.zip
+	/home/sisoro/.local/share/Trash/files/grub2-themes-master.zip
+t/home/sisoro/.local/share/vifm/Trash/000_postswitch.d
+	/home/sisoro/.local/share/Trash/files/postswitch.d
+t/home/sisoro/.local/share/vifm/Trash/001_exam4-equations.jpg
+	/home/sisoro/Documents/exam4-equations.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_737319674.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/737319674.json
+t/home/sisoro/.local/share/vifm/Trash/000_737319674.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/737319674.txt
+t/home/sisoro/.local/share/vifm/Trash/000_758716117.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/758716117.json
+t/home/sisoro/.local/share/vifm/Trash/000_758716117.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/758716117.txt
+t/home/sisoro/.local/share/vifm/Trash/000_771436284.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/771436284.json
+t/home/sisoro/.local/share/vifm/Trash/000_771436284.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/771436284.txt
+t/home/sisoro/.local/share/vifm/Trash/000_749042924.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/749042924.json
+t/home/sisoro/.local/share/vifm/Trash/000_749042924.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/749042924.txt
+t/home/sisoro/.local/share/vifm/Trash/000_772565392.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/772565392.json
+t/home/sisoro/.local/share/vifm/Trash/000_772565392.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/772565392.txt
+t/home/sisoro/.local/share/vifm/Trash/000_773594951.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/773594951.json
+t/home/sisoro/.local/share/vifm/Trash/000_773594951.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/773594951.txt
+t/home/sisoro/.local/share/vifm/Trash/000_769520506.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/769520506.json
+t/home/sisoro/.local/share/vifm/Trash/000_769520506.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/769520506.txt
+t/home/sisoro/.local/share/vifm/Trash/000_763918601.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/763918601.json
+t/home/sisoro/.local/share/vifm/Trash/000_763918601.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/763918601.txt
+t/home/sisoro/.local/share/vifm/Trash/000_762904116.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/762904116.json
+t/home/sisoro/.local/share/vifm/Trash/000_762904116.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/762904116.txt
+t/home/sisoro/.local/share/vifm/Trash/000_768650490.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/768650490.json
+t/home/sisoro/.local/share/vifm/Trash/000_768650490.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/768650490.txt
+t/home/sisoro/.local/share/vifm/Trash/000_769858832.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/769858832.json
+t/home/sisoro/.local/share/vifm/Trash/000_769858832.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/769858832.txt
+t/home/sisoro/.local/share/vifm/Trash/000_770790495.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/770790495.json
+t/home/sisoro/.local/share/vifm/Trash/000_770790495.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/770790495.txt
+t/home/sisoro/.local/share/vifm/Trash/000_767946615.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/767946615.json
+t/home/sisoro/.local/share/vifm/Trash/000_767946615.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/767946615.txt
+t/home/sisoro/.local/share/vifm/Trash/000_764135236.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/764135236.json
+t/home/sisoro/.local/share/vifm/Trash/000_764135236.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/764135236.txt
+t/home/sisoro/.local/share/vifm/Trash/000_465491334.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/465491334.json
+t/home/sisoro/.local/share/vifm/Trash/000_465491334.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/465491334.txt
+t/home/sisoro/.local/share/vifm/Trash/000_774957883.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/774957883.json
+t/home/sisoro/.local/share/vifm/Trash/000_774957883.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/774957883.txt
+t/home/sisoro/.local/share/vifm/Trash/000_771367449.json
+	/home/sisoro/Downloads/RechatTool-1.5.5/771367449.json
+t/home/sisoro/.local/share/vifm/Trash/000_771367449.txt
+	/home/sisoro/Downloads/RechatTool-1.5.5/771367449.txt
+t/home/sisoro/.local/share/vifm/Trash/000_Reading Response 7 (1).pdf
+	/home/sisoro/Documents/Reading Response 7 (1).pdf
+t/home/sisoro/.local/share/vifm/Trash/000_Reading Response 7.pdf
+	/home/sisoro/Documents/Reading Response 7.pdf
+t/home/sisoro/.local/share/vifm/Trash/000_Nozick.pptx
+	/home/sisoro/Downloads/Nozick.pptx
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-100428_1886x999_scrot.png
+	/home/sisoro/Pictures/2020-10-22-100428_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-214311_933x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-214311_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_Screenshots_000.png
+	/home/sisoro/Pictures/Screenshots_000.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215103_933x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215103_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-214235_933x999_scrot.png
+	/home/sisoro/2020-10-22-214235_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215704_933x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215704_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215729_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215729_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215909_933x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215909_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215917_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215917_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220012_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220012_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215403_933x999_scrot.png
+	/home/sisoro/2020-10-22-215403_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215431_939x1005_scrot.png
+	/home/sisoro/2020-10-22-215431_939x1005_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-215855_933x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-215855_933x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220227_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220227_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220433_1895x1005_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220433_1895x1005_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220456_1923x1079_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220456_1923x1079_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220530_1921x1078_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220530_1921x1078_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220554_1526x822_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220554_1526x822_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220608_1905x1079_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220608_1905x1079_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220624_1894x1079_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220624_1894x1079_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220635_1924x1078_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220635_1924x1078_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220746_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220746_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220749_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220749_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220802_1905x1079_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220802_1905x1079_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-220752_1886x999_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-220752_1886x999_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_rofi-calendar
+	/home/sisoro/.config/polybar/scripts/rofi-calendar
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-231856_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-231856_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_2020-10-22-232411_3840x1080_scrot.png
+	/home/sisoro/Pictures/Screenshots/2020-10-22-232411_3840x1080_scrot.png
+t/home/sisoro/.local/share/vifm/Trash/000_136a35719df1ef25caac8e41910cf702.jpg
+	/home/sisoro/Pictures/136a35719df1ef25caac8e41910cf702.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_thumb-350-732856.jpg
+	/home/sisoro/Pictures/thumb-350-732856.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_index.jpg
+	/home/sisoro/Pictures/index.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_thumb-121035.jpg
+	/home/sisoro/Pictures/thumb-121035.jpg
+t/home/sisoro/.local/share/vifm/Trash/000_.vimrc
+	/home/sisoro/razer-dotfiles/.vimrc
+t/home/sisoro/.local/share/vifm/Trash/000_vim
+	/home/sisoro/razer-dotfiles/vim
+t/home/sisoro/.local/share/vifm/Trash/000_vim
+	/home/sisoro/.vim/plugged/vim
+t/home/sisoro/.local/share/vifm/Trash/000_.vimrc
+	/home/sisoro/.vimrc
+t/home/sisoro/.local/share/vifm/Trash/000_vifmimgpdffile
+	/home/sisoro/.config/vifm/vifmimgpdffile
+t/home/sisoro/.local/share/vifm/Trash/000_vifmimgpdfpage
+	/home/sisoro/.config/vifm/vifmimgpdfpage
+t/home/sisoro/.local/share/vifm/Trash/000_picom.conf
+	/home/sisoro/.config/picom.conf
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s0
