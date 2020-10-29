@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 70                      "
 "    -> Remaps: 170                      "
-"    -> Plugin Settings and Remaps: 212  "
-"    -> Misc: 263                        "
+"    -> Plugin Settings and Remaps: 216  "
+"    -> Misc: 267                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -203,6 +203,10 @@ vnoremap <leader>0 $
 " move files up and down in visual mode 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" move up and down 15 lines with Ctrl+J or K
+nnoremap <C-j> 15j
+nnoremap <C-k> 15k
 
 " Visual mode pressing * searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
