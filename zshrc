@@ -89,7 +89,8 @@ bindkey -v '^?' backward-delete-char
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    sudo
+    archlinux
+    extract
     zsh-syntax-highlighting
     zsh-autosuggestions
     history
