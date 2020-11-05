@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 73                      "
 "    -> Remaps: 172                      "
-"    -> Plugin Settings and Remaps: 239  "
-"    -> Misc: 303                        "
+"    -> Plugin Settings and Remaps: 233  "
+"    -> Misc: 297                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
