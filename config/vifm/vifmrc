@@ -166,8 +166,8 @@ command! reload :write | restart
 " program.
 
 " Pdf
-filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
-fileviewer *.pdf
+filextype *.pdf epdfview %c %i &, apvlv %c, xpdf %c
+fileviewer *.pdf 
         \ vifmimg pdfpreview %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
@@ -510,6 +510,16 @@ nnoremap <f8> :delete<cr>
 
 map > :!vifmimg inc<CR>
 map < :!vifmimg dec<CR>
+
+"open files in neovim instead of vim
+set vicmd=nvim
+
+" mediocre fzf integration
+nnoremap <C-f> :FZFlocate<CR>
+nnoremap <C-v> :FZFfind<CR>
+command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 20 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto "'.system('find -L -maxdepth 4 | fzf --preview "ls -lhA {}" 2>/dev/tty ').'"%IU' | redraw
+
 
 " Export IPC name of current instance as environment variable and use it to
 " communicate with the instance later.
