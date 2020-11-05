@@ -1,9 +1,7 @@
 {
-
-// explorer
+  // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.file.showHiddenFiles": true
-
 }
