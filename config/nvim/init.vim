@@ -1,4 +1,4 @@
-"   NVIM CONFIGURATION                    "
+"   NVIM CONFIGURATION                   "
 """"""""""""""""""""""""""""""""""""""""""
 "                                        "
 " Sections:                              "
