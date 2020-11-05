@@ -17,9 +17,9 @@
 #window {
     background-color: @background;
     border:           1;
-    border-radius: 6;
+    border-radius: 2;
     border-color: @bordercolor;
-    padding:          5;
+    padding:          3;
 }
 #mainbox {
     border:  0;
