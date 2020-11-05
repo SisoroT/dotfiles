@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 70                      "
-"    -> Remaps: 170                      "
-"    -> Plugin Settings and Remaps: 216  "
-"    -> Misc: 267                        "
+"    -> General: 73                      "
+"    -> Remaps: 172                      "
+"    -> Plugin Settings and Remaps: 239  "
+"    -> Misc: 303                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -20,7 +20,10 @@ call plug#begin('~/.vim/plugged')
 " Nerd Tree
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'scrooloose/nerdcommenter'
+
+" Fuzzy file finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Quick commentary
 Plug 'tpope/vim-commentary'
@@ -30,22 +33,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " CoC recommended config
 let g:coc_start_at_startup = 1
 let g:coc_global_extensions = [
-\ 'coc-json',
-\ 'coc-css',
-\ 'coc-ultisnips',
-\ 'coc-tsserver',
-\ 'coc-emmet',
+\ 'coc-snippets',
 \ 'coc-tag',
 \ 'coc-omni',
 \ 'coc-syntax',
-\ 'coc-yaml',
-\ 'coc-solargraph',
-\ 'coc-phpls',
-\ 'coc-html',
-\ 'coc-tailwindcss',
 \ 'coc-markdownlint',
-\ 'coc-git'
-\ ]
+\ 'coc-git',
+\ 'coc-vimlsp',
+\ 'coc-json',
+\ 'coc-prettier',
+\ 'coc-pairs',
+\ 'coc-yank'
+\]
 
 " Formatting
 Plug 'prettier/vim-prettier', {
@@ -57,11 +56,15 @@ let g:prettier#config#parser = 'babylon'
 " Marks changes to line as you make them
 Plug 'dense-analysis/ale'
 
+" Movement
+Plug 'unblevable/quick-scope'
+
 " Aesthetics
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -111,7 +114,6 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
 
 " Turn on the wild menu
 set wildmenu
@@ -174,7 +176,7 @@ set noswapfile
 let mapleader = " "
 
 " open mini file manager in a split window
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar>
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar><CR>
 
 " navigate double windows with space+vim keys while in normal mode
 nnoremap <leader>h :wincmd h<CR>
@@ -207,10 +209,31 @@ vnoremap K :m '<-2<CR>gv=gv
 " move up and down 15 lines with Ctrl+J or K
 nnoremap <C-j> 15j
 nnoremap <C-k> 15k
+vnoremap <C-j> 15j
+vnoremap <C-k> 15k
 
 " Visual mode pressing * searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
+" clear highlighted search results
+nnoremap <C-c> :noh<CR>
+nnoremap <leader>c :noh<CR>
+
+" navigate previous files with tab
+nnoremap <TAB> :bprevious<CR>
+nnoremap <S-TAB> :bnext<CR>
+
+" allows binding of alt
+execute "set <M-h>=\eh"
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+
+" resize with alt+hjkl
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Plugin Settings and Remaps
@@ -219,18 +242,31 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 " Show hidden files in Nerd Tree
 let NERDTreeShowHidden=1
 
-" Nerd Tree remaps
+" Show nerd tree and close when alone
 nmap <leader>t :NERDTreeToggle<CR>
-
-" Nerd Commenter toggle
-" nmap <leader>e <plug>NERDCommenterToggle
-" vmap <leader>e <plug>NERDCommenterToggle
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " tpope commentary remaps
-nmap <leader>e gcc
-vmap <leader>e gc
+" nmap <leader>e gcc
+" vmap <leader>e gc
 nmap ee gcc
 vmap ee gc
+
+" open fzf and show hidden files
+map <leader>f <Esc><Esc>:Files!<CR>
+map <leader>F <Esc><Esc>:Files! ~/<CR>
+let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
+
+" only open up quickscope on presses
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Show coc explorer and close when alone
+nmap <leader>e :CocCommand explorer --preset .vim<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
+" enable tab completion for coc
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " air-line
 let g:airline_powerline_fonts = 1 
