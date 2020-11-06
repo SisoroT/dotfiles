@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 69                      "
 "    -> Remaps: 168                      "
-"    -> Plugin Settings and Remaps: 233  "
-"    -> Misc: 286                        "
+"    -> Plugin Settings and Remaps: 236  "
+"    -> Misc: 288                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -225,6 +225,9 @@ nnoremap <M-j> :resize -2<CR>
 nnoremap <M-k> :resize +2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+" source shortcut
+nnoremap <C-s> :so%<CR>
+
 " find and replace
 nnoremap S :%s//gI<Left><Left><Left>
 
@@ -234,10 +237,10 @@ nnoremap S :%s//gI<Left><Left><Left>
 """"""""""""""""""""""""""""""""""""""""""
 
 " tpope commentary remaps
-" nmap <leader>e gcc
-" vmap <leader>e gc
 nmap ee gcc
 vmap ee gc
+nmap q gcc
+vmap q gc
 
 " open fzf and show hidden files
 map <leader>f <Esc><Esc>:Files<CR>
@@ -274,7 +277,6 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
 
 " show top bar
 set showtabline=2
