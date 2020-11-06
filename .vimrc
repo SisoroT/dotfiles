@@ -140,7 +140,7 @@ set hlsearch
 set incsearch
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -202,7 +202,7 @@ nnoremap <leader>r <C-r>
 nnoremap <leader>0 $
 vnoremap <leader>0 $
 
-" move files up and down in visual mode 
+" move files up and down in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -261,7 +261,7 @@ let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Show coc explorer and close when alone
-nmap <leader>e :CocCommand explorer --preset .vim<CR>
+nmap <leader>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " enable tab completion for coc
@@ -269,26 +269,26 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " air-line
-let g:airline_powerline_fonts = 1 
- 
+let g:airline_powerline_fonts = 1
+
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
- 
+
 " unicode symbols
-let g:airline_left_sep = '»' 
-let g:airline_left_sep = '▶' 
-let g:airline_right_sep = '«' 
-let g:airline_right_sep = '◀' 
-let g:airline_symbols.linenr = '␊' 
-let g:airline_symbols.linenr = '␤' 
-let g:airline_symbols.linenr = '¶' 
-let g:airline_symbols.branch = '⎇'  
-let g:airline_symbols.paste = 'ρ' 
-let g:airline_symbols.paste = 'Þ' 
-let g:airline_symbols.paste = '∥' 
-let g:airline_symbols.whitespace = 'Ξ' 
- 
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 " airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
