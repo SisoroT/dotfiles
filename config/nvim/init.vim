@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 73                      "
-"    -> Remaps: 172                      "
+"    -> General: 69                      "
+"    -> Remaps: 168                      "
 "    -> Plugin Settings and Remaps: 233  "
-"    -> Misc: 297                        "
+"    -> Misc: 286                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -17,22 +17,11 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Nerd Tree
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-
-" Fuzzy file finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Quick commentary
-Plug 'tpope/vim-commentary'
-
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" CoC recommended config
 let g:coc_start_at_startup = 1
 let g:coc_global_extensions = [
+\ 'coc-explorer',
 \ 'coc-snippets',
 \ 'coc-tag',
 \ 'coc-omni',
@@ -45,6 +34,13 @@ let g:coc_global_extensions = [
 \ 'coc-pairs',
 \ 'coc-yank'
 \]
+
+" Fuzzy file finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Quick commentary
+Plug 'tpope/vim-commentary'
 
 " Formatting
 Plug 'prettier/vim-prettier', {
@@ -140,7 +136,7 @@ set hlsearch
 set incsearch
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -190,7 +186,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Alternative keybind for command mode
+" Alternative keybind for command mde
 :inoremap kj <Esc>
 :inoremap ii <Esc>
 :vnoremap ii <Esc>
@@ -202,7 +198,7 @@ nnoremap <leader>r <C-r>
 nnoremap <leader>0 $
 vnoremap <leader>0 $
 
-" move files up and down in visual mode 
+" move files up and down in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -212,7 +208,7 @@ nnoremap <C-k> 15k
 vnoremap <C-j> 15j
 vnoremap <C-k> 15k
 
-" Visual mode pressing * searches for the current selection
+" visual mode pressing * searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
 " clear highlighted search results
@@ -229,16 +225,13 @@ nnoremap <M-j> :resize -2<CR>
 nnoremap <M-k> :resize +2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+" find and replace
+nnoremap S :%s//gI<Left><Left><Left>
+
+
 """"""""""""""""""""""""""""""""""""""""""
 " => Plugin Settings and Remaps
 """"""""""""""""""""""""""""""""""""""""""
-
-" Show hidden files in Nerd Tree
-let NERDTreeShowHidden=1
-
-" Show nerd tree and close when alone
-nmap <leader>t :NERDTreeToggle<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " tpope commentary remaps
 " nmap <leader>e gcc
@@ -263,52 +256,38 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " air-line
-let g:airline_powerline_fonts = 1 
- 
+let g:airline_powerline_fonts = 1
+
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
- 
-" unicode symbols
-let g:airline_left_sep = '»' 
-let g:airline_left_sep = '▶' 
-let g:airline_right_sep = '«' 
-let g:airline_right_sep = '◀' 
-let g:airline_symbols.linenr = '␊' 
-let g:airline_symbols.linenr = '␤' 
-let g:airline_symbols.linenr = '¶' 
-let g:airline_symbols.branch = '⎇'  
-let g:airline_symbols.paste = 'ρ' 
-let g:airline_symbols.paste = 'Þ' 
-let g:airline_symbols.paste = '∥' 
-let g:airline_symbols.whitespace = 'Ξ' 
- 
+
+" Makes top bar look better
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" show top bar
+set showtabline=2
+
+" hides the --INSERT under bar
+set noshowmode
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""""""""""""""
 
-" Delete trailing white space on save, useful for some filetypes
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
+" delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 " :W sudo saves the file
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
