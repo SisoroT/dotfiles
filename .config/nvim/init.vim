@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 69                      "
-"    -> Remaps: 168                      "
-"    -> Plugin Settings and Remaps: 236  "
-"    -> Misc: 288                        "
+"    -> General: 72                      "
+"    -> Remaps: 174                      "
+"    -> Plugin Settings and Remaps: 242  "
+"    -> Misc: 297                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -54,6 +54,9 @@ Plug 'dense-analysis/ale'
 
 " Movement
 Plug 'unblevable/quick-scope'
+
+" Sudo save
+Plug 'lambdalisue/suda.vim'
 
 " Aesthetics
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -163,6 +166,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" allows yanking to system clipboard
+set clipboard=unnamedplus
+
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Remaps
@@ -250,13 +256,16 @@ let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Show coc explorer and close when alone
+" show coc explorer and close when alone
 nmap <leader>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " enable tab completion for coc
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+" sudo save file
+:command W SudaWrite
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -292,7 +301,7 @@ set noshowmode
 autocmd BufWritePre * %s/\s\+$//e
 
 " :W sudo saves the file
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+" command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
