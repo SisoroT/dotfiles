@@ -4,10 +4,10 @@
 # Sections:                               #
 #    -> General: 20                       #
 #    -> Apps: 65                          #
-#    -> Navigation: 119                   #
-#    -> Workspaces: 161                   #
-#    -> Modes: 268                        #
-#    -> Misc: 328                         #
+#    -> Navigation: 114                   #
+#    -> Workspaces: 156                   #
+#    -> Modes: 264                        #
+#    -> Misc: 340                         #
 #                                         #
 ###########################################
 
@@ -38,7 +38,7 @@ hide_edge_borders none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -78,7 +78,7 @@ exec --no-startup-id bluetoothctl
 # Start Applications
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+e exec pcmanfm
-bindsym $mod+s exec i3-sensible-terminal -e "/home/sisoro/.config/vifm/scripts/vifmrun"
+bindsym $mod+s exec urxvt -e "/home/sisoro/.config/vifm/scripts/vifmrun"
 bindsym $mod+Shift+d exec discord
 bindsym $mod+Shift+s exec steam
 bindsym $mod+v exec pavucontrol
@@ -108,11 +108,6 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
-
-# Screenshotting
-bindsym Print exec --no-startup-id i3-scrot # whole screen
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w # focused window
-bindsym Ctrl+Print --release exec --no-startup-id i3-scrot -s # snipping
 
 
 ###########################################
@@ -235,7 +230,7 @@ assign [class="Steam"]   7
 assign [class="discord"] 9
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -263,6 +258,7 @@ bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+t sticky toggle
+
 
 ###########################################
 # => Modes
@@ -292,14 +288,30 @@ mode "resize" {
 
 ############# screenshot mode #############
 
-# bindsym Print mode "$mode_screenshot"
-set $mode_screenshot (f)ullscreen, (s)election, (c)lipboard
+set $mode_screenshot Screenshot: (f)iles, (c)lipboard
+set $mode_screenshot_files files: (f)ullscreen, (a)pp, (s)election
+set $mode_screenshot_clipboard clipboard: (f)ullscreen, (a)pp, (s)election
+bindsym Print mode "$mode_screenshot"
 mode "$mode_screenshot" {
-        bindsym f exec --no-startup-id flameshot full -p ~/Pictures/screenshots, mode "default"
-        bindsym s exec --no-startup-id flameshot gui -p ~/Pictures/screenshots, mode "default"
-        bindsym c exec --no-startup-id flameshot full -c, mode "default"
+        bindsym f      mode "$mode_screenshot_files"
+        bindsym c      mode "$mode_screenshot_clipboard"
 
-# exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_screenshot_files" {
+        bindsym f exec --no-startup-id i3-scrot, mode "default"
+        bindsym a --release exec --no-startup-id i3-scrot -w, mode "default"
+        bindsym s --release exec --no-startup-id i3-scrot -s, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_screenshot_clipboard" {
+        bindsym f exec --no-startup-id i3-scrot, mode "default"
+        bindsym a --release exec --no-startup-id i3-scrot, -w mode "default"
+        bindsym s --release exec --no-startup-id i3-scrot, -s mode "default"
+
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
