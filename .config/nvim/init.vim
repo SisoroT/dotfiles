@@ -4,9 +4,9 @@
 " Sections:                              "
 "    -> Plugins: 15                      "
 "    -> General: 72                      "
-"    -> Remaps: 174                      "
-"    -> Plugin Settings and Remaps: 242  "
-"    -> Misc: 297                        "
+"    -> Remaps: 177                      "
+"    -> Plugin Settings and Remaps: 246  "
+"    -> Misc: 302                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -74,6 +74,9 @@ call plug#end()
 
 " set colorscheme to dracula on bootup
 colorscheme dracula
+
+" enable true colors
+" set termguicolors
 
 " Automatically turn on relative line numbers
 set nu relativenumber
@@ -179,6 +182,7 @@ let mapleader = " "
 
 " open mini file manager in a split window
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar><CR>
+nnoremap <leader>ph :wincmd s<bar> :Ex <bar><CR>
 
 " navigate double windows with space+vim keys while in normal mode
 nnoremap <leader>h :wincmd h<CR>
@@ -265,7 +269,7 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " sudo save file
-:command W SudaWrite
+command! W SudaWrite
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -292,6 +296,7 @@ set showtabline=2
 
 " hides the --INSERT under bar
 set noshowmode
+
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Misc
