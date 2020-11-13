@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 72                      "
 "    -> Remaps: 177                      "
-"    -> Plugin Settings and Remaps: 246  "
-"    -> Misc: 302                        "
+"    -> Plugin Settings and Remaps: 249  "
+"    -> Misc: 305                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -238,6 +238,9 @@ nnoremap <M-l> :vertical resize +2<CR>
 " source shortcut
 nnoremap <C-s> :so%<CR>
 
+" close a buffer
+nnoremap <leader>bd :bd<CR>
+
 " find and replace
 nnoremap S :%s//gI<Left><Left><Left>
 
@@ -305,7 +308,7 @@ set noshowmode
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" :W sudo saves the file
+" :W sudo saves the file (currently doesn't work in neovim)
 " command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Ignore compiled files
