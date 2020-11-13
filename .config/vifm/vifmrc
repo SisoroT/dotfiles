@@ -372,10 +372,6 @@ filextype */
 "
 " fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 
-" Displaying pictures in terminal
-"
-" fileviewer *.jpg,*.png shellpic %c
-
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
 " settings).  By default all unknown files are opened with 'vi[x]cmd'
@@ -383,10 +379,6 @@ filextype */
 " for unknown file types.
 " For *nix:
 " filetype * xdg-open
-" For OS X:
-" filetype * open
-" For Windows:
-" filetype * start, explorer
 
 " GETTING ICONS TO DISPLAY IN VIFM
 " You need the next 14 lines!
@@ -417,28 +409,13 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
-" Examples of configuring both panels
-
-" Customize view columns a bit (enable ellipsis for truncated file names)
-"
-" set viewcolumns=-{name}..,6{}.
-
-" Filter-out build and temporary files
-"
-" filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
-
-" ------------------------------------------------------------------------------
-
 " Sample mappings
-
-"Open all images in current directory in sxiv thumbnail mode
-nnoremap sx :!sxiv -t %d & <cr>
 
 "Open selected images in gimp
 nnoremap gp :!gimp %f & <cr>
 
 " Start shell in current directory
-nnoremap s :shell<cr>
+nnoremap ss :shell<cr>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
@@ -464,11 +441,12 @@ nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
-nnoremap cc cw<c-u>
-nnoremap A cw
+nnoremap cc cW<c-u>
+nnoremap A cW
+nnoremap aa cw
 
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap ,t :!termite &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
@@ -477,6 +455,12 @@ nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
+
+" move up and down 15 lines with Ctrl+J or K
+nnoremap <C-j> 15j
+nnoremap <C-k> 15k
+vnoremap <C-j> 15j
+vnoremap <C-k> 15k
 
 " Example of standard two-panel file managers mappings
 nnoremap <f3> :!less %f<cr>
@@ -488,44 +472,15 @@ nnoremap <f8> :delete<cr>
 
 " ------------------------------------------------------------------------------
 
-" Various customization examples
-
-" Use ag (the silver searcher) instead of grep
-"
-" set grepprg='ag --line-numbers %i %a %s'
-
-" Add additional place to look for executables
-"
-" let $PATH = $HOME.'/bin/fuse:'.$PATH
-
-" Block particular shortcut
-"
-" nnoremap <left> <nop>
-
 map > :!vifmimg inc<CR>
 map < :!vifmimg dec<CR>
 
 set vicmd=nvim
 
-" move up and down 15 lines with Ctrl+J or K
-nnoremap <C-j> 15j
-nnoremap <C-k> 15k
-vnoremap <C-j> 15j
-vnoremap <C-k> 15k
-
 " mediocre fzf integration
 nnoremap <C-f> :FZFlocate<CR>
 nnoremap <C-v> :FZFfind<CR>
 " find -L -maxdepth 4
-command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 20 2>/dev/tty'))
+command! FZFlocate :set noquickview | :execute 'goto' fnameescape('term('locate $HOME | fzf --height 20 2>/dev/tty'))
 command! FZFfind :set noquickview | :execute 'goto "'.system('find -L -maxdepth 4 | fzf --preview "ls -lhA {}" 2>/dev/tty ').'"%IU' | redraw
 
-
-" Export IPC name of current instance as environment variable and use it to
-" communicate with the instance later.
-"
-" It can be used in some shell script that gets run from inside vifm, for
-" example, like this:
-"     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
-"
-" let $VIFM_SERVER_NAME = v:servername
