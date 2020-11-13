@@ -7,7 +7,7 @@
 #    -> Navigation: 114                   #
 #    -> Workspaces: 156                   #
 #    -> Modes: 264                        #
-#    -> Misc: 340                         #
+#    -> Misc: 377                         #
 #                                         #
 ###########################################
 
@@ -316,6 +316,43 @@ mode "$mode_screenshot_clipboard" {
         bindsym Escape mode "default"
 }
 
+############ gaps mode ############
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
 ############ system power mode ############
 
 bindsym $mod+shift+p mode "$power"
@@ -341,14 +378,14 @@ mode "$power" {
 ###########################################
 
 
-#   colors
-#   class                   border  backgr. text    indic.   child_border
-    client.focused          #4D4D4D #4D4D4D #9AEDFE #FDF6E3
-    client.focused_inactive #282A36 #282A36 #8BE9FD #454948
-    client.unfocused        #282A36 #282A36 #8BE9FD #454948
-    client.urgent           #FF5555 #F4F99D #8BE9FD #8BE9FD
-    client.placeholder      #000000 #0c0c0c #F8F8F2 #000000
-    client.background       #282A36
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 # Set inner/outer gaps
     gaps inner 15
