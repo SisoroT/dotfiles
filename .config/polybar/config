@@ -206,7 +206,7 @@ label         =   %date%
 label-padding = 2
 
 exec = ~/.config/polybar/scripts/popup-calendar.sh
-click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup & 
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -227,7 +227,7 @@ interval = 5
 label-padding = 2
 
 exec = ~/.config/polybar/scripts/popup-calendar.sh
-click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup & 
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
