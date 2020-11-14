@@ -3,11 +3,11 @@
 #                                         #
 # Sections:                               #
 #    -> General: 20                       #
-#    -> Apps: 65                          #
-#    -> Navigation: 114                   #
-#    -> Workspaces: 156                   #
-#    -> Modes: 264                        #
-#    -> Misc: 377                         #
+#    -> Apps: 63                          #
+#    -> Navigation: 112                   #
+#    -> Workspaces: 154                   #
+#    -> Modes: 262                        #
+#    -> Misc: 331                         #
 #                                         #
 ###########################################
 
@@ -50,9 +50,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+e exec rofi -show emoji -modi emoji
 bindsym $mod+c exec --no-startup-id rofi-bluetooth
-
-# launch categorized menu
-bindsym $mod+Shift+z exec --no-startup-id morc_menu
+bindsym $mod+Shift+w exec --no-startup-id bwmenu --auto-lock 900
 
 # sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
 exec --no-startup-id volumeicon
@@ -288,70 +286,26 @@ mode "resize" {
 
 ############# screenshot mode #############
 
-set $mode_screenshot Screenshot: (f)iles, (c)lipboard
-set $mode_screenshot_files files: (f)ullscreen, (a)pp, (s)election
-set $mode_screenshot_clipboard clipboard: (f)ullscreen, (a)pp, (s)election
+set $mode_screenshot screenshot: (f)ullscreen, (s)creen, (e)xplorer
+set $mode_screenshot_files explorer: (f)ullscreen, (s)creen
 bindsym Print mode "$mode_screenshot"
 mode "$mode_screenshot" {
-        bindsym f      mode "$mode_screenshot_files"
-        bindsym c      mode "$mode_screenshot_clipboard"
+        bindsym f exec --no-startup-id flameshot full -c, mode "default"
+        bindsym s exec --no-startup-id flameshot screen -c, mode "default"
+        bindsym e mode "$mode_screenshot_files"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 mode "$mode_screenshot_files" {
-        bindsym f exec --no-startup-id i3-scrot, mode "default"
-        bindsym a --release exec --no-startup-id i3-scrot -w, mode "default"
-        bindsym s --release exec --no-startup-id i3-scrot -s, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_screenshot_clipboard" {
-        bindsym f exec --no-startup-id i3-scrot, mode "default"
-        bindsym a --release exec --no-startup-id i3-scrot, -w mode "default"
-        bindsym s --release exec --no-startup-id i3-scrot, -s mode "default"
+        bindsym f exec --no-startup-id flameshot full -p ~/Pictures/Screenshots, mode "default"
+        bindsym s exec --no-startup-id flameshot screen -p ~/Pictures/Screenshots, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-############ gaps mode ############
-
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+bindsym Ctrl+Print exec killall flameshot
 
 ############ system power mode ############
 
@@ -379,7 +333,7 @@ mode "$power" {
 
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #6272A4 #6272A4 #F8F8F2 #CAA9FA   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
