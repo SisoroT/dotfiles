@@ -11,7 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sisoro/.oh-my-zsh"
 
-# Path to your oh-my-zsh installation.
+# Path to vifmrun script
 export PATH=/home/sisoro/.config/vifm/scripts:$PATH
 
 # Path to histfile
