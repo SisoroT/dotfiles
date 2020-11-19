@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 72                      "
-"    -> Remaps: 177                      "
-"    -> Plugin Settings and Remaps: 249  "
-"    -> Misc: 305                        "
+"    -> General: 73                      "
+"    -> Remaps: 178                      "
+"    -> Plugin Settings and Remaps: 257  "
+"    -> Misc: 313                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 
 " Formatting
+" Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'branch': 'release/0.x'
@@ -183,6 +184,13 @@ let mapleader = " "
 " open mini file manager in a split window
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar><CR>
 nnoremap <leader>ph :wincmd s<bar> :Ex <bar><CR>
+
+" open terminal in split window
+nnoremap <leader>vv :vsplit term://zsh<CR>
+nnoremap <leader>hh :split term://zsh<CR> :resize 15<CR>
+
+" rebind exit for terminal
+tnoremap <C-x><C-x> <C-\><C-n>
 
 " navigate double windows with space+vim keys while in normal mode
 nnoremap <leader>h :wincmd h<CR>
