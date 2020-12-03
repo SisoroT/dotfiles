@@ -415,7 +415,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 nnoremap gp :!gimp %f & <cr>
 
 " Start shell in current directory
-nnoremap ss :shell<cr>
+nnoremap s :shell<cr>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
