@@ -220,10 +220,10 @@ format-foreground = ${colors.pink}
 interval = 5
 
 ; Format
-/* date = %A, %d %B */
+; date = %A, %d %B
 
 ; Label
-/* label         =   %date% */
+; label         =   %date%
 label-padding = 2
 
 exec = ~/.config/polybar/scripts/popup-calendar.sh
