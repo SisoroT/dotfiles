@@ -186,11 +186,11 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar><CR>
 nnoremap <leader>ph :wincmd s<bar> :Ex <bar><CR>
 
 " open terminal in split window
-nnoremap <leader>vv :vsplit term://zsh<CR>
-nnoremap <leader>hh :split term://zsh<CR> :resize 15<CR>
+nnoremap <leader>ov :vsplit term://zsh<CR>
+nnoremap <leader>oh :split term://zsh<CR> :resize 13<CR>
 
 " rebind exit for terminal
-tnoremap <C-x><C-x> <C-\><C-n>
+tnoremap <C-x> <C-\><C-n>
 
 " navigate double windows with space+vim keys while in normal mode
 nnoremap <leader>h :wincmd h<CR>
