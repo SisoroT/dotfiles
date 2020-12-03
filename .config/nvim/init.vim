@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 73                      "
-"    -> Remaps: 178                      "
-"    -> Plugin Settings and Remaps: 257  "
-"    -> Misc: 313                        "
+"    -> General: 75                      "
+"    -> Remaps: 180                      "
+"    -> Plugin Settings and Remaps: 259  "
+"    -> Misc: 315                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -31,7 +31,6 @@ let g:coc_global_extensions = [
 \ 'coc-vimlsp',
 \ 'coc-json',
 \ 'coc-prettier',
-\ 'coc-pairs',
 \ 'coc-yank'
 \]
 
@@ -49,6 +48,9 @@ Plug 'prettier/vim-prettier', {
 \ 'branch': 'release/0.x'
 \ }
 let g:prettier#config#parser = 'babylon'
+
+" Auto bracket pairing
+Plug 'jiangmiao/auto-pairs'
 
 " Marks changes to line as you make them
 Plug 'dense-analysis/ale'
