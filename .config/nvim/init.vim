@@ -1,4 +1,4 @@
-"   NVIM CONFIGURATION                   "
+"    NVIM CONFIGURATION                  "
 """"""""""""""""""""""""""""""""""""""""""
 "                                        "
 " Sections:                              "
@@ -6,7 +6,7 @@
 "    -> General: 75                      "
 "    -> Remaps: 180                      "
 "    -> Plugin Settings and Remaps: 259  "
-"    -> Misc: 315                        "
+"    -> Misc: 321                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -269,6 +269,12 @@ vmap q gc
 map <leader>f <Esc><Esc>:Files<CR>
 map <leader>F <Esc><Esc>:Files ~/<CR>
 let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
+" split rebinds
+let g:fzf_action= {
+            \'ctrl-s': 'split',
+            \'alt-s': 'split',
+            \'alt-v': 'vsplit'
+            \}
 
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
