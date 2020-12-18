@@ -6,7 +6,7 @@
 "    -> General: 75                      "
 "    -> Remaps: 180                      "
 "    -> Plugin Settings and Remaps: 259  "
-"    -> Misc: 321                        "
+"    -> Misc: 324                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -273,6 +273,7 @@ let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
 let g:fzf_action= {
             \'ctrl-s': 'split',
             \'alt-s': 'split',
+            \'ctrl-v': 'vsplit',
             \'alt-v': 'vsplit'
             \}
 
@@ -286,6 +287,8 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 " enable tab completion for coc
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" press kk to complete snippets
+" imap kk <Plug>(coc-snippets-expand)
 
 " sudo save file
 command! W SudaWrite
