@@ -1,3 +1,30 @@
+;    POLYBAR CONFIGURATION               ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                                        ;
+; Sections:                              ;
+;    -> Colors: 25                       ;
+;    -> Bar (Primary): 41                ;
+;    -> Bar (Secondary): 103             ;
+; Modlues:                               ;
+;    -> i3: 142                          ;
+;    -> bspwm: 191                       ;
+;    -> time: 232                        ;
+;    -> date: 252                        ;
+;    -> cpu: 298                         ;
+;    -> memory: 312                      ;
+;    -> audio: 326                       ;
+;    -> battery: 348                     ;
+;    -> windowtitle: 389                 ;
+;    -> network: 405                     ;
+;    -> Settings: 425                    ;
+;                                        ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => Colors
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [colors]
 background = #282a36
 foreground = #f8f8f2
@@ -10,7 +37,9 @@ cyan       = #8be9fd
 orange     = #ffb86c
 pink       = #ff79c6
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => Bar (Primary)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/primary]
 ; Size
@@ -58,7 +87,7 @@ font-3 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=true;3
 font-4 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=true;3
 
 ; Modlues
-modules-left   = i3
+modules-left   = bspwm
 modules-center = time date-popup
 modules-right  = cpu memory audio battery
 
@@ -70,7 +99,9 @@ tray-background = ${colors.background}
 cursor-click  = pointer
 cursor-scroll = ns-resize
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => Bar (Secondary)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/secondary]
 monitor = ${env:MONITOR:HDMI-1-0}
@@ -97,7 +128,7 @@ font-1 = FontAwesome5Free:style=Regular:pixelsize=10:antialias=true;3
 ; font-2 = FontAwesome5Brands:style=Regular:pixelsize=10:antialias=true;3
 
 ;MODULE SETUP
-modules-left = i3
+modules-left = bspwm
 modules-center = time date-popup
 
 tray-position = right
@@ -107,7 +138,9 @@ tray-background = ${colors.background}
 cursor-click  = pointer
 cursor-scroll = ns-resize
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => i3
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/i3]
 type = internal/i3
@@ -154,22 +187,50 @@ label-urgent            = %name%
 label-urgent-foreground = ${colors.red}
 label-urgent-padding    = 2
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => bspwm
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[module/weather]
-type = custom/script
+[module/bspwm]
+type = internal/bspwm
 
-; Script
-; exec = /home/sisoro/.config/polybar/scripts/weather.sh
+; Pin workspaces
+pin-workspaces = true
 
-; Update interval
-interval = 600
+; Mouse click
+enable-click = true
 
-; Label
-label         = %output%
-label-padding = 4
+; Mouse scroll
+enable-scroll = false
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Sort
+index-sort = false
+
+; Display icons
+fuzzy-match = true
+
+; Focused label
+label-focused            = %name%
+label-focused-foreground = ${colors.pink}
+label-focused-padding    = 2
+
+; Unfocused labels
+label-unfocused         = %name%
+label-unfocused-padding = 2
+label-empty=
+
+; Visible labels
+label-visible         = %name%
+label-visible-padding = 2
+
+; Urgent labels
+label-urgent            = %name%!
+label-urgent-foreground = ${colors.red}
+label-urgent-padding    = 2
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => time
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/time]
 type = internal/date
@@ -187,28 +248,9 @@ time = %I:%M%P
 label         =   %time%
 label-padding = 4
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[module/date]
-type = internal/date
-
-format-background = ${colors.background}
-format-foreground = ${colors.pink}
-
-; Update interval
-interval = 1.0
-
-; Format
-date = %A, %d %B
-
-; Label
-label         =   %date%
-label-padding = 2
-
-exec = ~/.config/polybar/scripts/popup-calendar.sh
-click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => date-popup
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/date-popup]
 type = custom/script
@@ -229,7 +271,32 @@ label-padding = 2
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => date
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/date]
+type = internal/date
+
+format-background = ${colors.background}
+format-foreground = ${colors.pink}
+
+; Update interval
+interval = 1.0
+
+; Format
+date = %A, %d %B
+
+; Label
+label         =   %date%
+label-padding = 2
+
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => cpu
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/cpu]
 type = internal/cpu
@@ -241,7 +308,9 @@ label = "   %percentage%%  "
 format-background = ${colors.background}
 format-foreground = ${colors.purple}
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => memory
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/memory]
 type = internal/memory
@@ -253,7 +322,9 @@ label = "   %percentage_used%%  "
 format-background = ${colors.background}
 format-foreground = ${colors.yellow}
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => audio
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/audio]
 type = internal/pulseaudio
@@ -273,7 +344,9 @@ label-muted            = "  "
 label-muted-foreground = ${colors.red}
 label-muted-padding    = 1
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => battery
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/battery]
 type = internal/battery
@@ -312,7 +385,25 @@ label-full ="  "
 format-full-background = ${colors.background}
 format-full-foreground = ${colors.green}
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => windowtitle
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/windowtitle]
+type = internal/xwindow
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 4
+
+label = [ %title% ]
+label-maxlen = 100
+label-empty = ""
+label-empty-foreground = ${colors.foreground}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => network
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/network]
 type = internal/network
@@ -330,7 +421,9 @@ label-disconnected            = 
 label-disconnected-foreground = ${colors.red}
 label-disconnected-padding    = 2
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; => settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [settings]
 screenchange-reload     = true
