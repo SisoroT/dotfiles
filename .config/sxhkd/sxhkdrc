@@ -3,8 +3,8 @@
 #                                         #
 # Sections:                               #
 #    -> General: 13                       #
-#    -> Hotkeys: 57                       #
-#    -> Misc: 000                         #
+#    -> Hotkeys: 46                       #
+#    -> Modes: 173                        #
 #                                         #
 ###########################################
 
@@ -36,6 +36,11 @@ super + alt + {q,r}
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
+
+# make sxhkd reload its configuration files:
+super + ctrl + l
+    betterlockscreen -l dim -t "locked."
+
 
 ###########################################
 # => Hotkeys
@@ -85,9 +90,25 @@ super + u
 # state/flags
 #
 
+# toggle floating
+super + space
+    if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+        bspc node focused -t floating; \
+    else \
+        bspc node focused -t tiled; \
+    fi
+
+# toggle fullscreen
+super + f
+    if [ -z "$(bspc query -N -n focused.fullscreen)" ]; then \
+        bspc node focused -t fullscreen; \
+    else \
+        bspc node focused -t tiled; \
+    fi
+
 # set the window state
-super + {t,shift + t,s,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# super + {t,shift + t,s,f}
+#     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -102,11 +123,11 @@ super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-    bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+#     bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {comma,period}
     bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -147,27 +168,39 @@ super + ctrl + space
 super + ctrl + shift + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
 
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+###########################################
+# => Modes
+###########################################
 
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# resize mode
+# -----------
 
-# move a floating window
-super + {Left,Down,Up,Right}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+super + shift + r : {h,l}
+    INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
 
-# # Resize Mode
-# # -----------
-# super + r : {h,l}
-#   INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
+super + shift + r : {j,k}
+    INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
 
-# super + r : {j,k}
-#   INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
+# screenshot mode
+# -----------
+
+Print ; {f,s}
+    {flameshot full -c, flameshot screen -c}
+ctrl + Print
+    killall flameshot
+
+# system power mode
+# -----------
+
+super + shift + p ; {l}
+    betterlockscreen -l dim -t "locked." #lock
+super + shift + p ; {e}
+    bspc quit #exit bspwm
+super + shift + p ; {s}
+    systemctl suspend #suspend
+super + shift + p ; {r}
+    systemctl reboot #reboot
+super + shift + p ; {shift + s}
+    systemctl poweroff #shutdown
 
