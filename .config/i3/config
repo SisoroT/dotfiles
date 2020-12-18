@@ -3,11 +3,11 @@
 #                                         #
 # Sections:                               #
 #    -> General: 20                       #
-#    -> Apps: 63                          #
-#    -> Navigation: 99                    #
-#    -> Workspaces: 141                   #
-#    -> Modes: 249                        #
-#    -> Misc: 318                         #
+#    -> Apps: 57                          #
+#    -> Navigation: 103                   #
+#    -> Workspaces: 145                   #
+#    -> Modes: 252                        #
+#    -> Misc: 321                         #
 #                                         #
 ###########################################
 
@@ -46,12 +46,6 @@ bindsym $mod+Shift+q kill
 # mouse cursor kill
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# rofi launchers
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+e exec rofi -show emoji -modi emoji
-bindsym $mod+c exec --no-startup-id rofi-bluetooth
-bindsym $mod+Shift+w exec --no-startup-id bwmenu --auto-lock 900
-
 # sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
@@ -64,28 +58,33 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ###########################################
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id autorandr -c
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id ./.fehbg
 exec --no-startup-id picom --config /home/sisoro/.config/picom/picom.conf &
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id bluetoothctl power on
 
 # Start Applications
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+e exec pcmanfm
 bindsym $mod+s exec urxvt -e "/home/sisoro/.config/vifm/scripts/vifmrun"
-bindsym $mod+Shift+d exec discord
+bindsym $mod+Shift+d exec discord-ptb
 bindsym $mod+Shift+s exec steam
+bindsym $mod+u exec unityhub
 bindsym $mod+v exec pavucontrol
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+# rofi launchers
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+e exec rofi -show emoji -modi emoji
+bindsym $mod+c exec --no-startup-id rofi-bluetooth
+bindsym $mod+Shift+w exec --no-startup-id bwmenu --auto-lock 900
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
+for_window [title="Unity Hub"] floating enable
 for_window [title="Steam"] floating enable
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
@@ -94,6 +93,11 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Yad" title="yad-calendar"] floating enable
 
+# Open applications on specific workspaces
+assign [class="firefox"] 1
+assign [class="Steam"]   7
+assign [class="discord"] 9
+assign [class="UnityHub"] 10
 
 ###########################################
 # => Navigation
@@ -157,8 +161,12 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Monitor names
-set $screen1 "eDP1"
+set $screen1 "eDP-1"
 set $screen2 "HDMI-1-0"
+
+# Nvidia Monitor names
+# set $screen1 "eDP-1-1"
+# set $screen2 "HDMI-0"
 
 # workspace output
 workspace $ws1 output $screen1
@@ -208,11 +216,6 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10; workspace $ws10
-
-# Open applications on specific workspaces
-assign [class="firefox"] 1
-assign [class="Steam"]   7
-assign [class="discord"] 9
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
@@ -335,13 +338,18 @@ client.background       #F8F8F2
     gaps bottom 15
 
 # volume controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+; exec notify-send volume up #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-; exec notify-send volume down #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+; exec notify-send volume up #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-; exec notify-send volume down #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle # mute sound
+bindsym XF86AudioRaiseVolume exec /home/sisoro/.config/dunst/volume.sh up
+bindsym XF86AudioLowerVolume exec /home/sisoro/.config/dunst/volume.sh down
+bindsym XF86AudioMute exec /home/sisoro/.config/dunst/volume.sh mute
 
 # screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec notify-send brightness up
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec notify-send brightness down
+# bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec notify-send brightness up
+# bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec notify-send brightness down
+bindsym XF86MonBrightnessUp exec /home/sisoro/.config/dunst/brightness.sh up
+bindsym XF86MonBrightnessDown exec /home/sisoro/.config/dunst/brightness.sh down
 
 # reload the configuration file
     bindsym $mod+Shift+c reload
