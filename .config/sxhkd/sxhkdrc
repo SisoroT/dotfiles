@@ -128,7 +128,7 @@ super + {_,shift + }{h,j,k,l}
 
 # focus the next/previous window in the current desktop
 super + {comma,period}
-    bspc node -f {next,prev}.local.!hidden.window
+    bspc node -f {prev,next}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -168,6 +168,33 @@ super + ctrl + space
 super + ctrl + shift + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+# Volume Controls
+# XF86AudioRaiseVolume
+#     amixer set Master 5%+; notify-send volume up #increase sound volume
+# XF86AudioLowerVolume
+#     amixer set Master 5%-; notify-send volume down #decrease sound volume
+# XF86AudioMute
+#     amixer set Master toggle #mute sound
+
+# Volume script
+XF86AudioRaiseVolume
+    /home/sisoro/.config/dunst/volume.sh up
+XF86AudioLowerVolume
+    /home/sisoro/.config/dunst/volume.sh down
+XF86AudioMute
+    /home/sisoro/.config/dunst/volume.sh mute
+
+# Brightness controls
+# XF86MonBrightnessUp
+#     xbacklight -inc 5; notify-send brightness up
+# XF86MonBrightnessDown
+#     xbacklight -dec 5; notify-send brightness down
+
+# Brightness script
+XF86MonBrightnessUp
+    /home/sisoro/.config/dunst/brightness.sh up
+XF86MonBrightnessDown
+    /home/sisoro/.config/dunst/brightness.sh down
 
 ###########################################
 # => Modes
