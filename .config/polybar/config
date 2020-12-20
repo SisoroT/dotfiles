@@ -4,19 +4,19 @@
 ; Sections:                              ;
 ;    -> Colors: 25                       ;
 ;    -> Bar (Primary): 41                ;
-;    -> Bar (Secondary): 103             ;
+;    -> Bar (Secondary): 106             ;
 ; Modlues:                               ;
-;    -> i3: 142                          ;
-;    -> bspwm: 191                       ;
-;    -> time: 232                        ;
-;    -> date: 252                        ;
-;    -> cpu: 298                         ;
-;    -> memory: 312                      ;
-;    -> audio: 326                       ;
-;    -> battery: 348                     ;
-;    -> windowtitle: 389                 ;
-;    -> network: 405                     ;
-;    -> Settings: 425                    ;
+;    -> i3: 148                          ;
+;    -> bspwm: 197                       ;
+;    -> time: 238                        ;
+;    -> date: 258                        ;
+;    -> cpu: 304                         ;
+;    -> memory: 318                      ;
+;    -> audio: 332                       ;
+;    -> battery: 354                     ;
+;    -> windowtitle: 395                 ;
+;    -> network: 411                     ;
+;    -> Settings: 431                    ;
 ;                                        ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -55,6 +55,9 @@ bottom = false
 
 ; Radius
 radius = 0
+
+; Hide polybar in fullscreen for bspwm
+wm-restack = bspwm
 
 ; Align modules fixed to middle
 fixed-center = true
@@ -121,6 +124,9 @@ border-color =
 
 module-margin-left = 0
 module-margin-right = 0
+
+; Hide polybar in fullscreen for bspwm
+wm-restack = bspwm
 
 ; Font
 font-0 = Roboto:size=10;3
