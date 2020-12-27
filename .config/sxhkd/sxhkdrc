@@ -25,9 +25,9 @@ super + m
 super + y
     bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-super + g
-    bspc node -s biggest.window
+# swap the current node and the biggest window on workspace
+super + b
+    bspc node -s biggest.local
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -38,7 +38,7 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 # make sxhkd reload its configuration files:
-super + ctrl + l
+super + alt + l
     betterlockscreen -l dim -t "locked."
 
 
@@ -68,7 +68,7 @@ super + shift + w
 super + shift + e
     pcmanfm
 super + s
-    urxvt -e "/home/sisoro/.config/vifm/scripts/vifmrun"
+    termite -e "/home/sisoro/.config/vifm/scripts/vifmrun"
 
 # pavucontrol
 super + v
@@ -92,19 +92,11 @@ super + u
 
 # toggle floating
 super + space
-    if [ -z "$(bspc query -N -n focused.floating)" ]; then \
-        bspc node focused -t floating; \
-    else \
-        bspc node focused -t tiled; \
-    fi
+    bspc node focused.tiled -t floating || bspc node focused.fullscreen -t floating || bspc node focused.floating -t tiled
 
 # toggle fullscreen
 super + f
-    if [ -z "$(bspc query -N -n focused.fullscreen)" ]; then \
-        bspc node focused -t fullscreen; \
-    else \
-        bspc node focused -t tiled; \
-    fi
+    bspc node focused.tiled -t fullscreen || bspc node focused.floating -t fullscreen || bspc node focused.fullscreen -t tiled
 
 # set the window state
 # super + {t,shift + t,s,f}
@@ -221,7 +213,7 @@ ctrl + Print
 # -----------
 
 super + shift + p ; {l}
-    betterlockscreen -l dim -t "locked." #lock
+    betterlockscreen -l dim -t "locked."
 super + shift + p ; {e}
     bspc quit #exit bspwm
 super + shift + p ; {s}
