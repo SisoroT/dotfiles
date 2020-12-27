@@ -14,6 +14,12 @@ export ZSH="/home/sisoro/.oh-my-zsh"
 # Path to vifmrun script
 export PATH=/home/sisoro/.config/vifm/scripts:$PATH
 
+# Path to scripts folder
+export PATH=/home/sisoro/Scripts:$PATH
+
+# Path to bspswallow script
+# export PATH=/home/sisoro/.config/bspwm/scripts/bspswallow:$PATH
+
 # Path to histfile
 export HISTFILE=~/.config/zsh/.zsh_history
 
@@ -94,6 +100,7 @@ plugins=(
     git
     archlinux
     extract
+    command-not-found
     zsh-syntax-highlighting
     zsh-autosuggestions
     history
