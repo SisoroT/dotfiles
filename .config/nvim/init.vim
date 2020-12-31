@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 75                      "
-"    -> Remaps: 180                      "
-"    -> Plugin Settings and Remaps: 259  "
-"    -> Misc: 324                        "
+"    -> General: 80                      "
+"    -> Remaps: 185                      "
+"    -> Plugin Settings and Remaps: 264  "
+"    -> Misc: 333                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -34,6 +34,9 @@ let g:coc_global_extensions = [
 \ 'coc-yank'
 \]
 
+" C# language server
+Plug 'OmniSharp/omnisharp-vim'
+
 " Fuzzy file finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -57,11 +60,13 @@ Plug 'dense-analysis/ale'
 
 " Movement
 Plug 'unblevable/quick-scope'
+Plug 'easymotion/vim-easymotion'
 
 " Sudo save
 Plug 'lambdalisue/suda.vim'
 
 " Aesthetics
+Plug 'luochen1990/rainbow'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -289,9 +294,13 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " press kk to complete snippets
 " imap kk <Plug>(coc-snippets-expand)
+let g:OmniSharp_server_use_mono = 1"
 
 " sudo save file
 command! W SudaWrite
+
+" rainbow parenthesis
+let g:rainbow_active = 1
 
 " air-line
 let g:airline_powerline_fonts = 1
