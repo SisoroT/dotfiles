@@ -6,5 +6,10 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
     "v": "open:vsplit"
-  }
+  },
+
+  // yank
+  "yank.highlight.duration": 150,
+  "yank.enableCompletion": true
+
 }
