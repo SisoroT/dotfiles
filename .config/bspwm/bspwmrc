@@ -2,8 +2,12 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-bspc monitor -d I II III IV V VI VII VIII IX X
+# swallow terminals that are busy running other apps
+pgrep bspswallow || bspswallow &
+
+# remove external monitor after it is disconnected
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
 
 # general settings
 bspc config border_width         1
@@ -33,10 +37,11 @@ bspc rule -a discord desktop='^9'
 bspc rule -a UnityHub desktop='^10'
 
 # startup
-autorandr -c
+autorandr -c &
+/home/sisoro/.config/bspwm/monitor-control.sh
 ~/.config/polybar/launch.sh &
-./.fehbg
+./.fehbg &
 picom --config /home/sisoro/.config/picom/picom.conf &
-bluetoothctl power on
-nm-applet
+bluetoothctl power on &
+nm-applet &
 
