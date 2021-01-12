@@ -33,6 +33,10 @@ super + b
 super + alt + {q,r}
     bspc {quit,wm -r}
 
+# run xkill
+super + alt + ctrl + q
+    xkill
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
@@ -62,7 +66,7 @@ super + e
 super + c
     rofi-bluetooth
 super + shift + w
-    bwmenu --auto-lock 900
+    bwmenu --auto-lock 1800
 
 # file managers
 super + shift + e
@@ -204,9 +208,14 @@ super + shift + r : {j,k}
 # screenshot mode
 # -----------
 
+# to clipboard
 Print ; {f,s}
     {flameshot full -c, flameshot screen -c}
-ctrl + Print
+# to files
+ctrl + Print ; {f,s}
+    {flameshot full -p ~/Pictures/Screenshots, flameshot screen -p ~/Pictures/Screenshots}
+# kill flameshot
+alt + Print
     killall flameshot
 
 # system power mode
