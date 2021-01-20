@@ -8,8 +8,11 @@
     "v": "open:vsplit"
   },
 
+  //autoformat
+  //"coc.preferences.formatOnSaveFiletypes": ["java", "json", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+
   // yank
   "yank.highlight.duration": 150,
   "yank.enableCompletion": true
-
 }
