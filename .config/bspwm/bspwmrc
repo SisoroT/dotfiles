@@ -39,10 +39,10 @@ bspc rule -a UnityHub desktop='^10'
 
 # startup
 autorandr -c &
-/home/sisoro/.config/bspwm/monitor-control.sh
-~/.config/polybar/launch.sh &
 ./.fehbg &
 picom --config /home/sisoro/.config/picom/picom.conf &
 bluetoothctl power on &
 nm-applet &
+/home/sisoro/.config/bspwm/monitor-control.sh
+~/.config/polybar/launch.sh &
 
