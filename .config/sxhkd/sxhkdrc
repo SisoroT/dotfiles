@@ -29,6 +29,10 @@ super + y
 super + b
     bspc node -s biggest.local
 
+# swap the current node and the biggest window on workspace
+super + shift + b
+    bspc node -s biggest.window
+
 # quit/restart bspwm
 super + alt + {q,r}
     bspc {quit,wm -r}
