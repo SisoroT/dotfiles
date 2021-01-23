@@ -8,18 +8,19 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Paths
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sisoro/.oh-my-zsh"
-
 # Path to vifmrun script
 export PATH=/home/sisoro/.config/vifm/scripts:$PATH
-
 # Path to scripts folder
 export PATH=/home/sisoro/Scripts:$PATH
-
-# Path to bspswallow script
-# export PATH=/home/sisoro/.config/bspwm/scripts/bspswallow:$PATH
-
+# Path to nvr
+export PATH=/home/sisoro/.local/bin:$PATH
+# Path to 1302 labs
+export PATH=/home/sisoro/Documents/csc-1302:$PATH
+# Path to omnisharp server
+# export FrameworkPathOverride=~/.config/coc/extensions/coc-omnisharp-data/server/omnisharp/
 # Path to histfile
 export HISTFILE=~/.config/zsh/.zsh_history
 
