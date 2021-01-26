@@ -1,0 +1,21 @@
+configuration {
+	modi: "drun,run,window,ssh";
+	lines: 7;
+	font: "hack nerd font 14";
+	bw: 0;
+	padding: 0;
+	show-icons: false;
+	matching: "fuzzy";
+	line-margin: 0;
+	line-padding: 10;
+	separator-style: "none";
+	hide-scrollbar: true;
+	theme: "config-dracula.rasi";
+	kb-remove-char-back: "BackSpace";
+	kb-remove-to-eol: "Control+Shift+e";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
+	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-row-up: "Up,Control+k,Shift+Tab";
+	kb-row-down: "Down,Control+j";
+}
