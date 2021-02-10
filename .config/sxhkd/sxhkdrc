@@ -3,8 +3,8 @@
 #                                         #
 # Sections:                               #
 #    -> General: 13                       #
-#    -> Hotkeys: 46                       #
-#    -> Modes: 173                        #
+#    -> Hotkeys: 54                       #
+#    -> Modes: 200                        #
 #                                         #
 ###########################################
 
@@ -170,11 +170,11 @@ super + ctrl + shift + space
 
 # Volume Controls
 XF86AudioRaiseVolume
-    amixer set Master 5%+; dunstify -r 2593 "Volume is $(pamixer --get-volume)%"
+    amixer set Master 5%+; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 XF86AudioLowerVolume
-    amixer set Master 5%-; dunstify -r 2593 "Volume is $(pamixer --get-volume)%"
+    amixer set Master 5%-; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 XF86AudioMute
-    amixer set Master toggle
+    amixer set Master toggle; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 
 # Volume script
 # XF86AudioRaiseVolume
