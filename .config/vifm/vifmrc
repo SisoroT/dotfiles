@@ -439,6 +439,9 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
+" clear highlighted search results
+nnoremap <C-c> :noh<CR>
+
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cW<c-u>
