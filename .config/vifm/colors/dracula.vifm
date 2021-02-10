@@ -19,6 +19,8 @@
 " standout
 " none
 
+" fixes the border bleed on preview
+set fillchars='vborder:│'
 
 highlight clear
 
@@ -27,9 +29,9 @@ highlight  Win         cterm=none          ctermfg=default  ctermbg=none
 highlight  TopLine     cterm=none          ctermfg=blue     ctermbg=black
 highlight  TopLineSel  cterm=none          ctermfg=magenta  ctermbg=black
 highlight  StatusLine  cterm=none          ctermfg=blue     ctermbg=black
-highlight  Border      cterm=none          ctermfg=blue     ctermbg=black
+highlight  Border      cterm=none          ctermfg=black    ctermbg=black
 
-highlight  LineNr      cterm=none          ctermfg=magenta  ctermbg=none
+highlight  LineNr      cterm=none          ctermfg=yellow   ctermbg=none
 highlight  Selected    cterm=bold          ctermfg=magenta  ctermbg=default
 highlight  CurrLine    cterm=bold          ctermfg=236      ctermbg=blue
 
