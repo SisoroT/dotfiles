@@ -47,7 +47,7 @@ super + Escape
 
 # make sxhkd reload its configuration files:
 super + alt + l
-    betterlockscreen -l dim -t "locked."
+    betterlockscreen -l --dim
 
 
 ###########################################
@@ -226,11 +226,11 @@ alt + Print
 # -----------
 
 super + shift + p ; {l}
-    betterlockscreen -l dim -t "locked."
+    betterlockscreen -l --dim
 super + shift + p ; {e}
     bspc quit #exit bspwm
 super + shift + p ; {s}
-    systemctl suspend #suspend
+    betterlockscreen -l --dim & sleep 0.5 && systemctl suspend #suspend
 super + shift + p ; {r}
     systemctl reboot #reboot
 super + shift + p ; {shift + s}
