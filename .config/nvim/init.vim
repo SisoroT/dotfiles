@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 71                      "
-"    -> Remaps: 184                      "
-"    -> Plugin Settings and Remaps: 266  "
-"    -> Misc: 340                        "
+"    -> General: 72                      "
+"    -> Remaps: 185                      "
+"    -> Plugin Settings and Remaps: 284  "
+"    -> Misc: 354                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -36,8 +36,9 @@ let g:coc_global_extensions = [
 \]
 
 " fuzzy file finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " quick commentary
 Plug 'tpope/vim-commentary'
@@ -197,6 +198,17 @@ nnoremap <leader>oh :split term://zsh<CR> :resize 13<CR>
 
 " rebind exit for terminal
 tnoremap <C-x> <C-\><C-n>
+tnoremap <M-x> <C-\><C-n>
+
+" make "Y" yank from cursor to end of line
+nnoremap Y y$
+
+" make jumping between search results easier to follow
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" cursor doesnt move when joining lines
+nnoremap J mzJ`z
 
 " navigate double windows with space+vim keys while in normal mode
 nnoremap <leader>h :wincmd h<CR>
@@ -209,6 +221,12 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" move the cursor in insert mode without arrow keys
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " alternative keybind for command mde
 :inoremap kj <Esc>
@@ -272,17 +290,9 @@ vmap ee gc
 nmap q gcc
 vmap q gc
 
-" open fzf and show hidden files
-map <leader>f <Esc><Esc>:Files<CR>
-map <leader>F <Esc><Esc>:Files ~/<CR>
-let $FZF_DEFAULT_COMMAND='find -L -maxdepth 4'
-" split rebinds
-let g:fzf_action= {
-            \'ctrl-s': 'split',
-            \'alt-s': 'split',
-            \'ctrl-v': 'vsplit',
-            \'alt-v': 'vsplit'
-            \}
+" telescope find files
+nnoremap <leader>f :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
+nnoremap <leader>F :Telescope find_files find_command=rg,--ignore,--hidden,--files cwd=~/.config/<CR>
 
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -291,11 +301,12 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 nmap <leader>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-" enable tab completion for coc
+" scroll through coc results using tab
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-" press kk to complete snippets
-imap kk <Plug>(coc-snippets-expand)
+
+" press shift-o to expand snippets
+inoremap <expr><S-o> pumvisible() ? "\<C-y>" : "\<S-o>"
 
 " sudo save file
 command! W SudaWrite
@@ -330,7 +341,10 @@ set showtabline=2
 set noshowmode
 
 " treesitter syntax highlighting
-luafile /home/sisoro/.config/nvim/treesitter.lua
+luafile /home/sisoro/.config/nvim/plugins/treesitter.lua
+
+" telescope settings
+luafile /home/sisoro/.config/nvim/plugins/telescope.lua
 
 " fixes linting for c#
 let g:ale_linters = { 'cs': ['OmniSharp'] }
