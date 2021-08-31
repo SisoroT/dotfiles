@@ -411,6 +411,10 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " Sample mappings
 
+command! zip if [ -n "%a" ]; then
+           \     zip -r '%a.zip' %f;
+           \ fi
+
 "Open selected images in gimp
 nnoremap gp :!gimp %f & <cr>
 
