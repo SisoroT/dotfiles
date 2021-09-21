@@ -3,10 +3,10 @@
 "                                        "
 " Sections:                              "
 "    -> Plugins: 15                      "
-"    -> General: 72                      "
-"    -> Remaps: 185                      "
-"    -> Plugin Settings and Remaps: 284  "
-"    -> Misc: 354                        "
+"    -> General: 82                      "
+"    -> Remaps: 194                      "
+"    -> Plugin Settings and Remaps: 294  "
+"    -> Misc: 349                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -17,53 +17,63 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-" autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_start_at_startup = 1
-let g:coc_global_extensions = [
-\ 'coc-explorer',
-\ 'coc-snippets',
-\ 'coc-tag',
-\ 'coc-omni',
-\ 'coc-syntax',
-\ 'coc-markdownlint',
-\ 'coc-git',
-\ 'coc-vimlsp',
-\ 'coc-java',
-\ 'coc-json',
-\ 'coc-prettier',
-\ 'coc-yank'
-\]
+" native lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'mfussenegger/nvim-jdtls'
+" makes it easier to install laguages for lsp
+Plug 'kabouzeid/nvim-lspinstall'
+
+" autocomplete
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
+
+" autocomplete sources
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-calc'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+
+" icons for the autocomplete
+Plug 'onsails/lspkind-nvim'
 
 " fuzzy file finder
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+" file tree
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+
+" gitsigns
+Plug 'lewis6991/gitsigns.nvim'
+
 " quick commentary
 Plug 'tpope/vim-commentary'
 
 " auto bracket pairing
 Plug 'jiangmiao/auto-pairs'
+" rainbow parens
+Plug 'p00f/nvim-ts-rainbow'
 
-" marks changes to line as you make them
-Plug 'dense-analysis/ale'
+" blankline for tabs
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " movement
 Plug 'unblevable/quick-scope'
-Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 
 " sudo save
 Plug 'lambdalisue/suda.vim'
 
 " aesthetics
-Plug 'luochen1990/rainbow'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ap/vim-css-color'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -76,7 +86,7 @@ call plug#end()
 colorscheme dracula
 
 " enable true colors
-" set termguicolors
+set termguicolors
 
 " automatically turn on relative line numbers
 set nu relativenumber
@@ -97,6 +107,9 @@ au FocusGained,BufEnter * checktime
 
 " shows the input at the bottom right corner
 set showcmd
+
+" hides the --INSERT under bar
+set noshowmode
 
 " set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -172,14 +185,10 @@ set noswapfile
 " allows yanking to system clipboard
 set clipboard=unnamedplus
 
-" show dots for tabs and trailing spaces
+" show dots trailing spaces and whitespace
 set list
-set listchars=
-set listchars+=tab:$·
 set listchars+=trail:·
-set listchars+=extends:»
-set listchars+=precedes:«
-set listchars+=nbsp:⣿
+
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Remaps
@@ -232,6 +241,7 @@ inoremap <C-l> <Right>
 :inoremap kj <Esc>
 :inoremap ii <Esc>
 :vnoremap ii <Esc>
+:snoremap ii <Esc>
 
 " redo with space+r in normal mode
 nnoremap <leader>r <C-r>
@@ -254,8 +264,8 @@ vnoremap <C-k> 15k
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
 " clear highlighted search results
-nnoremap <C-c> :noh<CR>
-nnoremap <leader>c :noh<CR>
+nnoremap <silent> <C-c> :noh<CR>
+nnoremap <silent> <leader>c :noh<CR>
 
 " navigate previous files with tab
 nnoremap <TAB> :bprevious<CR>
@@ -297,48 +307,31 @@ nnoremap <leader>F :Telescope find_files find_command=rg,--ignore,--hidden,--fil
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" show coc explorer and close when alone
-nmap <leader>e :CocCommand explorer<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-" scroll through coc results using tab
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-" press shift-o to expand snippets
-inoremap <expr><S-o> pumvisible() ? "\<C-y>" : "\<S-o>"
-
 " sudo save file
 command! W SudaWrite
 
-" rainbow parenthesis
-let g:rainbow_active = 1
+" lsp for java
+augroup lsp
+  au!
+  au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/sisoro/Scripts/launch-jdtls'}})
+augroup end
 
-" air-line
-let g:airline_powerline_fonts = 1
+" built-in lsp
+source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-install.lua
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+" autocomplete
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/vsnip.lua
 
-" makes top bar look better
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+" file explorer
+source /home/sisoro/.config/nvim/plugins/nvim-tree.vim
 
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+" hop
+luafile /home/sisoro/.config/nvim/plugins/hop.lua
 
-" show top bar
-set showtabline=2
-
-" hides the --INSERT under bar
-set noshowmode
+" gitsigns
+luafile /home/sisoro/.config/nvim/plugins/gitsigns.lua
 
 " treesitter syntax highlighting
 luafile /home/sisoro/.config/nvim/plugins/treesitter.lua
@@ -346,19 +339,21 @@ luafile /home/sisoro/.config/nvim/plugins/treesitter.lua
 " telescope settings
 luafile /home/sisoro/.config/nvim/plugins/telescope.lua
 
-" fixes linting for c#
-let g:ale_linters = { 'cs': ['OmniSharp'] }
+" galaxyline
+luafile /home/sisoro/.config/nvim/plugins/status-line/galaxyline.lua
+" bufferline
+luafile /home/sisoro/.config/nvim/plugins/status-line/bufferline.lua
 
 
 """"""""""""""""""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""""""""""""""
 
+" highlight yanked text
+au TextYankPost * silent! lua vim.highlight.on_yank()
+
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" :W sudo saves the file (currently doesn't work in neovim)
-" command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " ignore compiled files
 set wildignore=*.o,*~,*.pyc
