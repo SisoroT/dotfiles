@@ -1,18 +1,41 @@
 {
-  // explorer
-  "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
-  "explorer.file.showHiddenFiles": true,
-  "explorer.keyMappings.global": {
-    "v": "open:vsplit"
-  },
-
-  //autoformat
-  //"coc.preferences.formatOnSaveFiletypes": ["java", "json", "python"],
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
-
-  // yank
-  "yank.highlight.duration": 150,
-  "yank.enableCompletion": true
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.keyMappings.global": {
+        "v": "open:vsplit"
+    },
+    "suggest.completionItemKindLabels": {
+        "method": "  ",
+        "function": "  ",
+        "variable": "[]",
+        "field": "  ",
+        "typeParameter": "<>",
+        "constant": "  ",
+        "class": " פּ ",
+        "interface": " 蘒",
+        "struct": "  ",
+        "event": "  ",
+        "operator": "  ",
+        "module": "  ",
+        "property": "  ",
+        "enum": " 練",
+        "reference": "  ",
+        "keyword": "  ",
+        "file": "  ",
+        "folder": " ﱮ ",
+        "color": "  ",
+        "unit": " 塞 ",
+        "snippet": "  ",
+        "text": "  ",
+        "constructor": "  ",
+        "value": "  ",
+        "enumMember": "  "
+    },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "*"
+    ],
+    "yank.highlight.duration": 150,
+    "yank.enableCompletion": true
 }
