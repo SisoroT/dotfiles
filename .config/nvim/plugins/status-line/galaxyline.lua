@@ -178,14 +178,18 @@ gls.right[2] = {
     }
 }
 
--- gls.right[3] = {
---     LineInfo = {
---         separator = " ",
---         separator_highlight = {colors.pink, colors.bg},
---         provider = 'LineColumn',
---         highlight = {colors.fg,colors.bg},
---     },
--- }
+gls.right[3] = {
+    LineInfo = {
+    provider = function ()
+      local line = vim.fn.line('.')
+      local max_lines = vim.fn.line('$')
+      return string.format("%3d/%d", line, max_lines)
+    end,
+    separator = " ",
+    separator_highlight = {colors.pink, colors.bg},
+    highlight = {colors.fg, colors.bg},
+  }
+}
 
 gls.right[4] = {
     some_icon = {
