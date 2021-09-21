@@ -17,10 +17,6 @@ export PATH=/home/sisoro/.config/vifm/scripts:$PATH
 export PATH=/home/sisoro/Scripts:$PATH
 # Path to nvr
 export PATH=/home/sisoro/.local/bin:$PATH
-# Path to 1302 labs
-export PATH=/home/sisoro/Documents/csc-1302:$PATH
-# Path to omnisharp server
-# export FrameworkPathOverride=~/.config/coc/extensions/coc-omnisharp-data/server/omnisharp/
 # Path to histfile
 export HISTFILE=~/.config/zsh/.zsh_history
 
