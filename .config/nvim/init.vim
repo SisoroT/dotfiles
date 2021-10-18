@@ -1,12 +1,12 @@
 "    NVIM CONFIGURATION                  "
 """"""""""""""""""""""""""""""""""""""""""
 "                                        "
-" Sections:                              "
+"    Sections:                           "
 "    -> Plugins: 15                      "
 "    -> General: 82                      "
 "    -> Remaps: 194                      "
-"    -> Plugin Settings and Remaps: 294  "
-"    -> Misc: 349                        "
+"    -> Plugin Settings and Remaps: 293  "
+"    -> Misc: 352                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -55,7 +55,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-commentary'
 
 " auto bracket pairing
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 " rainbow parens
 Plug 'p00f/nvim-ts-rainbow'
 
@@ -238,10 +238,9 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 " alternative keybind for command mde
-:inoremap kj <Esc>
-:inoremap ii <Esc>
-:vnoremap ii <Esc>
-:snoremap ii <Esc>
+inoremap ii <Esc>
+vnoremap ii <Esc>
+snoremap ii <Esc>
 
 " redo with space+r in normal mode
 nnoremap <leader>r <C-r>
@@ -313,7 +312,7 @@ command! W SudaWrite
 " lsp for java
 augroup lsp
   au!
-  au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/sisoro/Scripts/launch-jdtls'}})
+  au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/sisoro/scripts/launch-jdtls'}})
 augroup end
 
 " built-in lsp
@@ -324,8 +323,11 @@ luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-install.lua
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/vsnip.lua
 
+" autopairs
+luafile /home/sisoro/.config/nvim/plugins/autopairs.lua
+
 " file explorer
-source /home/sisoro/.config/nvim/plugins/nvim-tree.vim
+luafile /home/sisoro/.config/nvim/plugins/nvim-tree.lua
 
 " hop
 luafile /home/sisoro/.config/nvim/plugins/hop.lua
