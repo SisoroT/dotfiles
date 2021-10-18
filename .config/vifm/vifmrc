@@ -166,7 +166,7 @@ command! reload :write | restart
 " program.
 
 " Pdf
-filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
+filextype *.pdf epdfview %c %i &, apvlv %c, xpdf %c
 fileviewer *.pdf
         \ vifmimg pdfpreview %px %py %pw %ph %c
         \ %pc
@@ -430,7 +430,7 @@ set classify+=' ::*.clj,,*.cljc::'
 set classify+=' ::*.pl,,*.pm,,*.t::'
 set classify+=' ::*.cljs,,*.edn::'
 set classify+=' ::*.rb::'
-set classify+=' ::*.fish,,*.sh,,*.bash,,*.zsh::'
+set classify+=' ::*.fish,,*.sh,,*.bash::'
 set classify+=' ::*.dart::'
 set classify+=' ::*.f#,,*.fs,,*.fsi,,*.fsscript,,*.fsx::'
 set classify+=' ::*.rlib,,*.rs::'
@@ -538,7 +538,10 @@ map < :!vifmimg dec<CR>
 
 set vicmd=nvim
 
-" jump to files with fzf
-nnoremap <C-f> :FZFfind<CR>
+" mediocre fzf integration
+nnoremap <C-f> :FZFlocate<CR>
+nnoremap <C-v> :FZFfind<CR>
+" find -L -maxdepth 4
+command! FZFlocate :set noquickview | :execute 'goto' fnameescape('term('locate $HOME | fzf --height 20 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto "'.system('find -L -maxdepth 4 | fzf --preview "ls -lhA {}" 2>/dev/tty ').'"%IU' | redraw
 
-command! FZFfind :set noquickview | :execute 'goto "'.system('find -L -maxdepth 4 | fzf --preview "ls -lhA {}" 2>/dev/tty ').'"%IU' | redraw | view
