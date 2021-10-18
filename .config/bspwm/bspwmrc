@@ -29,13 +29,12 @@ bspc rule -a alsamixer state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a Steam state=floating
-bspc rule -a UnityHub state=floating
+bspc rule -a Zathura state=tiled
 
 # Open applications on specific workspaces
 bspc rule -a firefox desktop='^1'
 bspc rule -a Steam desktop='^7'
 bspc rule -a discord desktop='^9'
-bspc rule -a UnityHub desktop='^10'
 
 # startup
 autorandr -c &
