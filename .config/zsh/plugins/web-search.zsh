@@ -59,16 +59,16 @@ alias google='web_search google'
 alias ddg='web_search duckduckgo'
 alias sp='web_search startpage'
 alias github='web_search github'
-alias github='web_search github'
+alias ghs='web_search github'
 alias stackoverflow='web_search stackoverflow'
 
 #add your own !bang searches here
 alias wiki='web_search duckduckgo \!w'
-alias news='web_search duckduckgo \!n'
 alias youtube='web_search duckduckgo \!yt'
 alias map='web_search duckduckgo \!m'
 alias image='web_search duckduckgo \!googleimg'
 alias define='web_search duckduckgo \!mwd'
+alias ud='web_search duckduckgo \!u'
 
 # other search engine aliases
 if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
