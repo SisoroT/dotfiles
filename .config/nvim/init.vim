@@ -5,7 +5,7 @@
 "    -> Plugins: 15                      "
 "    -> General: 82                      "
 "    -> Remaps: 194                      "
-"    -> Plugin Settings and Remaps: 293  "
+"    -> Plugin Settings and Remaps: 290  "
 "    -> Misc: 352                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
 " makes it easier to install laguages for lsp
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
@@ -209,9 +209,6 @@ nnoremap <leader>oh :split term://zsh<CR> :resize 13<CR>
 tnoremap <C-x> <C-\><C-n>
 tnoremap <M-x> <C-\><C-n>
 
-" make "Y" yank from cursor to end of line
-nnoremap Y y$
-
 " make jumping between search results easier to follow
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -264,11 +261,11 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
 " clear highlighted search results
 nnoremap <silent> <C-c> :noh<CR>
-nnoremap <silent> <leader>c :noh<CR>
+nnoremap <silent> <leader>n :noh<CR>
 
 " navigate previous files with tab
-nnoremap <TAB> :bprevious<CR>
-nnoremap <S-TAB> :bnext<CR>
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
 
 " resize with alt+hjkl
 nnoremap <M-h> :vertical resize -2<CR>
@@ -300,8 +297,12 @@ nmap q gcc
 vmap q gc
 
 " telescope find files
-nnoremap <leader>f :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
+nnoremap <leader>fc :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
+nnoremap <leader>fd :Telescope find_files find_command=rg,--ignore,--hidden,--files cwd=~/documents/<CR>
 nnoremap <leader>F :Telescope find_files find_command=rg,--ignore,--hidden,--files cwd=~/.config/<CR>
+" other telescope things
+nnoremap <leader>fb :Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>
+nnoremap <leader>fe :Telescope file_browser hidden=true<CR>
 
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -317,7 +318,7 @@ augroup end
 
 " built-in lsp
 source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
-luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-install.lua
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-installer.lua
 
 " autocomplete
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
@@ -364,4 +365,3 @@ if has("win16") || has("win32")
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
-
