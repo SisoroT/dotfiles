@@ -10,7 +10,7 @@ configuration {
 	line-padding: 10;
 	separator-style: "none";
 	hide-scrollbar: true;
-	theme: "dracula.rasi";
+	/* theme: "dracula.rasi"; */
 	kb-remove-char-back: "BackSpace";
 	kb-remove-to-eol: "Control+Shift+e";
 	kb-accept-entry: "Control+m,Return,KP_Enter";
@@ -19,3 +19,4 @@ configuration {
 	kb-row-up: "Up,Control+k,Shift+Tab";
 	kb-row-down: "Down,Control+j";
 }
+@theme "dracula.rasi"
