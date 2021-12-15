@@ -78,8 +78,10 @@ super + shift + e
 super + s
     termite -e "/home/sisoro/.config/vifm/scripts/vifmrun"
 
-# pavucontrol
+# audio control
 super + v
+    termite -e pulsemixer
+super + shift + v
     pavucontrol
 
 # discord
@@ -89,10 +91,6 @@ super + shift + d
 # steam
 super + shift + s
     steam
-
-# unityhub
-super + u
-    unityhub
 
 #
 # state/flags
@@ -170,11 +168,11 @@ super + ctrl + shift + space
 
 # Volume Controls
 XF86AudioRaiseVolume
-    amixer set Master 5%+; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
+    pamixer -i 5; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 XF86AudioLowerVolume
-    amixer set Master 5%-; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
+    pamixer -d 5; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 XF86AudioMute
-    amixer set Master toggle; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
+    pamixer -t; dunstify -r 2593 "Volume is $(pamixer --get-volume-human)"
 
 # Volume script
 # XF86AudioRaiseVolume
