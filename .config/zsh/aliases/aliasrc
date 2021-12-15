@@ -1,18 +1,28 @@
-alias neo="neofetch"
-alias cma="cmatrix"
+# => system commands
 alias cl="clear"
 alias ei="exit"
-alias vifm="vifmrun"
-alias fm="vifmrun"
-alias am="asciiquarium"
-alias wp="feh --bg-fill"
-alias yaq="yay -Q | grep"
-alias pacq="pacman -Q | grep"
-alias vim="nvim"
-alias v="nvim"
 alias l="ls -lhA --group-directories-first"
-alias re="/home/sisoro/downloads/RechatTool-1.5.7/RechatTool.exe -D"
-alias j=java
-alias c=gcc
 alias ls="ls --color=tty"
 alias grep="grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
+
+# => important programs
+alias vim="nvim"
+alias v="nvim"
+alias am="pulsemixer"
+alias vifm="vifmrun"
+alias fm="vifmrun"
+
+# => coding
+alias j="java"
+alias c="gcc"
+alias py="python"
+
+# => scripts
+alias wp="feh --bg-fill"
+alias re="/home/sisoro/downloads/RechatTool-1.5.7/RechatTool.exe -D"
+
+# => downloaded programs
+alias neo="neofetch"
+alias cma="cmatrix"
+alias cmam="cmatrix -C magenta"
+alias ac="asciiquarium"
