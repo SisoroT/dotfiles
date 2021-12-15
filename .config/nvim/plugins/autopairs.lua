@@ -3,7 +3,7 @@ require('nvim-autopairs').setup{
 
   -- change default fast_wrap
   fast_wrap = {
-    map = '<S-w>',
+    map = '<C-e>',
     chars = { '{', '[', '(', '"', "'" },
     pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
     offset = 0, -- Offset from pattern match
