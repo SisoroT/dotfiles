@@ -207,7 +207,8 @@ nnoremap <leader>ph :wincmd s<bar> :Ex <bar><CR>
 
 " open terminal in split window
 nnoremap <leader>ov :vsplit term://zsh<CR>
-nnoremap <leader>oh :split term://zsh<CR> :resize 13<CR>
+nnoremap <leader>oh :new +resize13 term://zsh<CR>
+autocmd TermOpen * startinsert
 
 " rebind exit for terminal
 tnoremap <C-x> <C-\><C-n>
