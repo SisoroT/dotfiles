@@ -3,10 +3,10 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 82                      "
-"    -> Remaps: 194                      "
-"    -> Plugin Settings and Remaps: 290  "
-"    -> Misc: 352                        "
+"    -> General: 86                      "
+"    -> Remaps: 198                      "
+"    -> Plugin Settings and Remaps: 294  "
+"    -> Misc: 362                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -22,6 +22,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
 " makes it easier to install laguages for lsp
 Plug 'williamboman/nvim-lsp-installer'
+
+" language server and autoformatting
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
@@ -73,6 +76,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'akinsho/bufferline.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
@@ -313,12 +317,15 @@ command! W SudaWrite
 " lsp for java
 augroup lsp
   au!
-  au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/sisoro/scripts/launch-jdtls'}})
+  au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/sisoro/scripts/launch_jdtls'}})
 augroup end
 
 " built-in lsp
 source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-installer.lua
+
+" formatting
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/null-ls-config.lua
 
 " autocomplete
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
@@ -342,10 +349,13 @@ luafile /home/sisoro/.config/nvim/plugins/treesitter.lua
 " telescope settings
 luafile /home/sisoro/.config/nvim/plugins/telescope.lua
 
-" galaxyline
+" status line
 luafile /home/sisoro/.config/nvim/plugins/status-line/galaxyline.lua
 " bufferline
 luafile /home/sisoro/.config/nvim/plugins/status-line/bufferline.lua
+
+" hex codes
+lua require'colorizer'.setup()
 
 
 """"""""""""""""""""""""""""""""""""""""""
