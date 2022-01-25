@@ -1,8 +1,11 @@
 # Paths
 # path to vifmrun script
-export PATH=/home/sisoro/.config/vifm/scripts:$PATH
+path+=('/home/sisoro/.config/vifm/scripts')
 # path to scripts folder
-export PATH=/home/sisoro/scripts:$PATH
+path+=('/home/sisoro/scripts')
+# path to local binaries
+path+=('/home/sisoro/.local/bin')
+export PATH
 
 # path to histfile
 HISTFILE=~/.config/zsh/.histfile
