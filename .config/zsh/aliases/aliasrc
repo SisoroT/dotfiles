@@ -15,7 +15,7 @@ alias fm="vifmrun"
 # => coding
 alias j="java"
 alias c="gcc"
-alias py="python"
+alias f="python"
 
 # => scripts
 alias wp="feh --bg-fill"
