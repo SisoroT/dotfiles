@@ -10,7 +10,7 @@ require("nvim-autopairs").setup({
 		end_key = "w",
 		keys = "qwertyuiopzxcvbnmasdfghjkl",
 		check_comma = true,
-		hightlight = "Search",
+		highlight = "Search",
 		hightlight_grey = "LineNr",
 	},
 })

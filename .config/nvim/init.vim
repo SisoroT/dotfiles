@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
 " native lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
-" makes it easier to install laguages for lsp
+" makes it easier to install languages for lsp
 Plug 'williamboman/nvim-lsp-installer'
 
 " language server and autoformatting
@@ -218,7 +218,7 @@ tnoremap <M-x> <C-\><C-n>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" cursor doesnt move when joining lines
+" cursor doesn't move when joining lines
 nnoremap J mzJ`z
 
 " navigate double windows with space+vim keys while in normal mode
