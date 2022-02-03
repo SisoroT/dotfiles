@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 86                      "
 "    -> Remaps: 198                      "
-"    -> Plugin Settings and Remaps: 294  "
-"    -> Misc: 362                        "
+"    -> Plugin Settings and Remaps: 295  "
+"    -> Misc: 363                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -245,7 +245,7 @@ vnoremap ii <Esc>
 snoremap ii <Esc>
 
 " redo with space+r in normal mode
-nnoremap <leader>r <C-r>
+" nnoremap <leader>r <C-r>
 
 " move to the end of the line with space+0 in normal and visual mode
 nnoremap <leader>0 $
