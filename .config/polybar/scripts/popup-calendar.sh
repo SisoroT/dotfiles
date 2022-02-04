@@ -17,7 +17,8 @@ case "$1" in
 
     # X
     if [ "$((X + YAD_WIDTH / 2 + BORDER_SIZE))" -gt "$WIDTH" ]; then #Right side
-        : $((pos_x = WIDTH - YAD_WIDTH - BORDER_SIZE))
+        # : $((pos_x = WIDTH - YAD_WIDTH - BORDER_SIZE))
+        : $((pos_x = X - YAD_WIDTH / 2))
     elif [ "$((X - YAD_WIDTH / 2 - BORDER_SIZE))" -lt 0 ]; then #Left side
         : $((pos_x = BORDER_SIZE))
     else #Center
