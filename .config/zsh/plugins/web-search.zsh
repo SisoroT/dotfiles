@@ -62,7 +62,7 @@ alias github='web_search github'
 alias ghs='web_search github'
 alias stackoverflow='web_search stackoverflow'
 
-#add your own !bang searches here
+# add your own !bang searches here
 alias wiki='web_search duckduckgo \!w'
 alias youtube='web_search duckduckgo \!yt'
 alias map='web_search duckduckgo \!m'
