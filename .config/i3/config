@@ -356,4 +356,3 @@ bindsym XF86MonBrightnessDown exec /home/sisoro/.config/dunst/brightness.sh down
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
     bindsym $mod+Shift+r restart
-
