@@ -3,10 +3,10 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 86                      "
-"    -> Remaps: 198                      "
-"    -> Plugin Settings and Remaps: 295  "
-"    -> Misc: 363                        "
+"    -> General: 88                      "
+"    -> Remaps: 200                      "
+"    -> Plugin Settings and Remaps: 297  "
+"    -> Misc: 370                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -55,7 +55,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 
 " quick commentary
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 
 " auto bracket pairing
 Plug 'windwp/nvim-autopairs'
@@ -74,7 +74,7 @@ Plug 'lambdalisue/suda.vim'
 
 " aesthetics
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -295,7 +295,8 @@ vnoremap <leader>s !column --table<CR>
 " => Plugin Settings and Remaps
 """"""""""""""""""""""""""""""""""""""""""
 
-" tpope commentary remaps
+" commentary remaps
+lua require('Comment').setup()
 nmap ee gcc
 vmap ee gc
 nmap q gcc
@@ -322,7 +323,8 @@ augroup lsp
 augroup end
 
 " built-in lsp
-source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
+" source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.lua
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-installer.lua
 
 " formatting

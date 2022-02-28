@@ -17,6 +17,15 @@ local colors = {
     yellow   =  "#f1fa8c",
 }
 
+--
+--
+--
+--
+-- LEFT SIDE
+--
+--
+--
+--
 gls.left[1] = {
 	ViMode = {
 		icon = function()
@@ -91,7 +100,7 @@ gls.left[2] = {
 	FileIcon = {
 		provider = "FileIcon",
 		condition = buffer_not_empty,
-		highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg },
+		highlight = { require("galaxyline.providers.fileinfo").get_file_icon_color, colors.bg },
 	},
 }
 
@@ -174,12 +183,21 @@ gls.left[10] = {
 	},
 }
 
+--
+--
+--
+--
+-- RIGHT SIDE
+--
+--
+--
+--
 gls.right[1] = {
 	GitIcon = {
 		provider = function()
 			return "  "
 		end,
-		condition = require("galaxyline.provider_vcs").check_git_workspace,
+		condition = require("galaxyline.providers.vcs").check_git_workspace,
 		highlight = { colors.green, colors.bg },
 	},
 }
@@ -187,7 +205,7 @@ gls.right[1] = {
 gls.right[2] = {
 	GitBranch = {
 		provider = "GitBranch",
-		condition = require("galaxyline.provider_vcs").check_git_workspace,
+		condition = require("galaxyline.providers.vcs").check_git_workspace,
 		highlight = { colors.green, colors.bg },
 	},
 }
