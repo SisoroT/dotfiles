@@ -36,12 +36,11 @@
     # Possible values are "left", "center" and "right".
     alignment = left
 
-    # The frequency with wich text that is longer than the notification
+    # The frequency with which text that is longer than the notification
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
     # Set to 0 to disable.
     bounce_freq = 5
-
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -184,20 +183,6 @@
 # [urgency_low]
 #     # IMPORTANT: colors have to be defined in quotation marks.
 #     # Otherwise the "#" and following would be interpreted as a comment.
-#     background = "#263238"
-#     foreground = "#556064"
-#     timeout = 10
-#
-# [urgency_normal]
-#     background = "#263238"
-#     foreground = "#F9FAF9"
-#     timeout = 10
-#
-# [urgency_critical]
-#     background = "#D62929"
-#     foreground = "#F9FAF9"
-#     timeout = 0
-
 [urgency_low]
 #frame_color = "#8be9fd"
 foreground = "#8be9fd"
@@ -234,89 +219,3 @@ timeout = 8
 # to "".
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
-
-#[espeak]
-#    summary = "*"
-#    script = dunst_espeak.sh
-
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
-
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
-
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
-#[Claws Mail]
-#    appname = claws-mail
-#    category = email.arrived
-#    urgency = normal
-#    background = "#2F899E"
-#    foreground = "#FFA247"
-#
-#[mute.sh]
-#     appname = mute
-#     category = mute.sound
-#     script = mute.sh
-#
-#[JDownloader]
-#    appname = JDownloader
-#    category = JD
-#    background = "#FFA247"
-#    foreground = "#FFFFFF"
-#
-#[newsbeuter]
-#    summary = *Feeds*
-#    background = "#A8EB41"
-#    foreground = "#FFFFFF"
-#
-[irc]
-        appname = weechat
-        timeout = 0
-        background = "#0033bb"
-        foreground = "#dddddd"
-#
-[weechat hl]
-     appname = weechat
-     category = weechat.HL
-     background = "#FF5C47"
-     foreground = "#FFFFFF"
-#
-[weechat pn]
-     appname = weechat
-     category = weechat.PM
-     background = "#D53B84"
-     foreground = "#FFFFFF"
-#
-#[CMUS]
-#    appname = CMUS
-#    category = cmus
-#    background = "#6C4AB7"
-#    foreground = "#FFE756"
-#
-#
-#     background = "#30AB70"
-#     foreground = "#F67245"
-#
-# vim: ft=cfg
