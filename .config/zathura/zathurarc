@@ -52,9 +52,7 @@ set recolor-darkcolor           "#f8f8f2" # Foreground
 #
 # Startup options
 #
-set adjust-open width
 set recolor true
-
 
 #
 # Mappings
@@ -66,4 +64,3 @@ map O zoom out
 map i recolor
 map r reload
 map R rotate
-
