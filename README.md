@@ -4,7 +4,7 @@
 </p>
 
 ## Software
-These are my arch linux configuration files. Some of the important software in use are:
+These are my arch linux configuration files. Some of the important software in use:
 
 - [bspwm](https://github.com/baskerville/bspwm) - tiling window manager
 - [neovim](https://github.com/neovim/neovim) - text editor
