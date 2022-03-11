@@ -1,4 +1,4 @@
-Ryan's Dotfiles
+# Ryan's Dotfiles
 
 ## Preview
 <p align=center>
