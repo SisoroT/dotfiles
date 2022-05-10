@@ -284,6 +284,10 @@ nnoremap <C-s> :so%<CR>
 " close a buffer
 nnoremap <leader>bd :bd<CR>
 
+" save and load folds
+nnoremap <leader>mv :mkview<CR>
+nnoremap <leader>lv :loadview<CR>
+
 " find and replace
 nnoremap S :%s//gI<Left><Left><Left>
 
