@@ -5,6 +5,12 @@ require("null-ls").setup({
             extra_args = { "--tab-width", "4", "--no-semi", "--single-quote", "--jsx-single-quote" },
         }),
         require("null-ls").builtins.formatting.stylua,
+        require("null-ls").builtins.formatting.sqlfluff.with({
+            extra_args = { "--dialect", "mysql" }, -- change to your dialect
+        }),
+        require("null-ls").builtins.diagnostics.sqlfluff.with({
+            extra_args = { "--dialect", "mysql" },
+        }),
         -- require("null-ls").builtins.formatting.codespell,
         require("null-ls").builtins.diagnostics.codespell,
         require("null-ls").builtins.diagnostics.flake8,
