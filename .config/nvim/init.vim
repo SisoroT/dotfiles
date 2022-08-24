@@ -3,10 +3,10 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 86                      "
-"    -> Remaps: 198                      "
-"    -> Plugin Settings and Remaps: 295  "
-"    -> Misc: 365                        "
+"    -> General: 90                      "
+"    -> Remaps: 202                      "
+"    -> Plugin Settings and Remaps: 299  "
+"    -> Misc: 374                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -41,6 +41,10 @@ Plug 'hrsh7th/cmp-nvim-lua'
 
 " icons for the autocomplete
 Plug 'onsails/lspkind-nvim'
+
+"databases
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 " fuzzy file finder
 Plug 'nvim-lua/plenary.nvim'
@@ -316,6 +320,11 @@ nnoremap <leader>fe :Telescope file_browser hidden=true<CR>
 
 " only open up quickscope on presses
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" toggle dbui
+nnoremap <leader>du :DBUIToggle<CR>
+vnoremap <leader>db :DB<CR>
+let g:db = "mysql://sisoro:<password>@localhost/<database>"
 
 " sudo save file
 command! W SudaWrite
