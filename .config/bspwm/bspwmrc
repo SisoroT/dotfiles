@@ -37,11 +37,13 @@ bspc rule -a Steam desktop='^7'
 bspc rule -a discord desktop='^9'
 
 # startup
-autorandr -c &
+autorandr -c & # laptop only
+# /home/sisoro/.config/bspwm/screenlayout.sh & # desktop only
+# nvidia-settings -a DigitalVibrance=300 & # desktop only
 ./.fehbg &
 picom --config /home/sisoro/.config/picom/picom.conf &
 bluetoothctl power on &
 nm-applet &
-/home/sisoro/.config/bspwm/monitor-control.sh
+# /home/sisoro/.config/bspwm/monitor-control.sh # laptop only
 ~/.config/polybar/launch.sh &
 
