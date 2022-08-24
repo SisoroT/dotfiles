@@ -14,12 +14,12 @@ require("nvim-tree").setup({
 	-- opens the tree when changing/opening a new tab if the tree wasn't previously opened
 	open_on_tab = false,
 	-- hijacks new directory buffers when they are opened.
-	update_to_buf_dir = {
-		-- enable the feature
-		enable = true,
-		-- allow to open the tree if it was previously closed
-		auto_open = true,
-	},
+	-- update_to_buf_dir = {
+	-- 	-- enable the feature
+	-- 	enable = true,
+	-- 	-- allow to open the tree if it was previously closed
+	-- 	auto_open = true,
+	-- },
 	-- hijack the cursor in the tree to put it at the start of the filename
 	hijack_cursor = true,
 	-- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
@@ -53,41 +53,41 @@ require("nvim-tree").setup({
 		args = {},
 	},
 
-	nvim_tree_show_icons = {
-		git = 1,
-		folders = 1,
-		files = 1,
-		folder_arrows = 1,
-	},
-	nvim_tree_icons = {
-		default = "",
-		symlink = "",
-		git = {
-			unstaged = "✗",
-			staged = "✓",
-			unmerged = "",
-			renamed = "➜",
-			untracked = "★",
-			deleted = "",
-			ignored = "◌",
-		},
-		folder = {
-			arrow_open = "",
-			arrow_closed = "",
-			default = "",
-			open = "",
-			empty = "",
-			empty_open = "",
-			symlink = "",
-			symlink_open = "",
-		},
-		lsp = {
-			hint = " ",
-			info = " ",
-			warning = " ",
-			error = " ﱥ",
-		},
-	},
+	-- nvim_tree_show_icons = {
+	-- 	git = 1,
+	-- 	folders = 1,
+	-- 	files = 1,
+	-- 	folder_arrows = 1,
+	-- },
+	-- nvim_tree_icons = {
+	-- 	default = "",
+	-- 	symlink = "",
+	-- 	git = {
+	-- 		unstaged = "✗",
+	-- 		staged = "✓",
+	-- 		unmerged = "",
+	-- 		renamed = "➜",
+	-- 		untracked = "★",
+	-- 		deleted = "",
+	-- 		ignored = "◌",
+	-- 	},
+	-- 	folder = {
+	-- 		arrow_open = "",
+	-- 		arrow_closed = "",
+	-- 		default = "",
+	-- 		open = "",
+	-- 		empty = "",
+	-- 		empty_open = "",
+	-- 		symlink = "",
+	-- 		symlink_open = "",
+	-- 	},
+	-- 	lsp = {
+	-- 		hint = " ",
+	-- 		info = " ",
+	-- 		warning = " ",
+	-- 		error = " ﱥ",
+	-- 	},
+	-- },
 
 	view = {
 		-- width of the window, can be either a number (columns) or a string in `%`
@@ -95,7 +95,7 @@ require("nvim-tree").setup({
 		-- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
 		side = "left",
 		-- if true the tree will resize itself after opening a file
-		auto_resize = false,
+		-- auto_resize = false,
 		mappings = {
 			-- custom only false will merge the list with the default mappings
 			-- if true, it will only use your list to set the mappings
