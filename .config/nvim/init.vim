@@ -3,10 +3,10 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 90                      "
-"    -> Remaps: 202                      "
-"    -> Plugin Settings and Remaps: 299  "
-"    -> Misc: 374                        "
+"    -> General: 91                      "
+"    -> Remaps: 203                      "
+"    -> Plugin Settings and Remaps: 300  "
+"    -> Misc: 375                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -38,11 +38,12 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'kristijanhusak/vim-dadbod-completion'
 
 " icons for the autocomplete
 Plug 'onsails/lspkind-nvim'
 
-"databases
+" databases
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 
@@ -287,10 +288,6 @@ nnoremap <C-s> :so%<CR>
 
 " close a buffer
 nnoremap <leader>bd :bd<CR>
-
-" save and load folds
-nnoremap <leader>mv :mkview<CR>
-nnoremap <leader>lv :loadview<CR>
 
 " find and replace
 nnoremap S :%s//gI<Left><Left><Left>
