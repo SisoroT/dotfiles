@@ -98,6 +98,7 @@ ins_left({
             v = "   ",
             C = "  ﲵ ",
             R = "  ﯒ ",
+            s = "  麗",
             t = "   ",
         }
         -- auto change letter based on mode
@@ -115,8 +116,8 @@ ins_left({
             Rv = "R&V ",
             s = "S ",
             S = "S ",
-            ["r"] = "HIT-ENTER ",
             [""] = "SELECT ",
+            ["r"] = "HIT-ENTER ",
             t = "T ",
             ["!"] = "SH ",
         }
@@ -196,7 +197,7 @@ ins_left({
 -- git icon
 ins_right({
     "branch",
-    icon = " ",
+    icon = "",
     color = { fg = colors.green },
 })
 
