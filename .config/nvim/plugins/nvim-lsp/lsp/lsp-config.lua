@@ -14,15 +14,20 @@ vim.api.nvim_set_keymap("n", "<C-n>", "<cmd>lua vim.diagnostic.goto_next()<CR>",
 vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
+vim.diagnostic.config({
+    virtual_text = false,
+    float = { focusable = false },
+})
 -- function to toggle diagnostics
 vim.g.diagnostics_visible = true
 function _G.toggle_diagnostics()
-	if vim.g.diagnostics_visible then
-		vim.g.diagnostics_visible = false
-		vim.diagnostic.disable()
-	else
-		vim.g.diagnostics_visible = true
-		vim.diagnostic.enable()
-	end
+    if vim.g.diagnostics_visible then
+        vim.g.diagnostics_visible = false
+        vim.diagnostic.disable()
+    else
+        vim.g.diagnostics_visible = true
+        vim.diagnostic.enable()
+    end
 end
-vim.api.nvim_set_keymap("n", "<leader>d", ":call v:lua.toggle_diagnostics()<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<leader>dd", ":call v:lua.toggle_diagnostics()<CR>", { noremap = true, silent = true })
