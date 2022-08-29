@@ -26,6 +26,9 @@ Plug 'williamboman/nvim-lsp-installer'
 " language server and autoformatting
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
+" diagnostics
+Plug 'folke/trouble.nvim'
+
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
@@ -62,6 +65,9 @@ Plug 'lewis6991/gitsigns.nvim'
 " quick commentary
 Plug 'numToStr/Comment.nvim'
 
+" quickly run code
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+
 " auto bracket pairing
 Plug 'windwp/nvim-autopairs'
 " rainbow parens
@@ -79,7 +85,7 @@ Plug 'lambdalisue/suda.vim'
 
 " aesthetics
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'NTBBloodbath/galaxyline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -340,9 +346,15 @@ luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-installer.lua
 " formatting
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/null-ls-config.lua
 
+" diagnostics
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/trouble.lua
+
 " autocomplete
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/vsnip.lua
+
+" quickly running code
+luafile /home/sisoro/.config/nvim/plugins/sniprun.lua
 
 " autopairs
 luafile /home/sisoro/.config/nvim/plugins/autopairs.lua
@@ -363,7 +375,7 @@ luafile /home/sisoro/.config/nvim/plugins/treesitter.lua
 luafile /home/sisoro/.config/nvim/plugins/telescope.lua
 
 " status line
-luafile /home/sisoro/.config/nvim/plugins/status-line/galaxyline.lua
+luafile /home/sisoro/.config/nvim/plugins/status-line/lualine.lua
 " bufferline
 luafile /home/sisoro/.config/nvim/plugins/status-line/bufferline.lua
 
