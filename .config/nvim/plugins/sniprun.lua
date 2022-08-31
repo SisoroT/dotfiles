@@ -51,7 +51,7 @@ require("sniprun").setup({
         SniprunFloatingWinErr = { fg = "#ff5555", ctermfg = "DarkRed" },
     },
 
-    --# miscellaneous compatibility/adjustement settings
+    --# miscellaneous compatibility/adjustment settings
     inline_messages = 0, --# inline_message (0/1) is a one-line way to display messages
     --# to workaround sniprun not being able to display anything
 
@@ -59,7 +59,6 @@ require("sniprun").setup({
     --# possible values are 'none', 'single', 'double', or 'shadow'
     live_mode_toggle = "off", --# live mode toggle, see Usage - Running for more info
 
-    vim.api.nvim_set_keymap("n", "<leader>cr", "<cmd>%SnipRun<CR>", { silent = true }),
-    vim.api.nvim_set_keymap("v", "<leader>cr", "<Plug>SnipRun", { silent = true }),
-    vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>SnipClose", { silent = true }),
+    vim.api.nvim_set_keymap("n", "<C-M>", "<cmd>%SnipRun<CR>", { silent = true }),
+    vim.api.nvim_set_keymap("v", "<C-M>", "<Plug>SnipRun", { silent = true }),
 })
