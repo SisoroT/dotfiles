@@ -29,6 +29,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 " diagnostics
 Plug 'folke/trouble.nvim'
 
+" lsp signatures
+Plug 'ray-x/lsp_signature.nvim'
+
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
@@ -381,6 +384,7 @@ luafile /home/sisoro/.config/nvim/plugins/status-line/bufferline.lua
 
 " hex codes
 lua require'colorizer'.setup()
+lua require "lsp_signature".setup(cfg)
 
 
 """"""""""""""""""""""""""""""""""""""""""
