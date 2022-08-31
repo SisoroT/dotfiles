@@ -90,16 +90,16 @@ ins_left({
     function()
         -- auto change icon based on mode
         local icons = {
-            n = "   ",
-            i = "   ",
-            c = "  ﲵ ",
-            V = "   ",
-            [""] = "   ",
-            v = "   ",
-            C = "  ﲵ ",
-            R = "  ﯒ ",
-            s = "  麗",
-            t = "   ",
+            n = "  ",
+            i = "  ",
+            c = " ﲵ ",
+            V = "  ",
+            [""] = "  ",
+            v = "  ",
+            C = " ﲵ ",
+            R = " ﯒ ",
+            s = " 麗",
+            t = "  ",
         }
         -- auto change letter based on mode
         local alias = {
