@@ -3,10 +3,10 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 100                     "
-"    -> Remaps: 212                      "
-"    -> Plugin Settings and Remaps: 309  "
-"    -> Misc: 391                        "
+"    -> General: 101                     "
+"    -> Remaps: 213                      "
+"    -> Plugin Settings and Remaps: 310  "
+"    -> Misc: 392                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -20,8 +20,9 @@ call plug#begin('~/.config/nvim/plugged')
 " native lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
-" makes it easier to install languages for lsp
-Plug 'williamboman/nvim-lsp-installer'
+" easier installation of packages for lsp, linters, and formatters
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " language server and autoformatting
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -342,9 +343,9 @@ augroup lsp
 augroup end
 
 " built-in lsp
-" source /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.vim
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-config.lua
-luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/lsp-installer.lua
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/mason.lua
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/mason-config.lua
 
 " formatting
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/null-ls-config.lua
