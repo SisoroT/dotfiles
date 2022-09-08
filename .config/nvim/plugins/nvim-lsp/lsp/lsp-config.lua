@@ -16,24 +16,34 @@ vim.api.nvim_set_keymap("n", "<S-H>", "<cmd>lua vim.diagnostic.open_float()<CR>"
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 vim.diagnostic.config({
-    virtual_text = false,
-    float = { focusable = false },
+	virtual_text = false,
+	float = { focusable = false },
 })
 
 -- show diagnostics on hover
 vim.o.updatetime = 50
 vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
 
+-- function to toggle cursor hold for diagnostics floats
+function _G.toggle_floats()
+	if vim.o.updatetime == 50 then
+		vim.o.updatetime = 1000
+	else
+		vim.o.updatetime = 50
+	end
+end
+
 -- function to toggle diagnostics
 vim.g.diagnostics_visible = true
 function _G.toggle_diagnostics()
-    if vim.g.diagnostics_visible then
-        vim.g.diagnostics_visible = false
-        vim.diagnostic.disable()
-    else
-        vim.g.diagnostics_visible = true
-        vim.diagnostic.enable()
-    end
+	if vim.g.diagnostics_visible then
+		vim.g.diagnostics_visible = false
+		vim.diagnostic.disable()
+	else
+		vim.g.diagnostics_visible = true
+		vim.diagnostic.enable()
+	end
 end
 
 vim.api.nvim_set_keymap("n", "<leader>dd", ":call v:lua.toggle_diagnostics()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>df", ":call v:lua.toggle_floats()<CR>", { noremap = true, silent = true })
