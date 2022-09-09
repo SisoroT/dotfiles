@@ -3,9 +3,9 @@
 "                                        "
 "    Sections:                           "
 "    -> Plugins: 15                      "
-"    -> General: 101                     "
-"    -> Remaps: 213                      "
-"    -> Plugin Settings and Remaps: 310  "
+"    -> General: 103                     "
+"    -> Remaps: 215                      "
+"    -> Plugin Settings and Remaps: 308  "
 "    -> Misc: 392                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
@@ -37,6 +37,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
+" github copilot
+Plug 'github/copilot.vim'
 
 " autocomplete sources
 Plug 'hrsh7th/cmp-buffer'
@@ -216,10 +218,6 @@ set listchars+=trail:·
 " sets leader key to spacebar
 let mapleader = " "
 
-" open mini file manager in a split window
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar><CR>
-nnoremap <leader>ph :wincmd s<bar> :Ex <bar><CR>
-
 " open terminal in split window
 nnoremap <leader>ov :vsplit term://zsh<CR>
 nnoremap <leader>oh :new +resize13 term://zsh<CR>
@@ -356,6 +354,8 @@ luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/trouble.lua
 " autocomplete
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/vsnip.lua
+" copilot
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/copilot.lua
 
 " quickly running code
 luafile /home/sisoro/.config/nvim/plugins/sniprun.lua
@@ -397,11 +397,3 @@ au TextYankPost * silent! lua vim.highlight.on_yank()
 
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
