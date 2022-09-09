@@ -45,5 +45,6 @@ function _G.toggle_diagnostics()
 	end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>dd", ":call v:lua.toggle_diagnostics()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>df", ":call v:lua.toggle_floats()<CR>", { noremap = true, silent = true })
+-- toggle diagnostics and floats
+vim.api.nvim_set_keymap("n", "<leader>dd", ":call v:lua.toggle_diagnostics()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>df", ":call v:lua.toggle_floats()<CR>", opts)
