@@ -18,4 +18,18 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+	["clangd"] = function()
+		require("lspconfig").clangd.setup({
+			cmd = {
+				"clangd",
+				"--background-index",
+				"--pch-storage=memory",
+				"--clang-tidy",
+				"--suggest-missing-includes",
+				"--completion-style=detailed",
+				"--cross-file-rename",
+				"--offset-encoding=utf-16", -- fixes multiple encoding issue
+			},
+		})
+	end,
 })
