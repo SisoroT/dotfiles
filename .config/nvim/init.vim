@@ -5,8 +5,8 @@
 "    -> Plugins: 15                      "
 "    -> General: 103                     "
 "    -> Remaps: 215                      "
-"    -> Plugin Settings and Remaps: 308  "
-"    -> Misc: 392                        "
+"    -> Plugin Settings and Remaps: 305  "
+"    -> Misc: 389                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -256,9 +256,6 @@ inoremap <C-l> <Right>
 inoremap ii <Esc>
 vnoremap ii <Esc>
 snoremap ii <Esc>
-
-" redo with space+r in normal mode
-" nnoremap <leader>r <C-r>
 
 " move to the end of the line with space+0 in normal and visual mode
 nnoremap <leader>0 $
