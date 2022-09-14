@@ -18,6 +18,23 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+	["pyright"] = function()
+		require("lspconfig").pyright.setup({
+			settings = {
+				python = {
+					analysis = {
+						useLibraryCodeForTypes = true,
+						diagnosticSeverityOverrides = {
+							reportGeneralTypeIssues = "none",
+							reportOptionalMemberAccess = "none",
+							reportOptionalSubscript = "none",
+							reportPrivateImportUsage = "none",
+						},
+					},
+				},
+			},
+		})
+	end,
 	["clangd"] = function()
 		require("lspconfig").clangd.setup({
 			cmd = {
