@@ -6,7 +6,7 @@
 "    -> General: 103                     "
 "    -> Remaps: 215                      "
 "    -> Plugin Settings and Remaps: 305  "
-"    -> Misc: 389                        "
+"    -> Misc: 391                        "
 "                                        "
 """"""""""""""""""""""""""""""""""""""""""
 
@@ -35,18 +35,18 @@ Plug 'ray-x/lsp_signature.nvim'
 
 " autocomplete
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 " github copilot
 Plug 'github/copilot.vim'
 
 " autocomplete sources
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-calc'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
 
 " icons for the autocomplete
@@ -350,7 +350,7 @@ luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/lsp/trouble.lua
 
 " autocomplete
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/cmp-config.lua
-luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/vsnip.lua
+luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/luasnip.lua
 " copilot
 luafile /home/sisoro/.config/nvim/plugins/nvim-lsp/autocomplete/copilot.lua
 
@@ -382,7 +382,9 @@ luafile /home/sisoro/.config/nvim/plugins/status-line/bufferline.lua
 
 " hex codes
 lua require'colorizer'.setup()
-lua require "lsp_signature".setup(cfg)
+
+" enable signatures
+lua require 'lsp_signature'.setup(cfg)
 
 
 """"""""""""""""""""""""""""""""""""""""""
