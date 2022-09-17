@@ -1,7 +1,14 @@
 local o = vim.o
 
 -- set colorscheme
-vim.cmd("colorscheme dracula")
+local colorscheme = "tokyonight-night"
+
+-- try to set colorscheme
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if colorscheme is not found, notify user and continue
+if not status_ok then
+	print("colorscheme " .. colorscheme .. " not found")
+end
 
 -- enable filetype
 vim.api.nvim_command("filetype plugin indent on")
