@@ -215,7 +215,7 @@ return packer.startup({
 
 		-- colorschemes
 		use("folke/tokyonight.nvim")
-		use("EdenEast/nightfox.nvim")
+		use("rktjmp/lush.nvim")
 		use("Dracula/vim")
 
 		-- blankline for tabs
@@ -249,6 +249,10 @@ return packer.startup({
 			},
 			-- rainbow parens
 			{ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
+			-- auto match html/jsx tags
+			{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
+			-- show context of current buffer contents
+			{ "nvim-treesitter/nvim-treesitter-context", after = "nvim-treesitter" },
 		})
 
 		-----------
