@@ -44,7 +44,7 @@ vim.api.nvim_set_keymap(
 -- search all files in .config folder
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>F ",
+	"<leader>F",
 	":Telescope find_files find_command=rg,--ignore,--hidden,--files cwd=~/.config/<CR>",
 	opts
 )
