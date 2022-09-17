@@ -7,41 +7,83 @@ scrollback_lines = 10000
 font = Fira Code Nerd Font 12
 
 
+# tokyonight(night)
 [colors]
 # special
-foreground      = #f8f8f2
-foreground_bold = #ff79c6
-cursor          = #FF92D0
-background      = #282a36
+foreground      = #a9b1d6
+foreground_bold = #9aa5ce
+cursor          = #bb9af7
+background      = #1a1b26
 
 # black
-color0  = #000000
-color8  = #4d4d4d
+color0  = #414868
+color8  = #414868
 
 # red
 color1  = #ff5555
 color9  = #ff6e67
 
 # green
-color2  = #50fa7b
-color10 = #5af78e
+color2  = #9ece6a
+color10 = #9ece6a
 
 # yellow
-color3  = #f1fa8c
-color11 = #f4f99d
+color3  = #e0af68
+color11 = #ff9e64
 
 # blue
-color4  = #bd93f9
-color12 = #caa9fa
+color4  = #7aa2f7
+color12 = #7aa2f7
 
 # magenta
-color5  = #ff79c6
-color13 = #ff92d0
+color5  = #bb9af7
+color13 = #bb9af7
 
 # cyan
-color6  = #8be9fd
-color14 = #9aedfe
+color6  = #2ac3de
+color14 = #7dcfff
 
 # white
-color7  = #bfbfbf
-color15 = #e6e6e6
+color7  = #9699a3
+color15 = #c0caf5
+
+
+# dracula
+# [colors]
+# # special
+# foreground      = #f8f8f2
+# foreground_bold = #ff79c6
+# cursor          = #FF92D0
+# background      = #282a36
+#
+# # black
+# color0  = #000000
+# color8  = #4d4d4d
+#
+# # red
+# color1  = #ff5555
+# color9  = #ff6e67
+#
+# # green
+# color2  = #50fa7b
+# color10 = #5af78e
+#
+# # yellow
+# color3  = #f1fa8c
+# color11 = #f4f99d
+#
+# # blue
+# color4  = #bd93f9
+# color12 = #caa9fa
+#
+# # magenta
+# color5  = #ff79c6
+# color13 = #ff92d0
+#
+# # cyan
+# color6  = #8be9fd
+# color14 = #9aedfe
+#
+# # white
+# color7  = #bfbfbf
+# color15 = #e6e6e6
