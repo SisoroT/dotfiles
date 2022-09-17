@@ -33,6 +33,7 @@ return packer.startup({
 		-- LSP, Linting, and Formatting --
 		----------------------------------
 
+		-- lsp
 		use({
 			-- easier installation of packages for lsp, linters, and formatters
 			{
@@ -56,15 +57,6 @@ return packer.startup({
 			},
 		})
 
-		-- diagnostics and autoformatting
-		use({
-			"jose-elias-alvarez/null-ls.nvim",
-			event = "BufRead",
-			config = function()
-				require("plugins.lsp.null-ls-config")
-			end,
-		})
-
 		-- java lsp
 		use({
 			"mfussenegger/nvim-jdtls",
@@ -74,7 +66,16 @@ return packer.startup({
 			ft = "java",
 		})
 
-		-- diagnostics
+		-- diagnostics, linting, and autoformatting
+		use({
+			"jose-elias-alvarez/null-ls.nvim",
+			event = "BufRead",
+			config = function()
+				require("plugins.lsp.null-ls-config")
+			end,
+		})
+
+		-- see all diagnostics in buffer at once
 		use({
 			"folke/trouble.nvim",
 			config = function()
@@ -138,36 +139,9 @@ return packer.startup({
 			end,
 		})
 
-		--------------------------
-		-- Editor Niceties --
-		--------------------------
-
-		-- auto bracket pairing
-		use({
-			"windwp/nvim-autopairs",
-			config = function()
-				require("plugins.autopairs")
-			end,
-			after = "nvim-cmp",
-		})
-
-		-- quick commentary
-		use({
-			"numToStr/Comment.nvim",
-			config = function()
-				require("plugins.comment")
-			end,
-		})
-
-		-- sudo save
-		use({
-			"lambdalisue/suda.vim",
-			setup = "vim.api.nvim_create_user_command('W', 'SudaWrite', {})",
-		})
-
-		---------------------------------------------
-		-- Navigation, Fuzzy Search, and File Tree --
-		---------------------------------------------
+		--------------------------------
+		-- Fuzzy Search and File Tree --
+		--------------------------------
 
 		-- fuzzy file finder
 		use({
@@ -196,11 +170,38 @@ return packer.startup({
 			end,
 		})
 
-		-- movement
+		--------------------------
+		-- Editor Niceties --
+		--------------------------
+
+		-- quick commentary
 		use({
-			"unblevable/quick-scope",
-			setup = "vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }",
+			"numToStr/Comment.nvim",
+			config = function()
+				require("plugins.comment")
+			end,
 		})
+
+		-- auto bracket pairing
+		use({
+			"windwp/nvim-autopairs",
+			config = function()
+				require("plugins.autopairs")
+			end,
+			after = "nvim-cmp",
+		})
+
+		-- sudo save
+		use({
+			"lambdalisue/suda.vim",
+			setup = "vim.api.nvim_create_user_command('W', 'SudaWrite', {})",
+		})
+
+		-----------------
+		-- Navigation --
+		-----------------
+
+		-- allows jumping anywhere in the file using keystrokes
 		use({
 			"phaazon/hop.nvim",
 			event = "BufRead",
@@ -209,9 +210,15 @@ return packer.startup({
 			end,
 		})
 
-		----------------------------------------
-		-- Theme, Icons, Statusbar, Bufferbar --
-		----------------------------------------
+		-- highlights first unique character in every word when using f, F, t, or T
+		use({
+			"unblevable/quick-scope",
+			setup = "vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }",
+		})
+
+		-----------------------------
+		-- Theme, Icons, Statusbar --
+		-----------------------------
 
 		-- colorschemes
 		use("folke/tokyonight.nvim")
@@ -220,25 +227,34 @@ return packer.startup({
 
 		-- blankline for tabs
 		use("lukas-reineke/indent-blankline.nvim")
+
+		-- bottom status line
 		use({
 			"nvim-lualine/lualine.nvim",
 			config = function()
 				require("plugins.status-line.lualine")
 			end,
 		})
+		-- top status line for buffers
 		use({
 			"akinsho/bufferline.nvim",
 			config = function()
 				require("plugins.status-line.bufferline")
 			end,
 		})
+
+		-- highlights colors behind hex, rgb, and names
 		use({
 			"norcalli/nvim-colorizer.lua",
 			config = function()
 				require("colorizer").setup()
 			end,
 		})
+
+		-- dev icons
 		use("kyazdani42/nvim-web-devicons")
+
+		-- better syntax highlighting
 		use({
 			{
 				"nvim-treesitter/nvim-treesitter",
@@ -276,6 +292,7 @@ return packer.startup({
 			end,
 		})
 
+		-- databases
 		use({
 			-- allows for interatction with databases
 			{ "tpope/vim-dadbod" },
