@@ -6,8 +6,6 @@ vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
--- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
--- vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-n>", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
@@ -21,15 +19,15 @@ vim.diagnostic.config({
 })
 
 -- show diagnostics on hover
-vim.o.updatetime = 50
+vim.o.updatetime = 200
 vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
 
 -- function to toggle cursor hold for diagnostics floats
 function _G.toggle_floats()
-	if vim.o.updatetime == 50 then
+	if vim.o.updatetime == 200 then
 		vim.o.updatetime = 1000
 	else
-		vim.o.updatetime = 50
+		vim.o.updatetime = 200
 	end
 end
 

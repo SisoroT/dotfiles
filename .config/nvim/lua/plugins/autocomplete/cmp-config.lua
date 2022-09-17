@@ -23,10 +23,9 @@ cmp.setup({
 		}),
 	},
 	formatting = {
-		format = function(entry, vim_item)
-			vim_item.kind = lspkind.presets.default[vim_item.kind]
-			return vim_item
-		end,
+		format = lspkind.cmp_format({
+			mode = "symbol", -- show only symbol annotations
+		}),
 	},
 	experimental = {
 		ghost_text = true,
@@ -54,6 +53,3 @@ require("cmp").setup({
 		tex = "{",
 	},
 })
-
-vim.api.nvim_command("autocmd VimEnter * hi CmpItemAbbrMatch guifg=white")
-vim.api.nvim_command("autocmd VimEnter * hi CmpItemAbbr guifg=#6272a4")

@@ -6,12 +6,13 @@ require("mason-lspconfig").setup_handlers({
 	function(server_name) -- default handler (optional)
 		require("lspconfig")[server_name].setup({})
 	end,
+
 	["sumneko_lua"] = function()
 		require("lspconfig").sumneko_lua.setup({
 			settings = {
 				Lua = {
 					diagnostics = {
-						-- get rid of the 'undefined global `vim`' error
+						-- get the language server to recognize the `vim` global
 						globals = { "vim" },
 					},
 				},
@@ -23,12 +24,12 @@ require("mason-lspconfig").setup_handlers({
 			settings = {
 				python = {
 					analysis = {
-						useLibraryCodeForTypes = true,
-						diagnosticSeverityOverrides = {
-							reportGeneralTypeIssues = "none",
-							reportOptionalMemberAccess = "none",
-							reportOptionalSubscript = "none",
-							reportPrivateImportUsage = "none",
+						uselibrarycodefortypes = true,
+						diagnosticseverityoverrides = {
+							reportgeneraltypeissues = "none",
+							reportoptionalmemberaccess = "none",
+							reportoptionalsubscript = "none",
+							reportprivateimportusage = "none",
 						},
 					},
 				},
