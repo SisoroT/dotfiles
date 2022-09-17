@@ -65,6 +65,9 @@ o.smartcase = true
 o.list = true
 o.listchars = "trail:·,nbsp:◇,tab:| ,extends:▸,precedes:◂"
 
+-- wrap between next and previous lines when at the beginning/end of a line
+o.whichwrap = "<>[]hl,b,s"
+
 -- keep list of undo history
 o.undofile = true
 
