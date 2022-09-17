@@ -67,7 +67,7 @@ map("n", "<C-s>", ":so%<CR>")
 map("n", "<leader>bd", ":bd<CR>")
 
 -- keybind to use find and replace
-map("n", "<S-s>", ":%s//gI<Left><Left><Left>")
+map("n", "<M-s>", ":%s//gI<Left><Left><Left>")
 
 -- move line up and down in normal and visual modes
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
