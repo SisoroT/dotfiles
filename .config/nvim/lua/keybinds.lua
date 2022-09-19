@@ -9,7 +9,7 @@ g.maplocalleader = " "
 
 -- open terminal in split window
 map("n", "<leader>ov", ":vsplit | term<CR>")
-map("n", "<leader>oh", ":split | resize 20 | term<CR>")
+map("n", "<leader>oh", ":split | resize 13 | term<CR>")
 
 -- rebind exit for terminal
 map("t", "<C-x>", "<C-\\><C-n>")
