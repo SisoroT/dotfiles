@@ -209,12 +209,6 @@ return packer.startup({
 				require("plugins.hop")
 			end,
 		})
-		use({
-			"ggandor/leap.nvim",
-			config = function()
-				require("leap").set_default_keymaps()
-			end,
-		})
 
 		-- highlights first unique character in every word when using f, F, t, or T
 		use({
