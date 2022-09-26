@@ -181,6 +181,13 @@ return packer.startup({
 				require("plugins.comment")
 			end,
 		})
+		-- better comments (adds TODO, FIXME, etc)
+		use({
+			"folke/todo-comments.nvim",
+			config = function()
+				require("todo-comments").setup()
+			end,
+		})
 
 		-- auto bracket pairing
 		use({
