@@ -19,13 +19,12 @@ vim.diagnostic.config({
 })
 
 -- show diagnostics on hover
-vim.o.updatetime = 200
 vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
 
 -- function to toggle cursor hold for diagnostics floats
 function _G.toggle_floats()
 	if vim.o.updatetime == 200 then
-		vim.o.updatetime = 1000
+		vim.o.updatetime = 10000
 	else
 		vim.o.updatetime = 200
 	end
