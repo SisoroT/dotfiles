@@ -1,4 +1,4 @@
-opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 -- toggle DBUI
 vim.api.nvim_set_keymap("n", "<leader>du", ":DBUIToggle<CR>", opts)
