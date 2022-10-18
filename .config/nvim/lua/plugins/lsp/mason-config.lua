@@ -24,12 +24,12 @@ require("mason-lspconfig").setup_handlers({
 			settings = {
 				python = {
 					analysis = {
-						uselibrarycodefortypes = true,
-						diagnosticseverityoverrides = {
-							reportgeneraltypeissues = "none",
-							reportoptionalmemberaccess = "none",
-							reportoptionalsubscript = "none",
-							reportprivateimportusage = "none",
+						useLibraryCodeForTypes = true,
+						diagnosticSeverityOverrides = {
+							reportGeneralTypeIssues = "none",
+							reportOptionalMemberAccess = "none",
+							reportOptionalSubscript = "none",
+							reportPrivateImportUsage = "none",
 						},
 					},
 				},
