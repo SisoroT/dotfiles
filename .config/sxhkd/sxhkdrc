@@ -4,7 +4,7 @@
 # Sections:                               #
 #    -> General: 13                       #
 #    -> Hotkeys: 54                       #
-#    -> Modes: 200                        #
+#    -> Modes: 202                        #
 #                                         #
 ###########################################
 
@@ -86,7 +86,7 @@ super + shift + v
 
 # discord
 super + shift + d
-    discord-ptb
+    discord
 
 # steam
 super + shift + s
@@ -135,6 +135,12 @@ super + bracket{left,right}
 # focus the last node/desktop
 super + {grave,Tab}
     bspc {node,desktop} -f last
+
+# swap all nodes on the current desktop with the nodes on the last desktop
+super + shift + Tab
+    bspc node @DP-4:focused:/ -s @DP-0:focused:/ || \
+    bspc node @DP-4:focused:/ -d @DP-0:focused || \
+    bspc node @DP-0:focused:/ -s @DP-4:focused:/;
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -210,12 +216,12 @@ super + shift + r : {j,k}
 # screenshot mode
 # -----------
 
-# to clipboard
-Print ; {f,s}
-    {flameshot full -c, flameshot screen -c}
 # to files
-ctrl + Print ; {f,s}
+Print ; {f,s}
     {flameshot full -p ~/pictures/screenshots, flameshot screen -p ~/pictures/screenshots}
+# to clipboard
+ctrl + Print ; {f,s}
+    {flameshot full -c, flameshot screen -c}
 # kill flameshot
 alt + Print
     killall flameshot
@@ -223,14 +229,18 @@ alt + Print
 # system power mode
 # -----------
 
+# lock screen
 super + shift + p ; {l}
     betterlockscreen -l dim
+# exit bspwm
 super + shift + p ; {e}
-    bspc quit #exit bspwm
+    bspc quit
+# suspend
 super + shift + p ; {s}
-    betterlockscreen -l dim & sleep 0.5 && systemctl suspend #suspend
+    betterlockscreen -l dim & sleep 0.5 && systemctl suspend
+# reboot
 super + shift + p ; {r}
-    systemctl reboot #reboot
+    systemctl reboot
+# shutdown
 super + shift + p ; {shift + s}
-    systemctl poweroff #shutdown
-
+    systemctl poweroff
