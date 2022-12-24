@@ -228,6 +228,10 @@ filextype *.html,*.htm
         \ dwb %f %i &,
         \ {Open with uzbl}
         \ uzbl-browser %f %i &,
+fileviewer *.html,*.htm
+        \ vifmimg htmlpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
 filetype *.html,*.htm links, lynx
 
 " Object
@@ -370,7 +374,10 @@ filextype */
 "
 " Or leave it for automatic detection
 "
-" fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+" fileviewer *[^/] pygmentize -O style=dracula -f console256 -g
+
+" view files using bat with only numbers and git changes
+fileviewer *[^/] bat --style=numbers,,changes --theme=Dracula --color=always --pager=never %c
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
