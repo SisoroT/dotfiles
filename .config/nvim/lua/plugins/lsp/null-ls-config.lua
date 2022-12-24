@@ -20,6 +20,10 @@ require("null-ls").setup({
 			extra_args = { "--dialect", "mysql" },
 		}),
 
+		-- shell
+		require("null-ls").builtins.formatting.shfmt,
+		require("null-ls").builtins.diagnostics.shellcheck,
+
 		-- spellchecking
 		-- require("null-ls").builtins.formatting.codespell,
 		require("null-ls").builtins.diagnostics.codespell,
