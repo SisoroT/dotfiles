@@ -8,4 +8,4 @@ vim.api.nvim_set_keymap("n", "<leader>db", ":%DB<CR>", opts)
 vim.api.nvim_set_keymap("v", "<leader>db", ":DB<CR>", opts)
 
 -- set database connection as global variable
-vim.g.db = "mysql://sisoro:Kurisu@localhost/girrafe"
+vim.g.db = "mysql://sisoro:{password}@localhost/{database}"
