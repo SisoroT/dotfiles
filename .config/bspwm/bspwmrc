@@ -1,22 +1,26 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x sxhkd >/dev/null || sxhkd &
 
 # swallow terminals that are busy running other apps
 pgrep bspswallow || bspswallow &
+
+# monitor setup (desktop only)
+bspc monitor DP-4 -d I II III IV V
+bspc monitor DP-0 -d VI VII VIII IX X
 
 # remove external monitor after it is disconnected
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 
 # general settings
-bspc config border_width         1
-bspc config window_gap          20
-bspc config split_ratio          0.50
+bspc config border_width 1
+bspc config window_gap 20
+bspc config split_ratio 0.50
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
 # Colors
 bspc config normal_border_color "#44475a"
@@ -39,11 +43,10 @@ bspc rule -a discord desktop='^9'
 # startup
 autorandr -c & # laptop only
 # /home/sisoro/.config/bspwm/screenlayout.sh & # desktop only
-# nvidia-settings -a DigitalVibrance=300 & # desktop only
+# nvidia-settings -a DigitalVibrance=300 &     # desktop only
 ./.fehbg &
 picom --config /home/sisoro/.config/picom/picom.conf &
 bluetoothctl power on &
 nm-applet &
 # /home/sisoro/.config/bspwm/monitor-control.sh # laptop only
 ~/.config/polybar/launch.sh &
-
