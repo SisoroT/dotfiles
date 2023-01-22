@@ -51,7 +51,7 @@ if [ -e "$FIFO_UEBERZUG" ]; then
 	elif [[ "$1" == "htmlpreview" ]]; then
 		echo -e "Loading preview..\nFile: $6"
 		[[ ! -d "/tmp${PWD}/$6/" ]] && mkdir -p "/tmp${PWD}/$6/"
-		[[ ! -f "/tmp${PWD}/$6.png" ]] && wkhtmltoimage --width 800 --height 600 "${PWD}/$6" "/tmp${PWD}/$6.png"
+		[[ ! -f "/tmp${PWD}/$6.png" ]] && wkhtmltoimage "${PWD}/$6" "/tmp${PWD}/$6.png"
 		declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
 			[x]="$2" [y]="$3" [width]="$4" [height]="$5"
 			[path]="/tmp${PWD}/$6.png") \
