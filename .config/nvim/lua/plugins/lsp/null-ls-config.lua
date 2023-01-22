@@ -1,32 +1,47 @@
+-- If null-ls runs into an error, print that there was an error and return
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+if not null_ls_status_ok then
+	print("null_ls encountered an error while loading")
+	return
+end
+
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
+
 require("null-ls").setup({
 	sources = {
 		-- python
-		require("null-ls").builtins.formatting.black,
-		require("null-ls").builtins.diagnostics.flake8,
+		formatting.black,
+		diagnostics.flake8,
 
 		-- lua
-		require("null-ls").builtins.formatting.stylua,
+		formatting.stylua,
 
-		-- javascirpt, css, html
-		require("null-ls").builtins.formatting.prettier.with({
+		-- javascript, css, html
+		formatting.prettier.with({
 			extra_args = { "--tab-width", "4", "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
-		require("null-ls").builtins.diagnostics.eslint,
-		require("null-ls").builtins.code_actions.eslint,
+		-- html only
+		diagnostics.tidy,
+		-- javascript only
+		diagnostics.eslint,
+		code_actions.eslint,
 
 		-- sql
-		require("null-ls").builtins.formatting.pg_format,
-		require("null-ls").builtins.diagnostics.sqlfluff.with({
+		formatting.pg_format,
+		diagnostics.sqlfluff.with({
 			extra_args = { "--dialect", "mysql" },
 		}),
 
 		-- shell
-		require("null-ls").builtins.formatting.shfmt,
-		require("null-ls").builtins.diagnostics.shellcheck,
+		formatting.shfmt,
+		diagnostics.shellcheck,
 
 		-- spellchecking
-		-- require("null-ls").builtins.formatting.codespell,
-		require("null-ls").builtins.diagnostics.codespell,
+		-- formatting.codespell,
+		diagnostics.codespell,
 	},
 
 	on_attach = function(client)
