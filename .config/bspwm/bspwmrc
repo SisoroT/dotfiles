@@ -6,8 +6,8 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 pgrep bspswallow || bspswallow &
 
 # monitor setup (desktop only)
-bspc monitor DP-4 -d I II III IV V
-bspc monitor DP-0 -d VI VII VIII IX X
+# bspc monitor DP-4 -d I II III IV V
+# bspc monitor DP-0 -d VI VII VIII IX X
 
 # remove external monitor after it is disconnected
 bspc config remove_disabled_monitors true
@@ -40,6 +40,9 @@ bspc rule -a firefox desktop='^1'
 bspc rule -a Steam desktop='^7'
 bspc rule -a discord desktop='^9'
 
+# fixes some java apps via: https://wiki.archlinux.org/index.php/Bspwm#Problems_with_Java_applications
+wmname LG3D
+
 # startup
 autorandr -c & # laptop only
 # /home/sisoro/.config/bspwm/screenlayout.sh & # desktop only
@@ -48,5 +51,6 @@ autorandr -c & # laptop only
 picom --config /home/sisoro/.config/picom/picom.conf &
 bluetoothctl power on &
 nm-applet &
-# /home/sisoro/.config/bspwm/monitor-control.sh # laptop only
+/home/sisoro/.config/bspwm/monitor-control.sh # laptop only
+/home/sisoro/scripts/touchpad-settings.sh     # laptop only
 ~/.config/polybar/launch.sh &
