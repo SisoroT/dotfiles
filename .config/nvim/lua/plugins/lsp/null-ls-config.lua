@@ -30,9 +30,11 @@ require("null-ls").setup({
 		code_actions.eslint,
 
 		-- sql
-		formatting.pg_format,
-		diagnostics.sqlfluff.with({
+		formatting.sqlfluff.with({
 			extra_args = { "--dialect", "mysql" },
+		}),
+		diagnostics.sqlfluff.with({
+			extra_args = { "--dialect", "mysql", "--exclude-rules", "L044" },
 		}),
 
 		-- shell
