@@ -21,7 +21,6 @@ alias f="python"
 
 # => scripts
 alias wp="feh --bg-fill"
-alias re="dotnet /home/sisoro/downloads/RechatTool-1.6.0-CrossPlatform/RechatTool.dll -D"
 
 # => downloaded programs
 alias neo="neofetch"
