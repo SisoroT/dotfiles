@@ -29,6 +29,10 @@ require("null-ls").setup({
 		diagnostics.eslint,
 		code_actions.eslint,
 
+		-- php
+		formatting.phpcbf,
+		diagnostics.phpcs,
+
 		-- sql
 		formatting.sqlfluff.with({
 			extra_args = { "--dialect", "mysql" },
