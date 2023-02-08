@@ -30,8 +30,12 @@ require("null-ls").setup({
 		code_actions.eslint,
 
 		-- php
-		formatting.phpcbf,
-		diagnostics.phpcs,
+		formatting.phpcbf.with({
+			extra_args = { "--standard=PSR12" },
+		}),
+		diagnostics.phpcs.with({
+			extra_args = { "--standard=PSR12", "--ignore=PEAR.Commenting.FileComment.Missing" },
+		}),
 
 		-- sql
 		formatting.sqlfluff.with({
@@ -49,7 +53,6 @@ require("null-ls").setup({
 		-- formatting.codespell,
 		diagnostics.codespell,
 	},
-
 	on_attach = function(client)
 		if client.server_capabilities.documentFormattingProvider then
 			vim.cmd([[
