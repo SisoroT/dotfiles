@@ -216,9 +216,9 @@ super + shift + r : {j,k}
 # screenshot mode
 # -----------
 
-# to files
-Print ; {f,s}
-    {flameshot full -p ~/pictures/screenshots, flameshot screen -p ~/pictures/screenshots}
+# to files or gui
+Print ; {f,s,g}
+    {flameshot full -p ~/pictures/screenshots, flameshot screen -p ~/pictures/screenshots, flameshot gui}
 # to clipboard
 ctrl + Print ; {f,s}
     {flameshot full -c, flameshot screen -c}
