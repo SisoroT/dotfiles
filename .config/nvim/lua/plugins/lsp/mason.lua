@@ -35,14 +35,12 @@ require("mason").setup({
 			apply_language_filter = "<C-f>",
 		},
 	},
-
 	-- The directory in which to install packages.
 	-- install_root_dir = path.concat({ vim.fn.stdpath("data"), "mason" }),
 
 	-- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
 	-- debugging issues with package installations.
 	log_level = vim.log.levels.INFO,
-
 	-- Limit for the maximum amount of packages to be installed at the same time. Once this limit is reached, any further
 	-- packages that are requested to be installed will be put in a queue.
 	max_concurrent_installers = 4,
