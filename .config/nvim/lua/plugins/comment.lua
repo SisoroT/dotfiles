@@ -22,9 +22,9 @@ require("Comment").setup({
 	---LHS of extra mappings
 	extra = {
 		---Add comment on the line above
-		above = "gcO",
+		above = "eO",
 		---Add comment on the line below
-		below = "gco",
+		below = "eo",
 		---Add comment at the end of line
 		eol = "gcA",
 	},
