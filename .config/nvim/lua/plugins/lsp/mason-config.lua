@@ -1,13 +1,15 @@
-require("mason-lspconfig").setup()
+local lspconfig = require("lspconfig")
+
 require("mason-lspconfig").setup_handlers({
 	-- The first entry (without a key) will be the default handler
 	-- and will be called for each installed server that doesn't have
 	-- a dedicated handler.
 	function(server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup({})
+		lspconfig[server_name].setup({})
 	end,
-	["sumneko_lua"] = function()
-		require("lspconfig").sumneko_lua.setup({
+	-- Next, you can provide targeted overrides for specific servers.
+	["lua_ls"] = function()
+		lspconfig.lua_ls.setup({
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -19,7 +21,7 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 	["pyright"] = function()
-		require("lspconfig").pyright.setup({
+		lspconfig.pyright.setup({
 			settings = {
 				python = {
 					analysis = {
@@ -36,7 +38,7 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 	["clangd"] = function()
-		require("lspconfig").clangd.setup({
+		lspconfig.clangd.setup({
 			cmd = {
 				"clangd",
 				"--background-index",
@@ -50,10 +52,10 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 	["tailwindcss"] = function()
-		require("lspconfig").tailwindcss.setup({
+		lspconfig.tailwindcss.setup({
 			cmd = { "tailwindcss-language-server", "--stdio" },
 			filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-			root_dir = require("lspconfig").util.root_pattern(
+			root_dir = lspconfig.util.root_pattern(
 				"tailwind.config.js",
 				"postcss.config.js",
 				"package.json",
