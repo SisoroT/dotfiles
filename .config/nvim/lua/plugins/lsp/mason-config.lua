@@ -1,5 +1,25 @@
 local lspconfig = require("lspconfig")
+-- needed for css
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- required for :LspInstall command
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"bashls",
+		"clangd",
+		"cssls",
+		"html",
+		"intelephense",
+		"jsonls",
+		"lua_ls",
+		"pyright",
+		"sqlls",
+		"tailwindcss",
+		"tsserver",
+		"vimls",
+	},
+})
 require("mason-lspconfig").setup_handlers({
 	-- The first entry (without a key) will be the default handler
 	-- and will be called for each installed server that doesn't have
@@ -51,18 +71,14 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+	["cssls"] = function()
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+		})
+	end,
 	["tailwindcss"] = function()
 		lspconfig.tailwindcss.setup({
-			cmd = { "tailwindcss-language-server", "--stdio" },
 			filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-			root_dir = lspconfig.util.root_pattern(
-				"tailwind.config.js",
-				"postcss.config.js",
-				"package.json",
-				"tsconfig.json",
-				"jsconfig.json",
-				".git"
-			),
 		})
 	end,
 })
