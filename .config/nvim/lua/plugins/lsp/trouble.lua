@@ -8,7 +8,8 @@ require("trouble").setup({
 	fold_closed = "", -- icon used for closed folds
 	group = true, -- group results by file
 	padding = true, -- add an extra new line on top of the list
-	action_keys = { -- key mappings for actions in the trouble list
+	action_keys = {
+		-- key mappings for actions in the trouble list
 		-- map to {} to remove a mapping, for example:
 		-- close = {},
 		close = "q", -- close the list
@@ -44,7 +45,6 @@ require("trouble").setup({
 		other = "﫠",
 	},
 	use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
-
 	-- toggle trouble view
 	vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true }),
 })
