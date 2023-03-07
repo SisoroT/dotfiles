@@ -51,42 +51,6 @@ require("nvim-tree").setup({
 		-- the command arguments as a list
 		args = {},
 	},
-	-- nvim_tree_show_icons = {
-	-- 	git = 1,
-	-- 	folders = 1,
-	-- 	files = 1,
-	-- 	folder_arrows = 1,
-	-- },
-	-- nvim_tree_icons = {
-	-- 	default = "",
-	-- 	symlink = "",
-	-- 	git = {
-	-- 		unstaged = "✗",
-	-- 		staged = "✓",
-	-- 		unmerged = "",
-	-- 		renamed = "➜",
-	-- 		untracked = "★",
-	-- 		deleted = "",
-	-- 		ignored = "◌",
-	-- 	},
-	-- 	folder = {
-	-- 		arrow_open = "",
-	-- 		arrow_closed = "",
-	-- 		default = "",
-	-- 		open = "",
-	-- 		empty = "",
-	-- 		empty_open = "",
-	-- 		symlink = "",
-	-- 		symlink_open = "",
-	-- 	},
-	-- 	lsp = {
-	-- 		hint = " ",
-	-- 		info = " ",
-	-- 		warning = " ",
-	-- 		error = " ﱥ",
-	-- 	},
-	-- },
-
 	view = {
 		-- width of the window, can be either a number (columns) or a string in `%`
 		width = 30,
@@ -109,7 +73,7 @@ require("nvim-tree").setup({
 				{ key = ">", action = "next_sibling" },
 				{ key = "P", action = "parent_node" },
 				{ key = "h", action = "close_node" },
-				{ key = "l", action = "open_node" },
+				{ key = "l", action = "edit" },
 				{ key = "<Tab>", action = "preview" },
 				{ key = "K", action = "first_sibling" },
 				{ key = "J", action = "last_sibling" },
