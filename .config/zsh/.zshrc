@@ -27,6 +27,9 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 setopt COMPLETE_ALIASES
 
+# enable zoxide
+eval "$(zoxide init zsh)"
+
 # load plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
