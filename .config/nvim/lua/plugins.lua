@@ -198,6 +198,14 @@ return packer.startup({
 			after = "nvim-cmp",
 		})
 
+		use({
+			"akinsho/git-conflict.nvim",
+			tag = "*",
+			config = function()
+				require("git-conflict").setup()
+			end,
+		})
+
 		-- sudo save
 		use({
 			"lambdalisue/suda.vim",
