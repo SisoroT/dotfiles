@@ -50,3 +50,4 @@ end
 -- toggle diagnostics and floats
 map("n", "<leader>dd", ":call v:lua.toggle_diagnostics()<CR>")
 map("n", "<leader>df", ":call v:lua.toggle_floats()<CR>")
+map("n", "<leader>da", ":call v:lua.toggle_diagnostics()<bar>call v:lua.toggle_floats()<CR>")
