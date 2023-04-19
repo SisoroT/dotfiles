@@ -44,6 +44,7 @@ return packer.startup({
 			},
 			{
 				"williamboman/mason-lspconfig.nvim",
+				after = "mason.nvim",
 				config = function()
 					require("plugins.lsp.mason-config")
 				end,
@@ -289,6 +290,15 @@ return packer.startup({
 		-----------
 		-- Other --
 		-----------
+
+		-- markdown preview
+		use({
+			"iamcco/markdown-preview.nvim",
+			setup = "vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle<cr>')",
+			run = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		})
 
 		-- gitsigns
 		use({
