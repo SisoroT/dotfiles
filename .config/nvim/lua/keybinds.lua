@@ -66,6 +66,9 @@ map("n", "<C-s>", ":so%<CR>")
 -- close a buffer
 map("n", "<leader>bd", ":bd<CR>")
 
+-- sort into table
+map("v", "<leader>s", "!column --table<CR>")
+
 -- keybind to use find and replace
 map("n", "<S-s>", ":%s//gI<Left><Left><Left>")
 
