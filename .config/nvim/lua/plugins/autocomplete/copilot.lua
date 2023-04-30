@@ -1,5 +1,5 @@
 local function map(mode, keybind, command)
-	vim.keymap.set(mode, keybind, command, { noremap = true, silent = true, script = true, expr = true })
+	vim.api.nvim_set_keymap(mode, keybind, command, { noremap = true, silent = true, script = true, expr = true })
 end
 
 -- disable tab complete
