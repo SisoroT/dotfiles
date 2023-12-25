@@ -1,16 +1,30 @@
-local function map(mode, keybind, command)
-	vim.api.nvim_set_keymap(mode, keybind, command, { noremap = true, silent = true, script = true, expr = true })
-end
+-- github copilot
 
--- disable tab complete
-vim.g.copilot_no_tab_map = true
+return {
+	"github/copilot.vim",
+	event = "BufRead",
+	keys = {
+		-- accept full suggestion
+		{
+			"<M-a>",
+			"copilot#Accept()",
+			mode = "i",
+			silent = true,
+			script = true,
+			expr = true,
+			replace_keycodes = false,
+		},
+		-- dismiss suggestion
+		{ "<M-d>", "<Plug>(copilot-dismiss)", mode = "i" },
+		-- trigger suggest
+		{ "<M-s>", "<Plug>(copilot-suggest)", mode = "i" },
+		-- next and prev suggestion
+		{ "<M-l>", "<Plug>(copilot-next)", mode = "i" },
+		{ "<M-h>", "<Plug>(copilot-previous)", mode = "i" },
+	},
 
--- change keybind for accepting suggestions
-map("i", "<M-a>", "copilot#Accept()")
-
--- change keybind to dismiss copilot suggestions
-map("i", "<M-d>", "copilot#Dismiss()")
-
--- change keybind for next and previous suggestions
-map("i", "<M-l>", "copilot#Next()")
-map("i", "<M-h>", "copilot#Previous()")
+	config = function()
+		-- disable tab complete
+		vim.g.copilot_no_tab_map = true
+	end,
+}

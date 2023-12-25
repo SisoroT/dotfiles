@@ -1,5 +1,5 @@
 -- Config
-require("settings")
-require("keybinds")
-require("autocmds")
-require("plugins")
+require("config.settings")
+require("config.keybinds")
+require("config.autocmds")
+require("config.lazy")

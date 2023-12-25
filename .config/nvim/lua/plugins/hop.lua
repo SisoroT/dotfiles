@@ -1,7 +1,11 @@
-require("hop").setup()
-
--- place this in one of your configuration file(s)
-vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>lua require'hop'.hint_words()<cr>", {})
-vim.api.nvim_set_keymap("v", "<leader>w", "<cmd>lua require'hop'.hint_words()<cr>", {})
-vim.api.nvim_set_keymap("n", "<leader>x", "<cmd>lua require'hop'.hint_lines()<cr>", {})
-vim.api.nvim_set_keymap("v", "<leader>x", "<cmd>lua require'hop'.hint_lines()<cr>", {})
+-- allows jumping anywhere in the file using keystrokes
+return {
+	"phaazon/hop.nvim",
+	keys = {
+		-- jump words
+		{ "<leader>w", "<cmd>lua require'hop'.hint_words()<cr>", mode = { "n", "v" } },
+		-- jump lines
+		{ "<leader>x", "<cmd>lua require'hop'.hint_words()<cr>", mode = { "n", "v" } },
+	},
+	config = true,
+}

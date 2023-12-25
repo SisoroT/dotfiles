@@ -18,6 +18,10 @@ map("t", "<C-x>", "<C-\\><C-n>")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+-- make scrolling easier to follow
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
 -- cursor doesn't move when joining lines
 map("n", "J", "mzJ`z")
 
