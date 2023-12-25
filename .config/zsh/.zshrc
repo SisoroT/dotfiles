@@ -1,11 +1,16 @@
 # Paths
 # path to vifmrun script
-path+=('/home/sisoro/.config/vifm/scripts')
+export PATH=$PATH:/home/sisoro/.config/vifm/scripts
 # path to scripts folder
-path+=('/home/sisoro/scripts')
+export PATH=$PATH:/home/sisoro/scripts
 # path to local binaries
-path+=('/home/sisoro/.local/bin')
-export PATH
+export PATH=$PATH:/home/sisoro/.local/bin
+
+# path to android sdk
+export ANDROID_HOME=/home/sisoro/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # path to histfile
 HISTFILE=~/.config/zsh/.histfile
