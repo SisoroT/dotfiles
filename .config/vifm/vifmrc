@@ -168,9 +168,9 @@ command! reload :write | restart
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 fileviewer *.pdf
-        \ vifmimg pdfpreview %px %py %pw %ph %c
+        \ vifm-sixel pdf %pw %ph %c %pd
         \ %pc
-        \ vifmimg clear
+        \ vifm-sixel clear
         " \ pdftotext -nopgbrk %c -
 
 " PostScript
@@ -211,9 +211,9 @@ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.mts,*.m4v,*.r[am],*.qt,*.divx,
           \*.as[fx]
-        \ vifmimg videopreview %px %py %pw %ph %c
+        \ vifm-sixel video %pw %ph %c %pd
         \ %pc
-        \ vifmimg clear
+        \ vifm-sixel clear
         " \ ffprobe -pretty %c 2>&1
 
 " Web
@@ -251,9 +251,9 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ cacaview %c &,
 
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-        \ vifmimg draw %px %py %pw %ph %c
+        \ vifm-sixel draw %pw %ph %c %pd
         \ %pc
-        \ vifmimg clear
+        \ vifm-sixel clear
 
 fileviewer *.gif
         \ vifmimg gifpreview %px %py %pw %ph %c
@@ -490,16 +490,16 @@ vnoremap w :view<cr>gv
 nnoremap gb :file &<cr>l
 
 " yank current directory path into the clipboard
-nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
+nnoremap yd :!echo -n %d | wl-copy<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
 
 " yank current file path into the clipboard
-nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+nnoremap yf :!echo -n %c:p | wl-copy<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c | wl-copy<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
 
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+nnoremap yr :!echo -n %c:r | wl-copy<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
 " clear highlighted search results
 nnoremap <C-c> :noh<CR>
