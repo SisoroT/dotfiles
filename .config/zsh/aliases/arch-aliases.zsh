@@ -2,67 +2,62 @@
 #               Pacman                #
 #######################################
 
-if (( $+commands[pacman] )); then
-  alias pacupg='sudo pacman -Syu'
-  alias pacin='sudo pacman -S'
-  alias pacins='sudo pacman -U'
-  alias paclean='sudo pacman -Sc'
-  alias paclr='sudo pacman -Scc'
-  alias pacre='sudo pacman -R'
-  alias pacrem='sudo pacman -Rns'
-  alias pacrep='pacman -Si'
-  alias pacreps='pacman -Ss'
-  alias pacq="pacman -Q | grep"
-  alias pacloc='pacman -Qi'
-  alias paclocs='pacman -Qs'
-  alias pacinsd='sudo pacman -S --asdeps'
-  alias pacmir='sudo pacman -Syy'
-  alias paclsorphans='sudo pacman -Qdt'
-  alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
-  alias pacfileupg='sudo pacman -Fy'
-  alias pacfiles='pacman -F'
-  alias pacls='pacman -Ql'
-  alias pacown='pacman -Qo'
-  alias pacupd="sudo pacman -Sy"
-  alias upgrade='sudo pacman -Syu'
+# Pacman - https://wiki.archlinux.org/index.php/Pacman_Tips
+alias pacupg='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias paclean='sudo pacman -Sc'
+alias pacins='sudo pacman -U'
+alias paclr='sudo pacman -Scc'
+alias pacre='sudo pacman -R'
+alias pacrem='sudo pacman -Rns'
+alias pacrep='pacman -Si'
+alias pacreps='pacman -Ss'
+alias pacq="pacman -Q | grep"
+alias pacloc='pacman -Qi'
+alias paclocs='pacman -Qs'
+alias pacinsd='sudo pacman -S --asdeps'
+alias pacmir='sudo pacman -Syy'
+alias paclsorphans='sudo pacman -Qdt'
+alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pacfileupg='sudo pacman -Fy'
+alias pacfiles='pacman -F'
+alias pacls='pacman -Ql'
+alias pacown='pacman -Qo'
+alias pacupd="sudo pacman -Sy"
 
-  function paclist() {
-    # Based on https://bbs.archlinux.org/viewtopic.php?id=93683
-    pacman -Qqe | \
-      xargs -I '{}' \
-        expac "${bold_color}% 20n ${fg_no_bold[white]}%d${reset_color}" '{}'
-  }
+function paclist() {
+  pacman -Qqe | xargs -I{} -P0 --no-run-if-empty pacman -Qs --color=auto "^{}\$"
+}
 
-  function pacdisowned() {
-    local tmp db fs
-    tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
-    db=$tmp/db
-    fs=$tmp/fs
+function pacdisowned() {
+  local tmp_dir db fs
+  tmp_dir=$(mktemp --directory)
+  db=$tmp_dir/db
+  fs=$tmp_dir/fs
 
-    mkdir "$tmp"
-    trap 'rm -rf "$tmp"' EXIT
+  trap "rm -rf $tmp_dir" EXIT
 
-    pacman -Qlq | sort -u > "$db"
+  pacman -Qlq | sort -u > "$db"
 
-    find /bin /etc /lib /sbin /usr ! -name lost+found \
-      \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+  find /etc /usr ! -name lost+found \
+    \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
 
-    comm -23 "$fs" "$db"
-  }
+  comm -23 "$fs" "$db"
 
-  alias pacmanallkeys='sudo pacman-key --refresh-keys'
+  rm -rf $tmp_dir
+}
 
-  function pacmansignkeys() {
-    local key
-    for key in $@; do
-      sudo pacman-key --recv-keys $key
-      sudo pacman-key --lsign-key $key
-      printf 'trust\n3\n' | sudo gpg --homedir /etc/pacman.d/gnupg \
-        --no-permission-warning --command-fd 0 --edit-key $key
-    done
-  }
+alias pacmanallkeys='sudo pacman-key --refresh-keys'
 
-fi
+function pacmansignkeys() {
+  local key
+  for key in $@; do
+    sudo pacman-key --recv-keys $key
+    sudo pacman-key --lsign-key $key
+    printf 'trust\n3\n' | sudo gpg --homedir /etc/pacman.d/gnupg \
+      --no-permission-warning --command-fd 0 --edit-key $key
+  done
+}
 
 if (( $+commands[xdg-open] )); then
   function pacweb() {
@@ -110,5 +105,30 @@ if (( $+commands[yay] )); then
   alias yainsd='yay -S --asdeps'
   alias yamir='yay -Syy'
   alias yaupd="yay -Sy"
-  alias upgrade='yay -Syu'
 fi
+
+# Check Arch Linux PGP Keyring before System Upgrade to prevent failure.
+function upgrade() {
+  echo ":: Checking Arch Linux PGP Keyring..."
+  local installedver="$(sudo pacman -Qi archlinux-keyring | grep -Po '(?<=Version         : ).*')"
+  local currentver="$(sudo pacman -Si archlinux-keyring | grep -Po '(?<=Version         : ).*')"
+  if [ $installedver != $currentver ]; then
+    echo " Arch Linux PGP Keyring is out of date."
+    echo " Updating before full system upgrade."
+    sudo pacman -Sy --needed --noconfirm archlinux-keyring
+  else
+    echo " Arch Linux PGP Keyring is up to date."
+    echo " Proceeding with full system upgrade."
+  fi
+  if (( $+commands[yay] )); then
+    yay -Syu
+  elif (( $+commands[trizen] )); then
+    trizen -Syu
+  elif (( $+commands[pacaur] )); then
+    pacaur -Syu
+  elif (( $+commands[aura] )); then
+    sudo aura -Syu
+  else
+    sudo pacman -Syu
+  fi
+}
