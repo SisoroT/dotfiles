@@ -13,8 +13,7 @@ alias xx="extract"
 alias vim="nvim"
 alias v="nvim"
 alias am="pulsemixer"
-alias vifm="vifmrun"
-alias fm="vifmrun"
+alias fm="vifm"
 
 # => coding
 alias j="java"
