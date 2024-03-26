@@ -11,19 +11,14 @@ alias zz="z -"
 # => important programs
 alias vim="nvim"
 alias v="nvim"
-alias am="pulsemixer"
 alias fm="vifm"
 
-# => coding
-alias j="java"
-alias c="gcc"
-alias f="python"
-
 # => scripts
-alias wp="feh --bg-fill"
+alias ratemir='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist'
 
 # => downloaded programs
 alias neo="neofetch"
-alias cma="cmatrix"
-alias cmam="cmatrix -C magenta"
-alias ac="asciiquarium"
