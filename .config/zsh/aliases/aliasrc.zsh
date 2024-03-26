@@ -7,7 +7,6 @@ alias ls="exa --icons"
 # alias ls="ls --color"
 alias grep="grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias zz="z -"
-alias xx="extract"
 
 # => important programs
 alias vim="nvim"
