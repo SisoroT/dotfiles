@@ -1,8 +1,7 @@
-### Paths ###
-# scripts folder
-export PATH=$PATH:$HOME/scripts
 # local binaries
 export PATH=$PATH:$HOME/.local/bin
+# scripts folder
+export PATH=$PATH:$HOME/scripts
 # android sdk
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
@@ -33,20 +32,17 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 setopt COMPLETE_ALIASES
 
-# zoxide
-eval "$(zoxide init zsh)"
-
 # plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $plugin_dir/command-not-found.zsh
-source $plugin_dir/extract.zsh
+for plugin in $plugin_dir/*.zsh; do
+  source $plugin
+done
 
 # aliases
-source $alias_dir/aliasrc.zsh
-source $alias_dir/arch-aliases.zsh
-source $alias_dir/git-aliases.zsh
-source $alias_dir/gh-copilot-aliases.zsh
+for alias_file in $alias_dir/*.zsh; do
+  source $alias_file
+done
 
 # use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -75,12 +71,9 @@ precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-
-# perf: makes fzf only go 4 dirs deep
-export FZF_DEFAULT_COMMAND='find . -maxdepth 4'
-# fzf terminal shortcuts
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
