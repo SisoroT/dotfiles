@@ -1,7 +1,7 @@
 # => system commands
 alias cl="clear"
 alias ei="exit"
-alias l="exa -lha --icons --group-directories-first"
+alias l="exa -lha --git --icons --group-directories-first"
 alias ls="exa --icons"
 # alias l="ls -lhA --group-directories-first"
 # alias ls="ls --color"
