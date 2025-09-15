@@ -347,4 +347,9 @@ nnoremap <C-u> <C-u>zz
 
 " jump to files with fzf
 nnoremap <C-f> :FZFfind<CR>
-command! FZFfind :set noquickview | :execute 'goto "'.system('find -L -maxdepth 4 | fzf --preview "ls -lhA {}" 2>/dev/tty ').'"%IU' | redraw | view
+command! FZFfind : set noquickview
+                \| let $FZF_PICK = term('fd --unrestricted | fzf 2>/dev/tty')
+                \| if $FZF_PICK != ''
+                \|     execute 'goto' fnameescape($FZF_PICK)
+                \| endif
+                \| view
