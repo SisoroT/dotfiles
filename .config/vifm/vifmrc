@@ -1,17 +1,12 @@
 " -- General Settings --
 
 " This makes vifm perform file operations on its own instead of relying on
-" standard utilities like `cp`.  While using `cp` and alike is a more universal
+" standard utilities like `cp`. While using `cp` and alike is a more universal
 " solution, it's also much slower when processing large amounts of files and
 " doesn't support progress measuring.
 set syscalls
 
 " Trash Directory
-" The default is to move files that are deleted with dd or :d to
-" the trash directory. If you change this you will not be able to move
-" files by deleting them and then using p to put the file in the new location.
-" I recommend not changing this until you are familiar with vifm.
-" This probably shouldn't be an option.
 set trash
 
 " This is how many directories to store in the directory history.
@@ -26,17 +21,14 @@ set sortnumbers
 " Maximum number of changes that can be undone.
 set undolevels=100
 
-" If you installed the vim.txt help file set vimhelp.
-" If would rather use a plain text help file set novimhelp.
-set novimhelp
+" Use vim when opening vifm help file
+set vimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
 set norunexec
 
 " Selected color scheme
-" The following line will cause issues if using vifm.vim with regular vim.
-" Either use neovim or comment out the following line.
 colorscheme dracula
 
 " Format for displaying time in file list. For example:
@@ -51,7 +43,7 @@ set wildmenu
 set wildstyle=popup
 
 " Display suggestions in normal, visual and view modes for keys, marks and
-" registers (at most 5 files).  In other view, when available.
+" registers (at most 5 files). In other view, when available.
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
 " Ignore case in search patterns unless it contains at least one uppercase letter
@@ -78,15 +70,12 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 " Set line numbers to show
 set nu relativenumber
 
-" What should be saved automatically between vifm runs
-" Like in previous versions of vifm
-" set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
-" Like in vi
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
-
 " :mark mark /full/directory/path [filename]
 mark h ~/
+
+" What should be saved automatically between vifm runs
+set vifminfo=bmarks,bookmarks,registers,dirstack,savedirs,state,tui,
+    \chistory,dhistory,fhistory,phistory,shistory
 
 " Set the editor to use when editing files from within vifm
 set vicmd=nvim
