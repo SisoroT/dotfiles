@@ -1,121 +1,116 @@
+@define-color bg        #24283b;
+@define-color text      #c0caf5;
+@define-color red       #f7768e;
+@define-color blue      #7aa2f7;
+@define-color mauve     #b48ead;
+@define-color purple    #9d7cd8;
+@define-color magenta   #bb9af7;
+@define-color green     #9ece6a;
+@define-color orange    #ff9e64;
+@define-color yellow    #e0af68;
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: VictorMono Nerd Font;
+    font-family: NotoSans Nerd Font;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: #12131a;
-    color: white;
+    background: transparent;
+    color: @text;
 }
 
 #workspaces {
-    background-color: #1d202e;
+    background-color: alpha(@bg, 0.9);
+    border-radius: 1rem;
     margin: 5px;
-    margin-left: 6px;
-}
-#workspaces button {
-    padding: 2px 8px;
-    color: #fff;
+    margin-left: 1rem;
 }
 
-#workspaces button.focused {
-    color: #24283b;
-    background-color: #7aa2f7;
+#workspaces button {
+    border-radius: 1rem;
+    padding: 0.4rem;
+}
+
+#workspaces button.active {
+    background-color: @purple;
+}
+
+#workspaces button.empty:not(.active) {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0;
 }
 
 #workspaces button:hover {
-    background-color: #7dcfff;
-    color: #24283b;
+    background-color: @blue;
+    color: @bg;
 }
 
-#custom-date,
+#custom-niri-columns {
+    background-color: alpha(@bg, 0.9);
+    border-radius: 1rem;
+    margin: 5px;
+    margin-left: 0.5rem;
+    padding: 0.4rem 1rem;
+}
+
 #clock,
 #battery,
 #pulseaudio,
-#network {
-    padding: 2px 10px;
-    margin: 5px 0px;
-}
-
-#custom-date {
-    color: #7dcfff;
-}
-
-#custom-power {
-    color: #24283b;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-    padding: 3px 10px;
+#memory,
+#cpu,
+#tray {
+    background-color: alpha(@bg, 0.9);
+    padding: 0.4rem 1rem;
+    margin: 5px 0;
 }
 
 #clock {
-    color: #b48ead;
-    margin-right: 6px;
+    color: @mauve;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-right: 0;
+}
+
+#clock.date {
+    border-radius: 0px 1rem 1rem 0px;
 }
 
 #battery {
-    color: #9ece6a;
+    color: @green;
 }
 
 #battery.charging {
-    color: #9ece6a;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: #24283b;
-}
-
-#network {
-    color: #f7768e;
+    color: @red;
 }
 
 #pulseaudio {
-    color: #e0af68;
-}
-
-#temperature {
-    margin: 5px 0;
-    padding: 0 10px;
-    color: #82e4ff;
-}
-
-#disk {
-    color: #b9f27c;
-    margin: 5px 0;
-    padding-right: 10px;
-    margin-right: 3px;
-}
-
-#memory {
-    margin-left: 5px;
-    margin: 5px 0;
-    padding: 0 10px;
-    margin-left: 3px;
-    color: #ff9e64;
+    color: @yellow;
+    border-radius: 1rem;
 }
 
 #cpu {
-    margin: 5px 0;
-    padding: 0 10px;
-    color: #ff7a93;
-    margin-right: 6px;
+    color: @red;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 0.5rem;
+}
+
+#memory {
+    color: @orange;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 0.5rem;
 }
 
 #tray {
-    margin: 5px;
-    margin-left: 0px;
-    margin-right: 6px;
-    border-radius: 5px;
-    padding: 0 10px;
-}
-
-#tray > * {
-    padding: 0 2px;
-    margin: 0 2px;
+    border-radius: 1rem;
+    margin-right: 1rem;
 }
