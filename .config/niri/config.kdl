@@ -1,0 +1,252 @@
+// Monitors
+output "DP-3" {
+    mode "2560x1440@164.834"
+    position x=0 y=0
+}
+output "DP-1" {
+    mode "2560x1440@164.834"
+    position x=2560 y=0
+}
+
+// startup processes
+spawn-at-startup "waybar"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "gammastep"
+spawn-sh-at-startup "swaybg -i ~/pictures/wallpapers/1440p+/couple_room.jpg -m fill"
+
+// remove client-side decorations if possible
+prefer-no-csd
+
+// https://yalter.github.io/niri/Configuration:-Input
+input {
+    touchpad {
+        tap
+        natural-scroll
+    }
+    workspace-auto-back-and-forth
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    focus-follows-mouse max-scroll-amount="95%"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    gaps 15
+    background-color "transparent"
+    center-focused-column "never"
+
+    default-column-width { proportion 0.5; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    focus-ring {
+        width 2
+        active-gradient from="#cba6f7 " to="#7fc8ff" angle=225
+        inactive-color "#505050"
+    }
+}
+
+// https://yalter.github.io/niri/Configuration:-Animations
+animations {
+    // slow down all animations by this factor. values below 1 speed them up instead.
+    slowdown 0.5
+}
+
+// make the wallpaper stationary, rather than moving with workspaces
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+// general window rules
+window-rule {
+    opacity 0.98
+    draw-border-with-background false
+
+    // slightly rounded corners for all windows.
+    geometry-corner-radius 7
+    clip-to-geometry true
+}
+// inactive windows
+window-rule {
+    match is-active=false
+    opacity 0.90
+}
+// browsers
+window-rule {
+    match app-id="zen$"
+    match app-id="firefox$"
+    match app-id="brave$"
+    open-maximized true
+}
+
+// where screenshots are saved
+screenshot-path "~/pictures/screenshots/%Y-%m-%d_%Hh%Mm%Ss.png"
+
+binds {
+    // general
+    Mod+Return { spawn "foot"; }
+    Mod+Q repeat=false { close-window; }
+
+    // maximize/fullscreen
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    // floating
+    Mod+Space      { toggle-window-floating; }
+    Mod+Ctrl+Space { switch-focus-between-floating-and-tiling; }
+
+    // browser
+    Mod+W { spawn "zen-browser"; }
+
+    // app launcher
+    Mod+D { spawn "fuzzel"; }
+
+    // file manager
+    Mod+E { spawn-sh "foot -e yazi"; }
+    Mod+Shift+E { spawn "pcmanfm"; }
+
+    // lock screen
+    Super+Alt+L { spawn "swaylock"; }
+
+    // zoomed-out view of workspaces and windows.
+    Mod+O repeat=false { toggle-overview; }
+
+    // clipboard
+    Mod+V { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Alt+V { spawn-sh "cliphist list | fuzzel --dmenu | cliphist delete"; }
+
+    // audio control
+    Mod+Shift+V { spawn-sh "foot -e pulsemixer"; }
+
+    // emoji picker
+    Mod+Shift+Period { spawn-sh "BEMOJI_PICKER_CMD='fuzzel --dmenu' bemoji"; }
+
+    // Volume control
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pamixer -i 5; dunstify -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pamixer -d 5; dunstify -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "pamixer -t; dunstify -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
+
+    // column focusing
+    Mod+H { focus-column-or-monitor-left; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-or-monitor-right; }
+
+    // column moving
+    Mod+Shift+H { move-column-left-or-to-monitor-left; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L { move-column-right-or-to-monitor-right; }
+
+    // monitor focusing
+    Mod+Tab { focus-monitor-previous; }
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+J { focus-monitor-down; }
+    Mod+Ctrl+K { focus-monitor-up; }
+    Mod+Ctrl+L { focus-monitor-right; }
+
+    // monitor moving
+    Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
+
+    // workspace focusing and moving
+    Mod+U { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
+    Mod+Shift+U { move-column-to-workspace-down; }
+    Mod+Shift+I { move-column-to-workspace-up; }
+    Mod+Ctrl+U { move-workspace-down; }
+    Mod+Ctrl+I { move-workspace-up; }
+
+    // focus/move first/last column
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    // scrolling: column/workspace focusing
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollLeft { focus-column-left; }
+    Mod+Shift+WheelScrollDown { focus-column-right; }
+    Mod+Shift+WheelScrollUp   { focus-column-left; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+
+    // scrolling: column/workspace movement
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+
+    // workspace focusing and moving by number
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
+
+    // move the focused window in and out of a column.
+    Mod+Comma  { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+
+    // cycle window size presets
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+
+    // centering
+    Mod+C { center-column; }
+    Mod+Ctrl+C { center-visible-columns; }
+
+    // toggle tabbed column mode
+    Mod+T { toggle-column-tabbed-display; }
+
+    // screenshots
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // reboot
+    Mod+Shift+Ctrl+R { spawn "systemctl" "reboot"; }
+    // shutdown
+    Mod+Shift+Ctrl+P { spawn "systemctl" "poweroff"; }
+
+    // Applications such as remote-desktop clients and software KVM switches may
+    // request that niri stops processing the keyboard shortcuts defined here
+    // so they may, for example, forward the key presses as-is to a remote machine.
+    // It's a good idea to bind an escape hatch to toggle the inhibitor,
+    // so a buggy application can't hold your session hostage.
+    // The allow-inhibiting=false property can be applied to other binds as well,
+    // which ensures niri always processes them, even when an inhibitor is active.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+}
