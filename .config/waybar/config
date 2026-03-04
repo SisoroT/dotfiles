@@ -2,7 +2,8 @@
 {
     "layer": "top",
     "modules-left": [
-        "hyprland/workspaces"
+        "niri/workspaces",
+        "custom/niri-columns"
     ],
     "modules-center": [
         "clock",
@@ -10,34 +11,50 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "memory",
         "cpu",
+        "memory",
         "battery",
         "tray"
     ],
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true,
-        "format": "{name}"
+        "format": "{value}"
+    },
+    "custom/niri-columns": {
+        "exec": "~/.config/waybar/scripts/niri-columns.sh",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": false
     },
     "clock": {
-        "actions": {
-            "on-scroll-down": "shift_up",
-            "on-scroll-up": "shift_down",
-            "on-click-middle": "shift_reset",
-            "on-click-right": "mode"
-        },
         "tooltip": false
-        // "format": "{:%I:%M %p}",
     },
     "clock#date": {
         "format": "{:%A, %B %d}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "format": {
+                "months": "<span color='#ff9e64'><b>{}</b></span>",
+                "days": "<span color='#c0caf5'><b>{}</b></span>",
+                "weeks": "<span color='#9ece6a'><b>W{}</b></span>",
+                "weekdays": "<span color='#bb9af7'><b>{}</b></span>",
+                "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_reset",
+            "on-click-middle": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "pulseaudio": {
         "format": "{icon} {volume:2}%",
-        "format-bluetooth": "{icon}  {volume}%",
-        "format-muted": "MUTE",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphones": "",
             "default": [
@@ -51,11 +68,11 @@
     },
     "memory": {
         "interval": 5,
-        "format": "Mem {}%"
+        "format": "  {}%"
     },
     "cpu": {
         "interval": 5,
-        "format": "CPU {usage:2}%"
+        "format": " {usage:2}%"
     },
     "battery": {
         "states": {
@@ -72,12 +89,8 @@
             ""
         ]
     },
-    "disk": {
-        "interval": 5,
-        "format": "Disk {percentage_used:2}%",
-        "path": "/"
-    },
     "tray": {
-        "icon-size": 20
+        "icon-size": 20,
+        "spacing": 10
     }
 }
