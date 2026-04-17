@@ -89,12 +89,19 @@ window-rule {
 window-rule {
     match app-id="zen$"
     match app-id="firefox$"
-    match app-id="brave$"
+    match app-id="brave-browser$"
+    match app-id="chromium$"
     open-maximized true
 }
 
 // where screenshots are saved
 screenshot-path "~/pictures/screenshots/%Y-%m-%d_%Hh%Mm%Ss.png"
+
+gestures {
+    hot-corners {
+        off
+    }
+}
 
 binds {
     // general
@@ -132,7 +139,7 @@ binds {
     Mod+Shift+V { spawn-sh "foot -e pulsemixer"; }
 
     // emoji picker
-    Mod+Shift+Period { spawn-sh "BEMOJI_PICKER_CMD='fuzzel --dmenu' bemoji"; }
+    Mod+Shift+Period { spawn-sh "BEMOJI_PICKER_CMD='fuzzel --dmenu' bemoji -n"; }
 
     // Volume control
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pamixer -i 5; dunstify -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
