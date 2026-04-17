@@ -18,6 +18,10 @@ spawn-sh-at-startup "swaybg -i ~/pictures/wallpapers/1440p+/couple_room.jpg -m f
 // remove client-side decorations if possible
 prefer-no-csd
 
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
 // https://yalter.github.io/niri/Configuration:-Input
 input {
     touchpad {
