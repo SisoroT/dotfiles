@@ -1,8 +1,4 @@
-# Dotfiles
-
-My Arch Linux dotfiles.
-
-## Software
+# Software
 
 My neovim config lives in its own repo: [SisoroT/nvim](https://github.com/SisoroT/nvim).
 
