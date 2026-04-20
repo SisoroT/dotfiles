@@ -1,13 +1,8 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
+set adjust-open "best-fit"
 
-# Dracula color theme for Zathura
-# Swaps Foreground for Background to get a light version if the user prefers
-
-#
 # Dracula color theme
-#
-
 set notification-error-bg       "#ff5555" # Red
 set notification-error-fg       "#f8f8f2" # Foreground
 set notification-warning-bg     "#ffb86c" # Orange
@@ -42,21 +37,14 @@ set render-loading              true
 set render-loading-fg           "#282a36" # Background
 set render-loading-bg           "#f8f8f2" # Foreground
 
-#
 # Recolor mode settings
-#
-
 set recolor-lightcolor          "#282a36" # Background
 set recolor-darkcolor           "#f8f8f2" # Foreground
 
-#
 # Startup options
-#
 set recolor true
 
-#
 # Mappings
-#
 map u scroll half-up
 map d scroll half-down
 map I zoom in
