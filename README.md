@@ -1,15 +1,17 @@
 # Dotfiles
-<p align=center>
-  <img src="./assets/preview.png">
-</p>
+
+My Arch Linux dotfiles.
 
 ## Software
-These are my arch linux configuration files. Some of the important software in use:
 
-- [bspwm](https://github.com/baskerville/bspwm) - tiling window manager
-- [neovim](https://github.com/neovim/neovim) - text editor
-- [polybar](https://github.com/polybar/polybar) - status bar
-- [starship](https://starship.rs/) - universal terminal prompt
-- [termite](https://github.com/aperezdc/termite) - terminal
-- [zathura](https://github.com/pwmt/zathura) - document viewer
-- [zsh](https://www.zsh.org/) - shell
+My neovim config lives in its own repo: [SisoroT/nvim](https://github.com/SisoroT/nvim).
+
+- [Hyprland](https://hyprland.org/) — tiling Wayland compositor
+- [niri](https://github.com/YaLTeR/niri) — scrolling Wayland compositor
+- [waybar](https://github.com/Alexays/Waybar) — status bar, shared between Hyprland and niri
+- [fuzzel](https://codeberg.org/dnkl/fuzzel) — Wayland app launcher
+- [foot](https://codeberg.org/dnkl/foot) — Wayland terminal
+- [neovim](https://github.com/neovim/neovim) — text editor
+- [tmux](https://github.com/tmux/tmux) — terminal multiplexer
+- [starship](https://starship.rs/) — universal terminal prompt
+- [zsh](https://www.zsh.org/) — shell
