@@ -7,6 +7,9 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
+# npm global install location (avoids conflicts with system npm)
+export npm_config_prefix="$HOME/.local"
 
 # variables
 local plugin_dir="$HOME/.config/zsh/plugins"
