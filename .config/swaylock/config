@@ -5,6 +5,7 @@ datestr=%A, %B %d
 screenshots
 ignore-empty-password
 disable-caps-lock-text
+show-failed-attempts
 
 effect-blur=15x10
 effect-vignette=0.5:0.5
@@ -13,21 +14,21 @@ indicator
 indicator-radius=240
 indicator-caps-lock
 
-key-hl-color=bb9af7
+key-hl-color=cba6f7
 separator-color=00000000
-bs-hl-color=e0af68
+bs-hl-color=f9e2af
 
-text-color=a9b1d6
-text-clear-color=e0af68
-text-caps-lock-color=7aa2f7
-text-ver-color=a9b1d6
-text-wrong-color=f7768e
+text-color=cdd6f4
+text-clear-color=f9e2af
+text-caps-lock-color=89b4fa
+text-ver-color=cdd6f4
+text-wrong-color=f38ba8
 
 line-color=00000000
-line-clear-color=e0af68
-line-caps-lock-color=7aa2f7
-line-ver-color=a9b1d6
-line-wrong-color=f7768e
+line-clear-color=f9e2af
+line-caps-lock-color=89b4fa
+line-ver-color=cdd6f4
+line-wrong-color=f38ba8
 
 inside-color=00000000
 inside-clear-color=00000000
