@@ -14,7 +14,7 @@ spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "gammastep"
 spawn-sh-at-startup "swaybg -i ~/pictures/wallpapers/1440p+/couple_room.jpg -m fill"
-// idle: blank monitors + lock at 10min; re-blanks on each new idle cycle
+// idle: blank monitors + lock at 10min
 spawn-sh-at-startup "swayidle -w timeout 600 'niri msg action power-off-monitors; (pidof hyprlock || hyprlock) &' resume 'niri msg action power-on-monitors' before-sleep '(pidof hyprlock || hyprlock) & sleep 0.5'"
 
 // remove client-side decorations if possible
