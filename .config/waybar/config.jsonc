@@ -1,9 +1,7 @@
-// -*- mode: json -*-
 {
     "layer": "top",
     "modules-left": [
         "niri/workspaces",
-        "custom/niri-columns"
     ],
     "modules-center": [
         "clock",
@@ -19,12 +17,6 @@
     "niri/workspaces": {
         "disable-scroll": true,
         "format": "{value}"
-    },
-    "custom/niri-columns": {
-        "exec": "~/.config/waybar/scripts/niri-columns.sh",
-        "interval": 1,
-        "format": "{}",
-        "tooltip": false
     },
     "clock": {
         "tooltip": false
