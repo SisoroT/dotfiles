@@ -97,6 +97,13 @@ window-rule {
     match app-id="chromium$"
     open-maximized true
 }
+// auto-float picture-in-picture windows
+window-rule {
+    match title="^Picture.in.Picture$"
+    open-floating true
+    default-column-width { fixed 640; }
+    default-window-height { fixed 360; }
+}
 
 // where screenshots are saved
 screenshot-path "~/pictures/screenshots/%Y-%m-%d_%Hh%Mm%Ss.png"
