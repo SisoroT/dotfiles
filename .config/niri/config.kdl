@@ -262,10 +262,19 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    // reboot
-    Mod+Shift+Ctrl+R { spawn "systemctl" "reboot"; }
-    // shutdown
-    Mod+Shift+Ctrl+P { spawn "systemctl" "poweroff"; }
+    // power menu
+    Mod+Shift+P {
+        spawn-sh "
+            choice=$(printf '󰌾 lock\n󰍃 logout\n󰤄 suspend\n󰑤 reboot\n󰐥 shutdown' | fuzzel --dmenu)
+            case ${choice#* } in
+                lock)     hyprlock ;;
+                logout)   systemctl soft-reboot ;;
+                suspend)  systemctl suspend ;;
+                reboot)   systemctl reboot ;;
+                shutdown) systemctl poweroff ;;
+            esac
+        ";
+    }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
