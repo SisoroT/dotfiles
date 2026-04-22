@@ -10,46 +10,46 @@
 @define-color yellow    #e0af68;
 
 * {
-    font-family: NotoSans Nerd Font;
-    font-weight: 600;
-    font-size: 13px;
-    min-height: 0;
+  font-family: NotoSans Nerd Font;
+  font-weight: 600;
+  font-size: 13px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: @text;
+  background: transparent;
+  color: @text;
 }
 
 #workspaces {
-    background-color: alpha(@bg, 0.9);
-    border-radius: 1rem;
-    margin: 5px;
-    margin-left: 1rem;
+  background-color: alpha(@bg, 0.9);
+  border-radius: 1rem;
+  margin: 5px;
+  margin-left: 1rem;
 }
 
 #workspaces button {
-    border-radius: 1rem;
-    padding: 0.4rem;
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
 #workspaces button.active {
-    background-color: @purple;
+  background-color: @purple;
 }
 
 #workspaces button.empty:not(.active) {
-    opacity: 0;
-    min-width: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    font-size: 0;
+  opacity: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 0;
 }
 
 #workspaces button:hover {
-    background-color: @blue;
-    color: @bg;
+  background-color: @blue;
+  color: @bg;
 }
 
 #clock,
@@ -58,51 +58,51 @@ window#waybar {
 #memory,
 #cpu,
 #tray {
-    background-color: alpha(@bg, 0.9);
-    padding: 0.4rem 1rem;
-    margin: 5px 0;
+  background-color: alpha(@bg, 0.9);
+  padding: 0.4rem 1rem;
+  margin: 5px 0;
 }
 
 #clock {
-    color: @mauve;
-    border-radius: 1rem 0px 0px 1rem;
-    margin-right: 0;
+  color: @mauve;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-right: 0;
 }
 
 #clock.date {
-    border-radius: 0px 1rem 1rem 0px;
+  border-radius: 0px 1rem 1rem 0px;
 }
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 #battery.charging {
-    color: @green;
+  color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: @red;
+  color: @red;
 }
 
 #pulseaudio {
-    color: @yellow;
-    border-radius: 1rem;
+  color: @yellow;
+  border-radius: 1rem;
 }
 
 #cpu {
-    color: @red;
-    border-radius: 1rem 0px 0px 1rem;
-    margin-left: 0.5rem;
+  color: @red;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 0.5rem;
 }
 
 #memory {
-    color: @orange;
-    border-radius: 0px 1rem 1rem 0px;
-    margin-right: 0.5rem;
+  color: @orange;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 0.5rem;
 }
 
 #tray {
-    border-radius: 1rem;
-    margin-right: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
 }
