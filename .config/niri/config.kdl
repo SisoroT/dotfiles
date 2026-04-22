@@ -153,9 +153,9 @@ binds {
     Mod+Shift+Period { spawn-sh "BEMOJI_PICKER_CMD='fuzzel --dmenu' bemoji -n"; }
 
     // Volume control
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pamixer -i 5; notify-send -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pamixer -d 5; notify-send -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "pamixer -t; notify-send -r 2593 'Volume: '$(pamixer --get-volume-human)"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pamixer -i 5; h=$(pamixer --get-volume-human); [ \"$h\" = muted ] && v=0 || v=${h%\\%}; notify-send -r 2593 -h int:value:$v \"Volume: $h\""; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pamixer -d 5; h=$(pamixer --get-volume-human); [ \"$h\" = muted ] && v=0 || v=${h%\\%}; notify-send -r 2593 -h int:value:$v \"Volume: $h\""; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "pamixer -t; h=$(pamixer --get-volume-human); [ \"$h\" = muted ] && v=0 || v=${h%\\%}; notify-send -r 2593 -h int:value:$v \"Volume: $h\""; }
 
     // column focusing
     Mod+H { focus-column-or-monitor-left; }
