@@ -152,6 +152,11 @@ binds {
     // emoji picker
     Mod+Shift+Period { spawn-sh "BEMOJI_PICKER_CMD='fuzzel --dmenu' bemoji -n"; }
 
+    // notifications (dunst)
+    Mod+N       { spawn "dunstctl" "close"; }
+    Mod+Shift+N { spawn "dunstctl" "close-all"; }
+    Mod+Ctrl+N  { spawn "dunstctl" "history-pop"; }
+
     // Volume control
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pamixer -i 5; h=$(pamixer --get-volume-human); [ \"$h\" = muted ] && v=0 || v=${h%\\%}; notify-send -r 2593 -h int:value:$v \"Volume: $h\""; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pamixer -d 5; h=$(pamixer --get-volume-human); [ \"$h\" = muted ] && v=0 || v=${h%\\%}; notify-send -r 2593 -h int:value:$v \"Volume: $h\""; }
