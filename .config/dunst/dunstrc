@@ -71,7 +71,7 @@
     # Variables: %a appname, %s summary, %b body, %i icon (path),
     # %I icon (name only), %p progress value, %n progress raw value,
     # %% literal percent sign.
-    format = "<b>%s</b> %p\n%b"
+    format = "<b>%s</b>\n%b"
 
     alignment = left
     vertical_alignment = center
