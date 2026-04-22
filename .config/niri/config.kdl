@@ -265,13 +265,13 @@ binds {
     // power menu
     Mod+Shift+P {
         spawn-sh "
-            choice=$(printf '󰌾 lock\n󰍃 logout\n󰤄 suspend\n󰑤 reboot\n󰐥 shutdown' | fuzzel --dmenu)
+            choice=$(printf '󰌾 lock\n󰍃 logout\n󰤄 suspend\n󰑤 reboot\n󰐥 poweroff' | fuzzel --dmenu)
             case ${choice#* } in
                 lock)     hyprlock ;;
                 logout)   systemctl soft-reboot ;;
                 suspend)  systemctl suspend ;;
                 reboot)   systemctl reboot ;;
-                shutdown) systemctl poweroff ;;
+                poweroff) systemctl poweroff ;;
             esac
         ";
     }
