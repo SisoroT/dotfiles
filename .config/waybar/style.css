@@ -52,14 +52,6 @@ window#waybar {
     color: @bg;
 }
 
-#custom-niri-columns {
-    background-color: alpha(@bg, 0.9);
-    border-radius: 1rem;
-    margin: 5px;
-    margin-left: 0.5rem;
-    padding: 0.4rem 1rem;
-}
-
 #clock,
 #battery,
 #pulseaudio,
